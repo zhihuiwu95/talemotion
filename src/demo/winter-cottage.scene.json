@@ -1,0 +1,510 @@
+{
+  "version": "1.0",
+  "sceneId": "winter-cottage-01",
+  "title": "松林深处的灯光",
+  "duration": 120,
+  "viewport": { "width": 1280, "height": 720 },
+  "assets": {
+    "background": "/assets/winter-forest.svg",
+    "rabbitIdle": "/assets/rabbit-idle.svg",
+    "rabbitHappy": "/assets/rabbit-happy.svg",
+    "cottage": "/assets/cottage.svg",
+    "door": "/assets/cottage-door.svg",
+    "doorGlow": "/assets/door-glow.svg"
+  },
+  "objects": [
+    {
+      "id": "background",
+      "type": "sprite",
+      "asset": "background",
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720,
+      "anchor": [0, 0],
+      "zIndex": 0
+    },
+    {
+      "id": "cottage",
+      "type": "sprite",
+      "asset": "cottage",
+      "x": 1005,
+      "y": 632,
+      "anchor": [0.5, 1],
+      "zIndex": 10
+    },
+    {
+      "id": "doorGlow",
+      "type": "sprite",
+      "asset": "doorGlow",
+      "x": 1044,
+      "y": 624,
+      "anchor": [0.5, 1],
+      "alpha": 0,
+      "zIndex": 18
+    },
+    {
+      "id": "door",
+      "type": "sprite",
+      "asset": "door",
+      "x": 990,
+      "y": 625,
+      "anchor": [0, 1],
+      "zIndex": 20
+    },
+    {
+      "id": "rabbit",
+      "type": "sprite",
+      "asset": "rabbitIdle",
+      "expressions": { "happy": "rabbitHappy" },
+      "x": 142,
+      "y": 638,
+      "anchor": [0.5, 1],
+      "scale": 0.82,
+      "zIndex": 30
+    }
+  ],
+  "timeline": [
+    {
+      "id": "narration-01",
+      "at": 0.15,
+      "type": "audio.play",
+      "channel": "narration",
+      "text": "冬夜很静，松林像一排沉睡的巨人。小兔皮普抱紧围巾，沿着雪地里忽明忽暗的微光，慢慢向前走。",
+      "lang": "zh-CN",
+      "rate": 1.03,
+      "pitch": 1.04
+    },
+    {
+      "id": "snow-begins",
+      "label": "微光照进松林",
+      "at": 0.4,
+      "type": "effect.start",
+      "effect": "snow",
+      "params": { "density": 0.22 }
+    },
+    {
+      "id": "rabbit-first-steps",
+      "at": 0.6,
+      "type": "move",
+      "target": "rabbit",
+      "to": { "x": 300, "y": 638 },
+      "duration": 12,
+      "ease": "power1.inOut"
+    },
+    {
+      "at": 3,
+      "type": "camera.zoom",
+      "to": 1.025,
+      "duration": 10,
+      "ease": "sine.inOut"
+    },
+    {
+      "id": "narration-02",
+      "at": 15.1,
+      "type": "audio.play",
+      "channel": "narration",
+      "text": "风把旧脚印一点点盖住，皮普有些害怕。每当它停下，前方的光就轻轻闪一下，像在说：别担心，我在这里。",
+      "lang": "zh-CN",
+      "rate": 1.03,
+      "pitch": 1.04
+    },
+    {
+      "id": "rabbit-through-snow",
+      "label": "风雪盖住脚印",
+      "at": 15.3,
+      "type": "move",
+      "target": "rabbit",
+      "to": { "x": 510, "y": 638 },
+      "duration": 12,
+      "ease": "power1.inOut"
+    },
+    {
+      "at": 17,
+      "type": "camera.pan",
+      "to": { "x": 615, "y": 360 },
+      "duration": 10,
+      "ease": "sine.inOut"
+    },
+    {
+      "id": "narration-03",
+      "at": 30.1,
+      "type": "audio.play",
+      "channel": "narration",
+      "text": "穿过最后一排松树，它看见一间小木屋。窗边亮着蜂蜜色的灯，门前还留着一串新鲜的小脚印。",
+      "lang": "zh-CN",
+      "rate": 1.03,
+      "pitch": 1.04
+    },
+    {
+      "id": "cottage-light",
+      "label": "木屋亮起暖光",
+      "at": 30.2,
+      "type": "fade",
+      "target": "doorGlow",
+      "to": 0.36,
+      "duration": 7,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 31,
+      "type": "move",
+      "target": "rabbit",
+      "to": { "x": 700, "y": 638 },
+      "duration": 10,
+      "ease": "power1.inOut"
+    },
+    {
+      "at": 33,
+      "type": "camera.zoom",
+      "to": 1.055,
+      "duration": 9,
+      "ease": "sine.inOut"
+    },
+    {
+      "id": "narration-04",
+      "at": 45.1,
+      "type": "audio.play",
+      "channel": "narration",
+      "text": "皮普刚刚走近，木门便吱呀一声打开。暖光铺在雪上，屋里传来声音：快进来吧，我们一直在等你。",
+      "lang": "zh-CN",
+      "rate": 1.03,
+      "pitch": 1.04
+    },
+    {
+      "id": "door-opens",
+      "label": "木门缓缓打开",
+      "at": 45.2,
+      "type": "rotate",
+      "target": "door",
+      "to": -72,
+      "duration": 3,
+      "ease": "power2.inOut"
+    },
+    {
+      "at": 45.2,
+      "type": "fade",
+      "target": "doorGlow",
+      "to": 0.92,
+      "duration": 3,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 47.5,
+      "type": "effect.stop",
+      "effect": "snow"
+    },
+    {
+      "at": 48,
+      "type": "effect.start",
+      "effect": "snow",
+      "params": { "density": 0.55 }
+    },
+    {
+      "at": 50,
+      "type": "expression",
+      "target": "rabbit",
+      "value": "happy"
+    },
+    {
+      "id": "narration-05",
+      "at": 60.1,
+      "type": "audio.play",
+      "channel": "narration",
+      "text": "门后不是陌生人，而是走散许久的松鼠朋友。桌上有热汤、松果面包，还有一盏专门为皮普留着的小灯。",
+      "lang": "zh-CN",
+      "rate": 1.03,
+      "pitch": 1.04
+    },
+    {
+      "at": 60.3,
+      "type": "move",
+      "target": "rabbit",
+      "to": { "x": 790, "y": 638 },
+      "duration": 8,
+      "ease": "power1.inOut"
+    },
+    {
+      "id": "friends-reunite",
+      "label": "朋友终于重逢",
+      "at": 62,
+      "type": "camera.zoom",
+      "to": 1.12,
+      "duration": 10,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 62,
+      "type": "camera.pan",
+      "to": { "x": 590, "y": 350 },
+      "duration": 10,
+      "ease": "sine.inOut"
+    },
+    {
+      "id": "narration-06",
+      "at": 75.1,
+      "type": "audio.play",
+      "channel": "narration",
+      "text": "朋友说，暴风雪来临前，它们每天都把灯挂在窗边，希望迷路的皮普，能够认出回家的方向。",
+      "lang": "zh-CN",
+      "rate": 1.03,
+      "pitch": 1.04
+    },
+    {
+      "id": "light-kept-burning",
+      "label": "窗边的灯一直亮着",
+      "at": 75.2,
+      "type": "scale",
+      "target": "rabbit",
+      "to": 0.94,
+      "duration": 3,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 78.2,
+      "type": "scale",
+      "target": "rabbit",
+      "to": 0.86,
+      "duration": 4,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 82,
+      "type": "move",
+      "target": "rabbit",
+      "to": { "y": 625 },
+      "duration": 2,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 84,
+      "type": "move",
+      "target": "rabbit",
+      "to": { "y": 638 },
+      "duration": 2,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 85,
+      "type": "effect.stop",
+      "effect": "snow"
+    },
+    {
+      "at": 85.2,
+      "type": "effect.start",
+      "effect": "snow",
+      "params": { "density": 0.32 }
+    },
+    {
+      "id": "narration-07",
+      "at": 90.1,
+      "type": "audio.play",
+      "channel": "narration",
+      "text": "窗外的雪越下越轻，屋里的笑声却越来越暖。皮普终于明白，真正照亮森林的，从来不只是一盏灯。",
+      "lang": "zh-CN",
+      "rate": 1.03,
+      "pitch": 1.04
+    },
+    {
+      "id": "light-in-the-heart",
+      "label": "真正的光在心里",
+      "at": 90.2,
+      "type": "camera.zoom",
+      "to": 1.04,
+      "duration": 12,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 90.2,
+      "type": "camera.pan",
+      "to": { "x": 640, "y": 360 },
+      "duration": 12,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 92,
+      "type": "rotate",
+      "target": "door",
+      "to": -42,
+      "duration": 4,
+      "ease": "power2.inOut"
+    },
+    {
+      "at": 94,
+      "type": "fade",
+      "target": "doorGlow",
+      "to": 0.68,
+      "duration": 8,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 96,
+      "type": "rotate",
+      "target": "door",
+      "to": -72,
+      "duration": 4,
+      "ease": "power2.inOut"
+    },
+    {
+      "id": "narration-08",
+      "at": 105.1,
+      "type": "audio.play",
+      "channel": "narration",
+      "text": "那一夜，松林深处多了一扇永远为朋友打开的门。无论风雪多大，只要记得彼此，回家的路就不会消失。",
+      "lang": "zh-CN",
+      "rate": 1.03,
+      "pitch": 1.04
+    },
+    {
+      "id": "open-door-ending",
+      "label": "一扇永远打开的门",
+      "at": 105.2,
+      "type": "fade",
+      "target": "doorGlow",
+      "to": 1,
+      "duration": 4,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 106,
+      "type": "move",
+      "target": "rabbit",
+      "to": { "x": 760, "y": 638 },
+      "duration": 7,
+      "ease": "power1.inOut"
+    },
+    {
+      "at": 106,
+      "type": "scale",
+      "target": "rabbit",
+      "to": 0.9,
+      "duration": 7,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 110,
+      "type": "camera.zoom",
+      "to": 1,
+      "duration": 8,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 110,
+      "type": "camera.pan",
+      "to": { "x": 640, "y": 360 },
+      "duration": 8,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 114,
+      "type": "fade",
+      "target": "doorGlow",
+      "to": 0.58,
+      "duration": 5,
+      "ease": "sine.inOut"
+    },
+    {
+      "at": 118,
+      "type": "effect.stop",
+      "effect": "snow"
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.15,
+      "end": 7.4,
+      "speaker": "旁白",
+      "text": "冬夜很静，松林像一排沉睡的巨人。"
+    },
+    {
+      "start": 7.4,
+      "end": 14.8,
+      "speaker": "旁白",
+      "text": "皮普沿着雪地里忽明忽暗的微光，慢慢向前走。"
+    },
+    {
+      "start": 15.1,
+      "end": 22.4,
+      "speaker": "旁白",
+      "text": "风把旧脚印一点点盖住，皮普有些害怕。"
+    },
+    {
+      "start": 22.4,
+      "end": 29.8,
+      "speaker": "旁白",
+      "text": "前方的光轻轻闪着：别担心，我在这里。"
+    },
+    {
+      "start": 30.1,
+      "end": 37.4,
+      "speaker": "旁白",
+      "text": "穿过最后一排松树，它看见一间小木屋。"
+    },
+    {
+      "start": 37.4,
+      "end": 44.8,
+      "speaker": "旁白",
+      "text": "窗边亮着蜂蜜色的灯，门前留着新鲜的脚印。"
+    },
+    {
+      "start": 45.1,
+      "end": 52.4,
+      "speaker": "旁白",
+      "text": "皮普刚刚走近，木门便吱呀一声打开。"
+    },
+    {
+      "start": 52.4,
+      "end": 59.8,
+      "speaker": "屋里的声音",
+      "text": "“快进来吧，我们一直在等你。”"
+    },
+    {
+      "start": 60.1,
+      "end": 67.4,
+      "speaker": "旁白",
+      "text": "门后，是走散许久的松鼠朋友。"
+    },
+    {
+      "start": 67.4,
+      "end": 74.8,
+      "speaker": "旁白",
+      "text": "桌上还有一盏专门为皮普留着的小灯。"
+    },
+    {
+      "start": 75.1,
+      "end": 82.4,
+      "speaker": "旁白",
+      "text": "暴风雪来临前，朋友每天都把灯挂在窗边。"
+    },
+    {
+      "start": 82.4,
+      "end": 89.8,
+      "speaker": "旁白",
+      "text": "它们希望迷路的皮普，能够认出回家的方向。"
+    },
+    {
+      "start": 90.1,
+      "end": 97.4,
+      "speaker": "旁白",
+      "text": "窗外的雪越下越轻，屋里的笑声越来越暖。"
+    },
+    {
+      "start": 97.4,
+      "end": 104.8,
+      "speaker": "旁白",
+      "text": "真正照亮森林的，从来不只是一盏灯。"
+    },
+    {
+      "start": 105.1,
+      "end": 112.4,
+      "speaker": "旁白",
+      "text": "松林深处，多了一扇永远为朋友打开的门。"
+    },
+    {
+      "start": 112.4,
+      "end": 119.8,
+      "speaker": "旁白",
+      "text": "只要记得彼此，回家的路就不会消失。"
+    }
+  ]
+}

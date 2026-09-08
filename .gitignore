@@ -1,0 +1,11 @@
+node_modules
+dist
+coverage
+.DS_Store
+*.local
+*.log
+
+.venv/
+__pycache__/
+scripts/narration-input.json
+public/audio/*.tmp

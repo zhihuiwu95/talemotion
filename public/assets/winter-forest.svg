@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-label="Moonlit winter forest">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#111b36"/>
+      <stop offset="0.56" stop-color="#304a6c"/>
+      <stop offset="1" stop-color="#8baebe"/>
+    </linearGradient>
+    <linearGradient id="snow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8edf4"/>
+      <stop offset="1" stop-color="#9abac8"/>
+    </linearGradient>
+    <radialGradient id="moonGlow">
+      <stop offset="0" stop-color="#fffce9" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#fffce9" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#sky)"/>
+  <circle cx="242" cy="142" r="104" fill="url(#moonGlow)" filter="url(#soft)"/>
+  <circle cx="242" cy="142" r="46" fill="#f8f2d9"/>
+  <g fill="#dbeaf3" opacity=".78">
+    <circle cx="82" cy="106" r="2"/><circle cx="394" cy="82" r="2.5"/>
+    <circle cx="522" cy="151" r="2"/><circle cx="684" cy="70" r="1.8"/>
+    <circle cx="812" cy="125" r="2.6"/><circle cx="1038" cy="73" r="2"/>
+    <circle cx="1175" cy="164" r="2.4"/><circle cx="927" cy="208" r="1.7"/>
+    <path d="M330 192h12M336 186v12M734 180h10M739 175v10M1110 118h12M1116 112v12" stroke="#dbeaf3" stroke-width="2"/>
+  </g>
+  <path d="M0 412Q176 326 354 397T714 382T1010 365T1280 390V720H0Z" fill="#496c78"/>
+  <g fill="#294954">
+    <path d="M60 470 166 198l106 272h-55l72 122H36l78-122Z"/>
+    <path d="M285 483 376 252l91 231h-48l62 104H273l65-104Z"/>
+    <path d="M1105 465 1194 235l86 230h-41l41 82v40h-185l56-122Z"/>
+    <path d="M760 474 845 265l85 209h-43l54 94H748l55-94Z" opacity=".62"/>
+  </g>
+  <g fill="#51727a">
+    <path d="M-42 495 43 283l85 212H84l60 98H-38l54-98Z"/>
+    <path d="M472 500 553 302l81 198h-40l49 84H464l50-84Z"/>
+    <path d="M936 489 1009 307l75 182h-39l50 89H928l47-89Z"/>
+  </g>
+  <path d="M0 526Q196 476 389 533T760 518T1019 509T1280 530V720H0Z" fill="url(#snow)"/>
+  <path d="M0 620Q234 565 486 620T908 602T1280 622V720H0Z" fill="#eef8f8" opacity=".72"/>
+  <path d="M86 627c172-46 339-31 505 5" fill="none" stroke="#85abb9" stroke-width="8" stroke-linecap="round" opacity=".42"/>
+</svg>
