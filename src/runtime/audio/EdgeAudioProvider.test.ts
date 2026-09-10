@@ -16,6 +16,28 @@ afterEach(() => {
   vi.restoreAllMocks()
 })
 describe('Edge audio playback', () => {
+  it('signals completion once, ignores cancelled clips, and releases missing/failed audio', async () => {
+    const done = vi.fn()
+    const speech = new EdgeAudioProvider()
+    speech.speak({ text, onComplete: done })
+    const element = document.querySelector('audio')!
+    const stale = element.onended as () => void
+    speech.cancel()
+    stale()
+    expect(done).not.toHaveBeenCalled()
+    speech.speak({ text, onComplete: done })
+    element.dispatchEvent(new Event('ended'))
+    element.dispatchEvent(new Event('ended'))
+    expect(done).toHaveBeenCalledOnce()
+    speech.speak({ text: 'missing', onComplete: done })
+    expect(done).toHaveBeenCalledTimes(2)
+    play.mockRejectedValueOnce(new Error('denied'))
+    speech.speak({ text, onComplete: done })
+    await Promise.resolve()
+    await Promise.resolve()
+    expect(done).toHaveBeenCalledTimes(3)
+    speech.dispose()
+  })
   it('starts immediately on the caller gesture, reuses the element and disposes it', async () => {
     const status = vi.fn()
     const speech = new EdgeAudioProvider(status)

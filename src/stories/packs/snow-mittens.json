@@ -1,0 +1,524 @@
+{
+  "schemaVersion": "1.0",
+  "catalogVersion": "1.0",
+  "id": "snow-mittens",
+  "title": "雪松下的小手套",
+  "summary": "拨开积雪，找到手套，和小熊一起玩雪。",
+  "theme": "help",
+  "audience": {
+    "minAge": 3,
+    "maxAge": 4,
+    "support": "建议亲子共玩；先等孩子反应，需要时再示范，不用完成速度评价能力。"
+  },
+  "provenance": {
+    "kind": "original",
+    "sourceTitle": "TaleMotion 森林日常原创故事",
+    "license": "项目自有原创内容；第三方引用仅作为设计依据。",
+    "attribution": "TaleMotion；AI辅助编写与代码绘制，尚未经幼教专业人员审阅。",
+    "changes": "为结构化故事播放器制作的原创样板。"
+  },
+  "learning": {
+    "objective": "在帮助小熊的情境中，观察手套的花纹是否相同。",
+    "evidenceIds": [
+      "moe-play",
+      "naeyc-play",
+      "takacs-2015"
+    ],
+    "rationale": "用角色的具体需要带动操作，让动作产生可见后果；教育目标是设计假设，保留儿童选择和成人支持。",
+    "observation": "孩子是否看过小熊手上的线索？能否通过语言或动作表示手套让小熊暖和了？",
+    "offline": "拿两双真实袜子一起找相同；愿意时说说自己的发现。",
+    "limitation": "本故事未验证学习效果；完成、重玩或尝试次数不能作为能力测评。"
+  },
+  "start": "meet",
+  "nodes": [
+    {
+      "id": "meet",
+      "kind": "interactive",
+      "backdrop": "snow",
+      "entities": [
+        {
+          "id": "bear",
+          "asset": "bear-cold",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "rabbit",
+          "asset": "rabbit",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "小熊少了一只手套。点点它，问问怎么啦？",
+        "style": "story"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "ask",
+            "target": "bear",
+            "label": "问问小熊",
+            "next": "search",
+            "outcome": "progress",
+            "consequence": "角色回应孩子的动作，故事继续。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "search",
+      "kind": "interactive",
+      "backdrop": "snow",
+      "entities": [
+        {
+          "id": "bear",
+          "asset": "bear-cold",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "rabbit",
+          "asset": "rabbit",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "snow",
+          "asset": "snow",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "pine",
+          "asset": "pine",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小熊",
+        "text": "手套落在雪松旁了。帮我找找吧！",
+        "style": "affectionate"
+      },
+      "cue": "点点积雪，也可以看看雪松",
+      "interaction": {
+        "kind": "explore",
+        "reason": "探索树与积雪，发现手套所在的线索。",
+        "choices": [
+          {
+            "id": "snow",
+            "target": "snow",
+            "label": "拨开积雪",
+            "next": "match",
+            "outcome": "progress",
+            "consequence": "角色回应孩子的动作，故事继续。"
+          },
+          {
+            "id": "pine",
+            "target": "pine",
+            "label": "看看雪松",
+            "next": "bird",
+            "outcome": "discover",
+            "consequence": "小鸟从树旁飞出，指向积雪。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bird",
+      "kind": "beat",
+      "backdrop": "snow",
+      "entities": [
+        {
+          "id": "bear",
+          "asset": "bear-cold",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "rabbit",
+          "asset": "rabbit",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "snow",
+          "asset": "snow",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "bird",
+          "asset": "bird",
+          "slot": "sky-right",
+          "mood": "neutral",
+          "motion": "arrive"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "小鸟飞出来啦！它指着那堆雪呢！",
+        "style": "cheerful"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "next": "search-clue"
+    },
+    {
+      "id": "search-clue",
+      "kind": "interactive",
+      "backdrop": "snow",
+      "entities": [
+        {
+          "id": "bear",
+          "asset": "bear-cold",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "rabbit",
+          "asset": "rabbit",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "snow",
+          "asset": "snow",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "雪里露出了一角，拨开看看吧！",
+        "style": "story"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "snow",
+            "target": "snow",
+            "label": "拨开积雪",
+            "next": "match",
+            "outcome": "progress",
+            "consequence": "角色回应孩子的动作，故事继续。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "match",
+      "kind": "interactive",
+      "backdrop": "snow",
+      "entities": [
+        {
+          "id": "bear",
+          "asset": "bear-cold",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "rabbit",
+          "asset": "rabbit",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "red",
+          "asset": "mitten-stripe",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "blue",
+          "asset": "mitten-dot",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小熊",
+        "text": "我戴的是红色条纹手套。把一样的送给我吧！",
+        "style": "story"
+      },
+      "cue": "看看小熊的手套，再点点一样的",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "red",
+            "target": "red",
+            "label": "送红色条纹手套",
+            "next": "thanks",
+            "outcome": "progress",
+            "consequence": "小熊收到配对手套，手暖和起来。"
+          },
+          {
+            "id": "blue",
+            "target": "blue",
+            "label": "送蓝色圆点手套",
+            "next": "hint",
+            "outcome": "retry",
+            "consequence": "描述圆点与条纹的区别，允许再找。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hint",
+      "kind": "beat",
+      "backdrop": "snow",
+      "entities": [
+        {
+          "id": "bear",
+          "asset": "bear-cold",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "rabbit",
+          "asset": "rabbit",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "red",
+          "asset": "mitten-stripe",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "blue",
+          "asset": "mitten-dot",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "这只是蓝色圆点的。再看看小熊的红色条纹吧。",
+        "style": "empathetic"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "next": "match"
+    },
+    {
+      "id": "thanks",
+      "kind": "beat",
+      "backdrop": "snow",
+      "entities": [
+        {
+          "id": "bear",
+          "asset": "bear-warm",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "rabbit",
+          "asset": "rabbit",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "delivered",
+          "asset": "mitten-stripe",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "deliver"
+        }
+      ],
+      "line": {
+        "speaker": "小熊",
+        "text": "你找到一样的条纹啦！手暖和了，谢谢你！",
+        "style": "excited"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "next": "play"
+    },
+    {
+      "id": "play",
+      "kind": "interactive",
+      "backdrop": "snow",
+      "entities": [
+        {
+          "id": "bear",
+          "asset": "bear-warm",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "rabbit",
+          "asset": "rabbit",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "snowman",
+          "asset": "snowman",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "prints",
+          "asset": "footprints",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小熊",
+        "text": "一起堆雪人，还是踩脚印？你来选！",
+        "style": "cheerful"
+      },
+      "cue": "堆雪人、踩脚印，都可以",
+      "interaction": {
+        "kind": "free",
+        "reason": "两种玩雪方式都成立，孩子决定共同活动。",
+        "choices": [
+          {
+            "id": "snowman",
+            "target": "snowman",
+            "label": "一起堆雪人",
+            "next": "snowman-end",
+            "outcome": "choice",
+            "consequence": "小熊和孩子一起堆起雪人。"
+          },
+          {
+            "id": "prints",
+            "target": "prints",
+            "label": "一起踩脚印",
+            "next": "prints-end",
+            "outcome": "choice",
+            "consequence": "雪地留下大小脚印，两位朋友一起走。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "snowman-end",
+      "kind": "ending",
+      "backdrop": "snow",
+      "entities": [
+        {
+          "id": "bear",
+          "asset": "bear-warm",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "rabbit",
+          "asset": "rabbit",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "snowman",
+          "asset": "snowman",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "build"
+        }
+      ],
+      "line": {
+        "speaker": "小熊",
+        "text": "小雪人堆好啦！和你一起玩，真开心！",
+        "style": "excited"
+      },
+      "cue": "想说说你帮了小熊什么吗？"
+    },
+    {
+      "id": "prints-end",
+      "kind": "ending",
+      "backdrop": "snow",
+      "entities": [
+        {
+          "id": "bear",
+          "asset": "bear-warm",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "rabbit",
+          "asset": "rabbit",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "arrive"
+        },
+        {
+          "id": "prints",
+          "asset": "footprints",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "arrive"
+        }
+      ],
+      "line": {
+        "speaker": "小熊",
+        "text": "一串大脚印，一串小脚印！一起走吧！",
+        "style": "cheerful"
+      },
+      "cue": "也可以和家人一起找找生活里的脚印。"
+    }
+  ],
+  "acceptance": [
+    {
+      "name": "直接找到，堆雪人",
+      "choices": [
+        "ask",
+        "snow",
+        "red",
+        "snowman"
+      ],
+      "ending": "snowman-end"
+    },
+    {
+      "name": "探索小鸟，尝试圆点后重找，踩脚印",
+      "choices": [
+        "ask",
+        "pine",
+        "snow",
+        "blue",
+        "red",
+        "prints"
+      ],
+      "ending": "prints-end"
+    }
+  ]
+}

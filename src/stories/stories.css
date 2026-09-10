@@ -1,0 +1,483 @@
+/* Storybook stage: snow blue, meadow green, rain grey, sun yellow, coral, ink. */
+.pack-shell {
+  max-width: 1080px;
+}
+.pack-header {
+  margin-bottom: 16px;
+  gap: 8px;
+}
+.pack-series {
+  color: #507f7d;
+  font-size: 14px;
+}
+.pack-book {
+  overflow: hidden;
+  border-radius: 28px;
+  border: 3px solid #fffdf5;
+  box-shadow: 0 14px 35px #294e5712;
+  background: #fffdf5;
+}
+.pack-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 27px;
+  color: #507f7d;
+  font-size: 12px;
+}
+.pack-caption h1 {
+  font-family: var(--title);
+  color: #294e57;
+  font-size: 25px;
+  letter-spacing: 0.05em;
+}
+.pack-stage {
+  height: 420px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.pack-backdrop,
+.pack-ensemble {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.pack-object {
+  position: absolute;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #294e57;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 20%;
+}
+.pack-object svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  pointer-events: none;
+}
+.pack-sprite {
+  display: block;
+  width: 100%;
+  height: 0;
+  min-height: 0;
+  flex: 1 1 0;
+  transform-origin: 50% 90%;
+}
+.pack-sprite .dressed-bear {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  aspect-ratio: 180 / 230;
+  margin-inline: auto;
+}
+.basket-arrival {
+  animation: pack-deliver 1.5s ease-out both;
+}
+.pack-object:disabled {
+  opacity: 1;
+}
+.pack-object.is-touchable:not(:disabled) .pack-sprite {
+  filter: drop-shadow(0 5px 0 #ffffffa8);
+}
+.pack-object.is-touchable:not(:disabled)::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border: 2px dashed #507f7d66;
+  border-radius: 35%;
+  pointer-events: none;
+}
+.pack-touch-label {
+  flex-shrink: 0;
+  white-space: nowrap;
+  max-width: 155%;
+  background: #fffdf5f2;
+  font-size: 13px;
+  padding: 5px 9px;
+  border-radius: 16px;
+  margin-top: -4px;
+  z-index: 2;
+  box-shadow: 0 2px 5px #294e5710;
+}
+.slot-actor-left {
+  left: 17%;
+  top: 18%;
+  height: 53%;
+  width: 20%;
+}
+.slot-actor-right {
+  right: 17%;
+  top: 18%;
+  height: 53%;
+  width: 20%;
+}
+.slot-prop-left {
+  left: 7%;
+  bottom: 3%;
+  height: 31%;
+  width: 21%;
+}
+.slot-prop-center {
+  left: 37%;
+  bottom: 3%;
+  height: 31%;
+  width: 26%;
+}
+.slot-prop-right {
+  right: 7%;
+  bottom: 3%;
+  height: 31%;
+  width: 21%;
+}
+.slot-sky-left {
+  left: 5%;
+  top: 9%;
+  height: 22%;
+  width: 12%;
+}
+.slot-sky-right {
+  right: 5%;
+  top: 9%;
+  height: 22%;
+  width: 12%;
+}
+.pack-dialogue,
+.pack-welcome {
+  padding: 17px 32px 24px;
+  min-height: 162px;
+}
+.pack-speaker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #507f7d;
+  height: 34px;
+}
+.pack-dialogue p {
+  font-family: var(--title);
+  font-size: 22px;
+  line-height: 1.65;
+  margin: 6px 0 10px;
+}
+.pack-cue {
+  font-size: 13px;
+  color: #52766c;
+  min-height: 22px;
+}
+.pack-welcome {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+.pack-welcome p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+.pack-welcome small {
+  color: #6d8a7b;
+}
+.pack-ending {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 20px 22px;
+}
+.pack-rain {
+  animation: pack-rain 1.4s linear infinite;
+}
+.motion-arrive {
+  animation: pack-arrive 1.3s ease-out both;
+}
+.motion-wiggle {
+  animation: pack-wiggle 1.6s ease-in-out both;
+}
+.motion-celebrate {
+  animation: pack-celebrate 1.5s ease-in-out both;
+}
+.motion-deliver {
+  animation: pack-deliver 1.5s ease-out both;
+}
+.motion-build {
+  animation: pack-build 1.6s ease-out both;
+}
+.motion-play {
+  animation: pack-play 1.7s ease-in-out both;
+}
+.pack-shell.is-paused *,
+.pack-shell.is-paused *::after {
+  animation-play-state: paused !important;
+}
+.pack-shelf {
+  margin: 30px 0;
+}
+.pack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.pack-card {
+  text-align: left;
+  padding: 0;
+  border: 2px solid #fffdf5;
+  border-radius: 22px;
+  overflow: hidden;
+  color: #294e57;
+  background: #fffdf5;
+  transition: transform 0.2s;
+}
+.pack-card:hover {
+  transform: translateY(-4px);
+}
+.pack-cover {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+.pack-cover-actor {
+  position: absolute;
+  width: 35%;
+  height: 85%;
+  left: 16%;
+  bottom: 2%;
+}
+.pack-cover-prop {
+  position: absolute;
+  width: 38%;
+  height: 57%;
+  right: 10%;
+  bottom: 4%;
+}
+.pack-cover svg {
+  width: 100%;
+  height: 100%;
+}
+.pack-card-copy {
+  padding: 20px;
+}
+.pack-card-copy span {
+  font-size: 12px;
+  color: #52766c;
+}
+.pack-card-copy h3 {
+  font-family: var(--title);
+  font-size: 24px;
+  margin: 8px 0;
+}
+.pack-card-copy p {
+  line-height: 1.7;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+@keyframes pack-rain {
+  to {
+    transform: translate(-10px, 30px);
+  }
+}
+@keyframes pack-arrive {
+  from {
+    opacity: 0;
+    transform: translate(50px, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pack-wiggle {
+  25% {
+    rotate: -5deg;
+  }
+  75% {
+    rotate: 5deg;
+  }
+}
+@keyframes pack-celebrate {
+  25%,
+  65% {
+    transform: translateY(-14px) rotate(-3deg);
+  }
+  45%,
+  85% {
+    transform: translateY(0) rotate(3deg);
+  }
+}
+@keyframes pack-deliver {
+  from {
+    transform: translate(95px, -45px) scale(0.75);
+    opacity: 0.3;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes pack-build {
+  from {
+    transform: translateY(-50px) scale(0.8);
+    opacity: 0.3;
+  }
+  65% {
+    transform: translateY(3px) scale(1.03);
+    opacity: 1;
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes pack-play {
+  15%,
+  45%,
+  75% {
+    transform: scale(0.9) rotate(-4deg);
+  }
+  30%,
+  60%,
+  90% {
+    transform: scale(1.04) rotate(3deg);
+  }
+}
+@media (max-width: 700px) {
+  .pack-shell {
+    padding: 12px 10px;
+  }
+  .pack-series,
+  .pack-age {
+    display: none;
+  }
+  .pack-header {
+    gap: 0;
+  }
+  .pack-header .parent-button {
+    padding: 7px 5px;
+    font-size: 12px;
+  }
+  .pack-caption {
+    padding: 15px 17px;
+    gap: 10px;
+  }
+  .pack-caption h1 {
+    font-size: 21px;
+  }
+  .pack-caption > span:first-child {
+    font-size: 11px;
+  }
+  .pack-book {
+    border-radius: 22px;
+  }
+  .pack-stage {
+    height: clamp(325px, 48svh, 430px);
+  }
+  .slot-actor-left {
+    left: 10%;
+    width: 34%;
+    height: 45%;
+    top: 14%;
+  }
+  .slot-actor-right {
+    right: 10%;
+    width: 34%;
+    height: 45%;
+    top: 14%;
+  }
+  .slot-sky-left {
+    left: 1%;
+    width: 16%;
+    height: 18%;
+    top: 0;
+  }
+  .slot-sky-right {
+    right: 1%;
+    width: 16%;
+    height: 18%;
+    top: 0;
+  }
+  .slot-prop-left {
+    left: 2%;
+    width: 28%;
+    bottom: 7%;
+    height: 29%;
+  }
+  .slot-prop-center {
+    left: 35%;
+    width: 30%;
+    bottom: 7%;
+    height: 29%;
+  }
+  .slot-prop-right {
+    right: 2%;
+    width: 28%;
+    bottom: 7%;
+    height: 29%;
+  }
+  .pack-touch-label {
+    font-size: 11px;
+    padding: 5px 6px;
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+    line-height: 1.4;
+    min-width: 64px;
+  }
+  .pack-dialogue,
+  .pack-welcome {
+    padding: 12px 17px 20px;
+    min-height: 173px;
+  }
+  .pack-dialogue p {
+    font-size: 19px;
+  }
+  .pack-cue {
+    font-size: 12px;
+  }
+  .pack-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .pack-card {
+    display: grid;
+    grid-template-columns: 35% 65%;
+  }
+  .pack-cover {
+    height: 100%;
+    min-height: 167px;
+  }
+  .pack-cover-actor {
+    width: 65%;
+    height: 75%;
+    left: 3%;
+    bottom: 15%;
+  }
+  .pack-cover-prop {
+    width: 57%;
+    height: 44%;
+    right: 0;
+    bottom: 0;
+  }
+  .pack-card-copy {
+    padding: 17px 13px;
+  }
+  .pack-card-copy h3 {
+    font-size: 21px;
+  }
+  .pack-card-copy p {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pack-shell *,
+  .pack-card {
+    animation: none !important;
+    transition: none !important;
+  }
+}

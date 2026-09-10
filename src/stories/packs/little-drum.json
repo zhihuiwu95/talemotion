@@ -1,0 +1,520 @@
+{
+  "schemaVersion": "1.0",
+  "catalogVersion": "1.0",
+  "id": "little-drum",
+  "title": "小鼓咚咚响",
+  "summary": "听听两位朋友的想法，一起找到玩小鼓的办法。",
+  "theme": "negotiate",
+  "audience": {
+    "minAge": 3,
+    "maxAge": 4,
+    "support": "建议亲子共玩；先等孩子反应，需要时再示范，不用完成速度评价能力。"
+  },
+  "provenance": {
+    "kind": "original",
+    "sourceTitle": "TaleMotion 森林日常原创故事",
+    "license": "项目自有原创内容；第三方引用仅作为设计依据。",
+    "attribution": "TaleMotion；AI辅助编写与代码绘制，尚未经幼教专业人员审阅。",
+    "changes": "为结构化故事播放器制作的原创样板。"
+  },
+  "learning": {
+    "objective": "通过听见两位角色的愿望，体验等待轮流或拍手加入两种协商方式。",
+    "evidenceIds": [
+      "moe-social",
+      "naeyc-play",
+      "takacs-2015"
+    ],
+    "rationale": "用角色的具体需要带动操作，让动作产生可见后果；教育目标是设计假设，保留儿童选择和成人支持。",
+    "observation": "孩子是否注意到小猫还没玩完、小狐狸也想参加？可以用动作表示，不要求复述固定话术。",
+    "offline": "家人拿一个玩具，分别说说想怎么玩，共同商量轮流或一起玩的办法；可以不分享自己的物品。",
+    "limitation": "本故事未验证学习效果；完成、重玩或尝试次数不能作为能力测评。"
+  },
+  "start": "meet",
+  "nodes": [
+    {
+      "id": "meet",
+      "kind": "interactive",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "小猫在敲小鼓，小狐狸也想玩。先听听小猫吧。",
+        "style": "story"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "cat",
+            "target": "cat",
+            "label": "听听小猫",
+            "next": "cat-wish",
+            "outcome": "progress",
+            "consequence": "角色回应孩子的动作，故事继续。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cat-wish",
+      "kind": "interactive",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "我还想敲完这一小段。也听听小狐狸的想法吧。",
+        "style": "affectionate"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "fox",
+            "target": "fox",
+            "label": "听听小狐狸",
+            "next": "fox-wish",
+            "outcome": "progress",
+            "consequence": "角色回应孩子的动作，故事继续。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fox-wish",
+      "kind": "interactive",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "wait",
+          "asset": "wait",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "clap",
+          "asset": "clap",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我也想参加。等一小段再敲，还是先拍手一起玩？",
+        "style": "affectionate"
+      },
+      "cue": "等一等，或先拍手，都可以",
+      "interaction": {
+        "kind": "free",
+        "reason": "两位角色表达自己的需要后，孩子选择双方愿意接受的办法。",
+        "choices": [
+          {
+            "id": "wait",
+            "target": "wait",
+            "label": "等一小段再敲",
+            "next": "agree-wait",
+            "outcome": "choice",
+            "consequence": "小猫同意敲完这一段后轮到小狐狸。"
+          },
+          {
+            "id": "clap",
+            "target": "clap",
+            "label": "先拍手一起玩",
+            "next": "agree-clap",
+            "outcome": "choice",
+            "consequence": "小猫同意敲鼓、小狐狸拍手，组成小乐队。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "agree-wait",
+      "kind": "beat",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "好呀！我敲完这一小段，就轮到你。",
+        "style": "cheerful"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "next": "pass"
+    },
+    {
+      "id": "pass",
+      "kind": "interactive",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "我敲完啦！把小鼓轻轻递给小狐狸吧。",
+        "style": "cheerful"
+      },
+      "cue": "点点小鼓，轻轻递过去",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "pass",
+            "target": "drum",
+            "label": "把小鼓递给小狐狸",
+            "next": "fox-turn",
+            "outcome": "progress",
+            "consequence": "小猫主动结束自己的这一段，小鼓移到小狐狸面前。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fox-turn",
+      "kind": "beat",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "deliver"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "谢谢你把小鼓递过来！轮到我敲一小段啦。",
+        "style": "cheerful"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "next": "tap"
+    },
+    {
+      "id": "tap",
+      "kind": "interactive",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "点点小鼓，和小狐狸一起敲一小段吧！",
+        "style": "story"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "tap",
+            "target": "drum",
+            "label": "和小狐狸敲小鼓",
+            "next": "wait-end",
+            "outcome": "progress",
+            "consequence": "角色回应孩子的动作，故事继续。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "wait-end",
+      "kind": "ending",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "咚咚，咚咚！我们轮流玩，都有自己的小节奏。",
+        "style": "cheerful"
+      },
+      "cue": "生活里，也可以说说自己想怎么玩。"
+    },
+    {
+      "id": "agree-clap",
+      "kind": "interactive",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "clap",
+          "asset": "clap",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "好呀，我敲鼓，你拍手！点点小手，一起试试。",
+        "style": "cheerful"
+      },
+      "cue": "点点小手，加入小乐队",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "clap-together",
+            "target": "clap",
+            "label": "一起拍手",
+            "next": "clap-end",
+            "outcome": "progress",
+            "consequence": "小猫继续敲鼓，小狐狸拍手，两种节奏一起出现。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "clap-end",
+      "kind": "ending",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "play"
+        },
+        {
+          "id": "clap",
+          "asset": "clap",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "咚咚，拍拍！你敲鼓，我拍手，一起玩真开心！",
+        "style": "excited"
+      },
+      "cue": "也可以和家人商量一个一起玩的办法。"
+    }
+  ],
+  "acceptance": [
+    {
+      "name": "同意等待，自主交接，轮到狐狸",
+      "choices": [
+        "cat",
+        "fox",
+        "wait",
+        "pass",
+        "tap"
+      ],
+      "ending": "wait-end"
+    },
+    {
+      "name": "同意拍手，组成小乐队",
+      "choices": [
+        "cat",
+        "fox",
+        "clap",
+        "clap-together"
+      ],
+      "ending": "clap-end"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import manifest from '../../generated/narration.json'
 import type { SpeechProvider, SpeechRequest } from './SpeechProvider'
 
-/** Plays published Edge TTS recordings on one reusable media element. */
+/** Plays published narration on one reusable media element (legacy class name). */
 export class EdgeAudioProvider implements SpeechProvider {
   readonly available = typeof Audio !== 'undefined'
   private audio: HTMLAudioElement | null = null
@@ -19,17 +19,28 @@ export class EdgeAudioProvider implements SpeechProvider {
     }
     return this.audio
   }
-  speak({ text }: SpeechRequest): void {
+  speak({ text, onComplete }: SpeechRequest): void {
     this.cancel()
     const source = (manifest.clips as Record<string, string>)[text]
     if (!this.available || !source) {
       this.onStatus?.(true)
+      onComplete?.()
       return
     }
     const audio = this.element()
     const generation = this.generation
+    let settled = false
+    const complete = () => {
+      if (generation !== this.generation || settled) return
+      settled = true
+      onComplete?.()
+    }
+    audio.onended = complete
     audio.onerror = () => {
-      if (generation === this.generation) this.onStatus?.(true)
+      if (generation === this.generation) {
+        this.onStatus?.(true)
+        complete()
+      }
     }
     audio.src = `${import.meta.env.BASE_URL}${source}`
     // Call play synchronously in the click handler; don't await fetch before this.
@@ -39,7 +50,10 @@ export class EdgeAudioProvider implements SpeechProvider {
         if (generation === this.generation) this.onStatus?.(false)
       })
       .catch(() => {
-        if (generation === this.generation) this.onStatus?.(true)
+        if (generation === this.generation) {
+          this.onStatus?.(true)
+          complete()
+        }
       })
   }
   pause(): void {
@@ -61,6 +75,7 @@ export class EdgeAudioProvider implements SpeechProvider {
     this.generation++
     if (this.audio) {
       this.audio.onerror = null
+      this.audio.onended = null
       this.audio.pause()
       this.audio.removeAttribute('src')
       this.audio.load()

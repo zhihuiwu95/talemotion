@@ -5,10 +5,18 @@ import { ActivityPlayer } from './ActivityPlayer'
 import { Forest, Icon, Mitten, Rabbit } from './Artwork'
 import { MatchingStory } from './MatchingStory'
 import { ObservationHistory } from './Observation'
+import { MittenAdventure } from './MittenAdventurePlayer'
+import { DressedBear } from './AdventureArt'
+import { storyPacks } from '../stories/library'
+import { PackPlayer } from '../stories/PackPlayer'
+import { StoryArt, StoryBackdrop } from '../stories/StoryArt'
 
 function selectedStory() {
   const id = new URLSearchParams(window.location.search).get('story')
-  return id === 'mittens' || activities.some((activity) => activity.id === id)
+  return id === 'mittens' ||
+    id === 'mittens-story' ||
+    storyPacks.some((pack) => pack.id === id) ||
+    activities.some((activity) => activity.id === id)
     ? id
     : null
 }
@@ -27,6 +35,16 @@ export function StoryLibrary() {
     setSelected(id)
     window.scrollTo(0, 0)
   }
+  const pack = storyPacks.find((item) => item.id === selected)
+  if (pack)
+    return <PackPlayer key={pack.id} pack={pack} onHome={() => choose(null)} />
+  if (selected === 'mittens-story')
+    return (
+      <MittenAdventure
+        onHome={() => choose(null)}
+        onClassic={() => choose('mittens')}
+      />
+    )
   if (selected === 'mittens')
     return <MatchingStory onHome={() => choose(null)} />
   const activity = activities.find((item) => item.id === selected)
@@ -49,7 +67,7 @@ export function StoryLibrary() {
             TaleMotion<small>陪孩子，玩进故事里</small>
           </span>
         </a>
-        <span className="library-age">2.5–4 岁 · 亲子共玩</span>
+        <span className="library-age">亲子共玩 · 按孩子的节奏来</span>
       </header>
       <section className="library-welcome">
         <div className="library-landscape">
@@ -71,9 +89,76 @@ export function StoryLibrary() {
           <span className="session-note">一次选一个故事，按孩子的节奏来。</span>
         </div>
       </section>
+      <section className="pack-shelf" aria-labelledby="pack-shelf-title">
+        <div className="shelf-heading">
+          <h2 id="pack-shelf-title">和朋友，走进故事里</h2>
+          <span>3–4 岁 · 可以陪着玩</span>
+        </div>
+        <div className="pack-grid">
+          {storyPacks.map((item) => {
+            const first = item.nodes.find((node) => node.id === item.start)!
+            const actor =
+              first.entities.find((entity) => entity.slot === 'actor-left') ??
+              first.entities[0]!
+            const prop =
+              item.nodes
+                .flatMap((node) => node.entities)
+                .find((entity) => entity.slot.startsWith('prop-')) ??
+              first.entities[0]!
+            return (
+              <button
+                key={item.id}
+                className="pack-card"
+                onClick={() => choose(item.id)}
+              >
+                <div className="pack-cover">
+                  <StoryBackdrop kind={first.backdrop} />
+                  <div className="pack-cover-actor">
+                    <StoryArt entity={actor} />
+                  </div>
+                  <div className="pack-cover-prop">
+                    <StoryArt entity={prop} />
+                  </div>
+                </div>
+                <div className="pack-card-copy">
+                  <span>
+                    {item.theme === 'help'
+                      ? '找一找，帮个忙'
+                      : item.theme === 'build'
+                        ? '你帮我，我帮你'
+                        : '听一听，商量着玩'}
+                  </span>
+                  <h3>{item.title}</h3>
+                  <p>{item.summary}</p>
+                  <span className="story-open">
+                    走进故事 <Icon name="arrow" />
+                  </span>
+                </div>
+              </button>
+            )
+          })}
+        </div>
+      </section>
+      <button
+        className="adventure-feature"
+        onClick={() => choose('mittens-story')}
+      >
+        <div className="adventure-feature-art">
+          <DressedBear warm />
+          <Mitten kind="stripe" mirror />
+        </div>
+        <div className="adventure-feature-copy">
+          <span>第一版故事样片 · 保留对照</span>
+          <h2>雪地里的手套</h2>
+          <p>帮小熊找回手套，再一起玩一场雪。</p>
+          <span className="story-open">
+            走进故事 <Icon name="arrow" />
+          </span>
+        </div>
+      </button>
       <section className="story-shelf" aria-labelledby="shelf-title">
         <div className="shelf-heading">
-          <h2 id="shelf-title">从哪个故事开始？</h2>
+          <h2 id="shelf-title">熟悉的小活动</h2>
           <span>每个约 2–4 分钟</span>
         </div>
         <div className="story-grid">

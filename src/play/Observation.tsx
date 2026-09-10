@@ -5,10 +5,12 @@ export function ObservationForm({
   story,
   attempts,
   completed,
+  mode,
 }: {
   story: string
   attempts: number[]
   completed: number
+  mode?: 'story'
 }) {
   const [id] = useState(
     () => `${Date.now()}-${Math.random().toString(36).slice(2)}`,
@@ -30,6 +32,7 @@ export function ObservationForm({
           replay: String(data.get('replay')),
           reuse: String(data.get('reuse')),
           note: String(data.get('note')).slice(0, 300),
+          ...(mode ? { mode } : {}),
         }
         try {
           const entries = readObservations().filter(
@@ -185,8 +188,9 @@ export function ObservationHistory() {
                   {record.understanding} · {record.replay} · {record.reuse}
                   <br />
                   <small>
-                    完成 {record.completed} 轮；尝试{' '}
-                    {record.attempts.join(' / ')} 次
+                    {record.mode === 'story'
+                      ? `${record.completed ? '已到达结尾' : '中途记录'}；主动操作 ${record.attempts.reduce((sum, count) => sum + count, 0)} 次`
+                      : `完成 ${record.completed} 轮；尝试 ${record.attempts.join(' / ')} 次`}
                   </small>
                   {record.note && <p>{record.note}</p>}
                 </li>

@@ -1,34 +1,40 @@
-# 当前语音方案：Edge TTS 预生成音频
+# 当前语音方案：Azure 晓晓多语言预生成音频
 
-更新：2026-09-08。按用户本轮决定，H5 互动故事与旧动画演示都使用 Edge TTS 生成的 MP3。`BrowserSpeechProvider` 仅保留为旧实现及其测试，当前页面不再实例化它，也不自动退回设备语音。
+更新：2026-09-09。四个原版活动、第一版手套样片、三个结构化故事包及旧动画入口，统一播放 Azure Speech 生成的 MP3。`zh-CN-XiaoxiaoMultilingualNeural` 在本次 eastus 资源的实时声线列表中为 GA；已验证支持使用的五种风格。
 
 ## 制作与播放
 
-- 制作端：Python `edge-tts==7.2.8`，普通话 `zh-CN-XiaoxiaoNeural`，语速 `-15%`，音高 `+0Hz`。
-- `npm run audio:collect` 从四个互动故事及旧 Scene JSON 收集所有旁白分支（含欢迎、提示、错误提示、成功、结尾）。
-- `scripts/generate-audio.py` 调用 Edge 在线服务，在 `public/audio/` 输出 MP3，并原子更新 `src/generated/narration.json`。
-- 文件名由声线、速度、音高、文本的 SHA-256 摘要生成。已生成的文件可以复用；三路并发，每段最多四次尝试，有超时，失败不发布新清单。
-- 播放端：`EdgeAudioProvider` 复用一个 HTMLAudioElement，在点击事件内立即调用 `play()`；无实时生成、无浏览器中文声库依赖、无 API 密钥。进入故事不自动朗读，点击“出发”开始。
-- 错误或未获播放权限时显示文字和“重试声音”。取消、静音、离开故事、后台暂停会停止音频；旧请求的异步错误不会覆盖新请求状态。恢复活动重播当前指令。
-- `npm run audio:verify` 检查当前文案对应的 hash 和实际文件，已接入 `npm run quality`，修改文案漏生成音频会使检查失败。
+- `scripts/tts-config.json`：eastus、晓晓多语言、24 kHz 单声道 96 kbps MP3。
+- `scripts/collect-narration.ts`：自动发现 `src/stories/packs/*.json` 并收集所有当前文案分支，当前 95 段；同文不同风格会报错，显式指定 `story`、`affectionate`、`cheerful`、`excited`、`empathetic`。语速 -5%，音高 +0 Hz；兴奋强度 1.1，其余 1.0。
+- `scripts/generate-audio.py`：Python 标准库调用 Azure REST。运行前读取环境变量 `AZURE_SPEECH_KEY`，检查实际声线及风格；两路并发、单次 40 秒超时，暂时故障最多四次尝试。先生成全部音频，再原子发布清单；中断后可复用成功文件。
+- 音频路径 hash 包括合成版本、声线、格式、文本、风格、情绪强度、速度和音高，避免改情绪后错误复用旧录音。
+- `src/generated/narration.json`：当前发布清单；`public/audio/`：音频资产。为保留已有素材，不清除未引用的历史录音；当前播放只使用清单。
+- 制作端读取密钥，网页只取静态 MP3。密钥不进入 Vite 环境变量、前端、音频清单或版本库。孩子操作不会发送给 Azure。
+- 播放器 `EdgeAudioProvider` 保留旧类名以兼容旧动画接入，但已经是通用录音播放器。复用一个 HTMLAudioElement，不回退到设备 TTS。
+- 播放结束或失败会通知互动反馈层；取消会丢弃旧通知。静音、暂停、后台及离开故事停止音频。新样片暂停时冻结动画及自动剧情转换，恢复后重播当前句。
 
-## 开发者重新生成
+## 重新生成
 
-普通运行不需要 Python，也不需要连接 Edge：音频已随项目提供。
+普通网页运行不需要 Python、密钥或 Azure 连接。只有重新制作语音才需要：
 
 ```bash
-uv venv --python 3.13 .venv
-uv pip install --python .venv/bin/python -r scripts/requirements-tts.txt
+# 在已经 export AZURE_SPEECH_KEY 的 shell 中运行；若仅写在 .zshrc，使用新的交互式 zsh。
 npm run audio:generate
 npm run quality
 ```
 
-代理如有需要，通过 `HTTPS_PROXY` 或 `https_proxy` 传入生成脚本；不关闭 TLS 校验。`scripts/requirements-tts.txt` 固定本次依赖版本。生成脚本需要网络；用户播放只向部署本网站的服务器请求 MP3，孩子的操作和观察记录不发送给 Edge。
+`audio:generate` 使用现有 `.venv/bin/python`。新环境可先执行 `uv venv --python 3.13 .venv`，无额外 pip 依赖。脚本遵循标准 HTTPS 代理环境变量，不关闭 TLS 校验。
 
-## 当前证据与边界
+`npm run audio:verify` 校验当前文案、完整合成参数、清单和 MP3 文件头。调整 SSML 生成结构时也应更新 `tts-config.json` 的 `version`，使缓存失效。
 
-本次已实际生成并解析 57 个 MP3，共约 2.7 MB，24 kHz 单声道。浏览器已观察到 MP3 地址、有效时长、播放时间推进和暂停状态。此方案解决了对系统 TTS 的依赖，并统一声线；仍不能保证任何手机都不会被系统音量、浏览器播放策略或网络问题影响。尚未真机验收 iOS Safari、Android Chrome、微信内置浏览器。
+## 反馈时序
 
-社区 Edge TTS 使用在线朗读服务，生成服务可能变化；已有音频的播放不依赖生成服务当时可用。后续如需正式生产服务，可替换制作脚本为 Azure Speech 等受支持服务，前端继续消费同样的 MP3 清单。没有引入常驻 Python 后端。
+原版：有效操作后有 650 ms 跨按钮触控保护；答对后至少展示 1.8 秒，并等待成功语音结束，才允许继续。重听成功语音重新保护。静音和明确音频错误走最短展示时间；无结束通知的故障最多等待 20 秒。
 
-来源：[rany2/edge-tts 项目与用法](https://github.com/rany2/edge-tts)。此前 2026-09-05 的 Azure 优先建议已被本轮样片选择替代；本次未接入 Azure，也不依赖旧免费额度估算。
+故事版：每个新叙事节拍等待当前语音及最短展示时间。小鸟出现、手套送达两个演出阶段结束后自动衔接剧情；需要孩子参与的地方等待新的点击。父级手势保护拦截双击尾部以及保护期间按下、解锁后才松开的触摸。
+
+## 证据与边界
+
+本次已实际调用用户的 eastus 资源生成 69 段当前语音，并通过 macOS 音频解析及浏览器 MP3 播放检查。第一批过长的成功台词已压缩后重新生成。具体听感与儿童节奏仍需要真机试听；桌面移动视口不能代替 iOS Safari、Android Chrome、微信里的实际触控和音频验收。
+
+来源：[Azure 声线及风格](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/language-support?tabs=tts)、[REST 合成端点](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/rest-text-to-speech)、[SSML 情感表达](https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-synthesis-markup-voice)。

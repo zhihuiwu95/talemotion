@@ -1,3 +1,5 @@
+> 当前亲子互动故事制作使用 [故事生产规范 v1](production/README.md)。本文保留早期 Pixi/GSAP 动画制作路线；两种数据契约不同，不要把旧 Scene JSON 直接交给故事包播放器。
+
 # TaleMotion 动画生产流程标准 v1
 
 ## 你需要提供什么

@@ -17,7 +17,41 @@
 }
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 280px;
+}
+.play-shell {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.play-shell input,
+.play-shell textarea,
+.play-shell [contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+.play-shell img,
+.play-shell svg {
+  -webkit-user-drag: none;
+}
+.feedback-wait {
+  min-height: 1.5em;
+  color: #47745f;
+  font-size: 14px;
+  text-align: center;
+}
+.phase-matched .friend-position,
+.phase-success .friend-position {
+  animation: friend-thanks 1s ease-out 2;
+}
+@keyframes friend-thanks {
+  35% { translate: 0 -10px; rotate: -3deg; }
+  70% { translate: 0 -4px; rotate: 2deg; }
+}
+.deliver-action .big-button:disabled,
+.activity-result .big-button:disabled {
+  opacity: .65;
 }
 button,
 a {

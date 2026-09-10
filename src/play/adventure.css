@@ -1,0 +1,902 @@
+/* Snow blue, pine green, mitten coral: a playable winter picture-book stage. */
+.adventure-shell {
+  --snow: #f4fbfc;
+  --sky: #dceef5;
+  --pine: #507f7d;
+  --ink: #294e57;
+  --mitten: #e8957d;
+  --sun: #fff5c9;
+  max-width: 1120px;
+  color: var(--ink);
+}
+.adventure-header {
+  padding-bottom: 16px;
+}
+.adventure-series {
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--pine);
+}
+.adventure-stage {
+  position: relative;
+  isolation: isolate;
+  height: min(740px, calc(100svh - 150px));
+  min-height: 590px;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 3px solid white;
+  background: var(--sky);
+  box-shadow: 0 16px 48px #294e5710;
+}
+.narrow-tree {
+  display: none;
+}
+.adventure-scenery,
+.winter-world {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.adventure-scenery {
+  z-index: -2;
+  transition: transform 1.3s ease;
+}
+.stage-search .adventure-scenery,
+.stage-bird .adventure-scenery,
+.stage-match .adventure-scenery {
+  transform: scale(1.12) translateX(-3%);
+}
+.adventure-place {
+  position: absolute;
+  top: 23px;
+  left: 27px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--pine);
+}
+.adventure-title {
+  position: absolute;
+  left: 8%;
+  top: 14%;
+  z-index: 5;
+  width: 45%;
+}
+.adventure-title > span {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+.adventure-title h1 {
+  margin: 20px 0;
+  font-family: 'Yuanti SC', 'STYuanti', 'YouYuan', sans-serif;
+  font-size: clamp(48px, 6vw, 76px);
+  letter-spacing: 0.05em;
+  line-height: 1.15;
+}
+.adventure-title em {
+  font-style: normal;
+  color: #ac5947;
+}
+.adventure-title p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 20px 0 26px;
+}
+.adventure-title .big-button {
+  width: auto;
+  padding: 16px 30px;
+  background: var(--pine);
+  box-shadow: 0 5px 0 #3b6566;
+}
+.adventure-title small {
+  display: block;
+  margin-top: 20px;
+  font-size: 12px;
+}
+.adventure-rabbit {
+  position: absolute;
+  width: 18%;
+  left: 8%;
+  bottom: 31%;
+  transition:
+    left 1.3s ease,
+    bottom 1.3s ease,
+    width 1.3s ease;
+  pointer-events: none;
+}
+.adventure-rabbit .rabbit-art {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.adventure-bear {
+  position: absolute;
+  width: 22%;
+  left: 49%;
+  bottom: 31%;
+  transition:
+    left 1.3s ease,
+    bottom 1.3s ease;
+}
+.scene-object {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--ink);
+  touch-action: manipulation;
+  border-radius: 25px;
+}
+.scene-object > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.scene-object:disabled {
+  opacity: 1;
+  cursor: default;
+}
+.scene-object:focus-visible {
+  outline: 4px dashed var(--pine);
+  outline-offset: 5px;
+}
+.scene-object:not(:disabled):active {
+  filter: brightness(1.07);
+}
+.dressed-bear {
+  position: relative;
+  width: 100%;
+}
+.dressed-bear .friend-art {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.bear-mitten {
+  position: absolute;
+  width: 31%;
+  top: 61%;
+}
+.bear-mitten svg {
+  width: 100%;
+  height: auto;
+}
+.mitten-left {
+  left: 0;
+  transform: rotate(15deg);
+}
+.mitten-right {
+  right: -2%;
+  transform: rotate(-15deg);
+}
+.cold-breath {
+  position: absolute;
+  left: 53%;
+  top: 33%;
+  font-size: 36px;
+  color: white;
+  animation: bear-breath 2.8s ease-out infinite;
+}
+.cold-bear {
+  animation: bear-shiver 3.6s ease-in-out infinite;
+}
+.warm-bear {
+  animation: bear-joy 1.2s ease-out 2;
+}
+.stage-thanks .mitten-right {
+  animation: mitten-arrives 1.3s both;
+}
+.stage-welcome .adventure-rabbit {
+  left: 55%;
+  width: 22%;
+  bottom: 15%;
+}
+.stage-welcome .adventure-bear {
+  left: 76%;
+  width: 21%;
+  bottom: 19%;
+}
+.stage-search .adventure-rabbit,
+.stage-bird .adventure-rabbit,
+.stage-match .adventure-rabbit {
+  left: 1%;
+  width: 15%;
+  bottom: 34%;
+}
+.stage-search .adventure-bear,
+.stage-bird .adventure-bear,
+.stage-match .adventure-bear {
+  left: 18%;
+  bottom: 37%;
+}
+.is-warm .adventure-rabbit {
+  left: 2%;
+  width: 16%;
+  bottom: 33%;
+}
+.is-warm .adventure-bear {
+  left: 21%;
+  bottom: 33%;
+}
+.touch-label {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 3px auto 0;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 3px 0 #abcbd659;
+}
+.invites-touch::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border: 3px dashed #678f9480;
+  border-radius: 40%;
+  animation: invite-breathe 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+.search-pine {
+  position: absolute;
+  width: 23%;
+  right: 3%;
+  bottom: 39%;
+}
+.search-snow {
+  position: absolute;
+  width: 29%;
+  right: 25%;
+  bottom: 28%;
+}
+.search-snow > svg {
+  position: relative;
+  z-index: 1;
+}
+.hidden-mitten {
+  position: absolute;
+  width: 28%;
+  top: -2%;
+  left: 42%;
+  transform: rotate(25deg);
+}
+.hidden-mitten svg {
+  width: 100%;
+}
+.adventure-robin {
+  position: absolute;
+  right: 6%;
+  top: 27%;
+  width: 12%;
+  pointer-events: none;
+}
+.adventure-robin svg {
+  width: 100%;
+}
+.robin-flies {
+  animation: robin-flight 1.8s ease-out both;
+}
+.ground-mitten {
+  position: absolute;
+  width: 15%;
+  bottom: 29%;
+}
+.ground-dot {
+  left: 49%;
+  transform: rotate(-18deg);
+}
+.ground-stripe {
+  left: 73%;
+  transform: rotate(17deg);
+}
+.snow-reveal {
+  position: absolute;
+  width: 49%;
+  left: 44%;
+  bottom: 29%;
+  z-index: 3;
+  pointer-events: none;
+  animation: snow-disperse 1.2s forwards;
+}
+.snow-reveal svg {
+  width: 100%;
+}
+.mitten-wiggle {
+  animation: gentle-wiggle 0.5s;
+}
+.flying-mitten {
+  position: absolute;
+  width: 12%;
+  left: 75%;
+  bottom: 30%;
+  z-index: 4;
+  pointer-events: none;
+  animation: mitten-home 1.3s forwards;
+}
+.flying-mitten svg {
+  width: 100%;
+}
+.warmth-sparks {
+  position: absolute;
+  left: 42%;
+  top: 30%;
+  color: #b47724;
+  font-size: 26px;
+  animation: warm-glow 1.5s both;
+}
+.warmth-sparks span {
+  font-family: 'Yuanti SC', 'YouYuan', sans-serif;
+  font-weight: 700;
+}
+.play-snowman {
+  position: absolute;
+  width: 19%;
+  left: 49%;
+  bottom: 30%;
+}
+.play-footprints {
+  position: absolute;
+  width: 23%;
+  left: 73%;
+  bottom: 31%;
+}
+.snowman-scene {
+  position: absolute;
+  width: 25%;
+  left: 61%;
+  bottom: 28%;
+}
+.snowman-scene > svg {
+  display: block;
+  width: 100%;
+}
+.snowman-scene.built .snowman-head {
+  transform-origin: center;
+  animation: build-head 1.1s both;
+}
+.little-snowball {
+  position: absolute;
+  width: 42%;
+  aspect-ratio: 1;
+  left: -50%;
+  bottom: 0;
+}
+.little-snowball > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: 3px solid #c4dce3;
+  border-radius: 50%;
+  box-shadow: inset -10px -8px 0 #e8f2f5;
+}
+.footprint-path {
+  position: absolute;
+  left: 49%;
+  width: 43%;
+  bottom: 27%;
+  min-height: 140px;
+}
+.snow-footprint {
+  animation: footprint-appear 0.4s both;
+}
+.stage-ending.ending-footprints .adventure-bear {
+  animation: walk-in-snow 2s ease-in-out both;
+}
+.stage-ending.ending-footprints .adventure-rabbit {
+  animation: follow-in-snow 2s ease-in-out both;
+}
+.adventure-dialogue {
+  position: absolute;
+  z-index: 6;
+  left: 4%;
+  right: 4%;
+  bottom: 20px;
+  background: #ffffffed;
+  border: 1px solid white;
+  border-radius: 22px;
+  padding: 12px 23px 15px;
+  box-shadow: 0 6px 20px #507f7d0c;
+}
+.dialogue-speaker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+}
+.dialogue-speaker > span {
+  font-size: 13px;
+  color: var(--pine);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.dialogue-speaker .icon-button {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+}
+.adventure-dialogue p {
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.6;
+  margin: 8px 0 12px;
+  font-weight: 500;
+}
+.adventure-cue {
+  font-size: 13px;
+  color: #47686e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.adventure-cue > span {
+  color: #bb7859;
+  font-size: 20px;
+}
+.adventure-cue.is-listening > span {
+  animation: invite-breathe 1.5s infinite;
+}
+.adventure-ending-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 20px;
+}
+.adventure-ending-actions p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+.adventure-ending-actions .replay-button {
+  width: auto;
+}
+.falling-snow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.falling-snow i {
+  position: absolute;
+  top: -12px;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 100%;
+  animation: snowfall 9s linear infinite;
+}
+.is-paused *,
+.is-paused *::after {
+  animation-play-state: paused !important;
+}
+
+.adventure-feature {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: left;
+  border: 2px solid white;
+  border-radius: 26px;
+  background: #dceef5;
+  padding: 25px 35px;
+  gap: 30px;
+  color: #294e57;
+  margin: 28px 0 40px;
+}
+.adventure-feature-art {
+  position: relative;
+  flex: 0 0 180px;
+  height: 160px;
+}
+.adventure-feature-art .dressed-bear {
+  width: 120px;
+  margin-left: 10px;
+}
+.adventure-feature-art > .mitten-art {
+  position: absolute;
+  width: 70px;
+  bottom: 0;
+  right: 0;
+  transform: rotate(20deg);
+}
+.adventure-feature-copy > span:first-child {
+  font-size: 13px;
+  color: #507f7d;
+}
+.adventure-feature-copy h2 {
+  font-family: 'Yuanti SC', 'YouYuan', sans-serif;
+  font-size: 30px;
+  margin: 9px 0;
+}
+.adventure-feature-copy p {
+  margin: 0 0 12px;
+  line-height: 1.7;
+}
+.adventure-feature-copy .story-open {
+  color: #294e57;
+}
+
+@keyframes snowfall {
+  to {
+    transform: translate(28px, 750px);
+  }
+}
+@keyframes invite-breathe {
+  50% {
+    opacity: 0.45;
+  }
+}
+@keyframes bear-shiver {
+  0%,
+  12%,
+  24%,
+  100% {
+    transform: rotate(0);
+  }
+  3%,
+  15% {
+    transform: rotate(-1deg);
+  }
+  8%,
+  20% {
+    transform: rotate(1deg);
+  }
+}
+@keyframes bear-breath {
+  from {
+    opacity: 0.8;
+    transform: translate(0, 0) scale(0.7);
+  }
+  to {
+    opacity: 0;
+    transform: translate(35px, -15px) scale(1.5);
+  }
+}
+@keyframes bear-joy {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-13px) rotate(-3deg);
+  }
+  70% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+}
+@keyframes mitten-arrives {
+  0%,
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes robin-flight {
+  from {
+    transform: translate(10px, 90px) scale(0.5);
+  }
+  60% {
+    transform: translate(-55px, -25px);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes snow-disperse {
+  to {
+    opacity: 0;
+    transform: translateY(35px) scale(1.4);
+  }
+}
+@keyframes gentle-wiggle {
+  25% {
+    rotate: -5deg;
+  }
+  75% {
+    rotate: 5deg;
+  }
+}
+@keyframes mitten-home {
+  70% {
+    opacity: 1;
+  }
+  to {
+    left: 33%;
+    bottom: 37%;
+    width: 6%;
+    opacity: 0;
+    rotate: -25deg;
+  }
+}
+@keyframes warm-glow {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes build-head {
+  from {
+    transform: translate(-100px, 120px) rotate(-90deg);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes footprint-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes walk-in-snow {
+  25% {
+    transform: translate(8px, -9px);
+  }
+  50% {
+    transform: translate(16px, 0);
+  }
+  75% {
+    transform: translate(24px, -9px);
+  }
+  to {
+    transform: translate(32px, 0);
+  }
+}
+@keyframes follow-in-snow {
+  25% {
+    transform: translate(6px, -6px);
+  }
+  50% {
+    transform: translate(12px, 0);
+  }
+  75% {
+    transform: translate(18px, -6px);
+  }
+  to {
+    transform: translate(24px, 0);
+  }
+}
+
+@media (max-width: 620px) {
+  .narrow-tree {
+    display: block;
+  }
+  .winter-sun {
+    transform: translateX(-160px);
+  }
+  .adventure-shell {
+    padding: 12px 10px 0;
+  }
+  .adventure-header {
+    gap: 4px;
+    padding: 0 0 12px;
+  }
+  .adventure-header .parent-button {
+    font-size: 12px;
+    padding: 8px 4px;
+  }
+  .adventure-series {
+    display: none;
+  }
+  .adventure-stage {
+    border-radius: 22px;
+    min-height: 620px;
+    height: calc(100svh - 115px);
+    max-height: 790px;
+  }
+  .adventure-place {
+    top: 19px;
+    left: 20px;
+    font-size: 12px;
+  }
+  .adventure-title {
+    left: 8%;
+    width: 84%;
+    top: 10%;
+  }
+  .adventure-title h1 {
+    font-size: 51px;
+    margin: 16px 0;
+  }
+  .adventure-title h1 em {
+    white-space: nowrap;
+  }
+  .adventure-title p {
+    font-size: 16px;
+    margin: 16px 0 22px;
+  }
+  .adventure-title small {
+    font-size: 11px;
+  }
+  .stage-welcome .adventure-rabbit {
+    width: 36%;
+    left: 15%;
+    bottom: 8%;
+  }
+  .stage-welcome .adventure-bear {
+    width: 35%;
+    left: 58%;
+    bottom: 10%;
+  }
+  .adventure-rabbit {
+    width: 27%;
+    left: 3%;
+    bottom: 36%;
+  }
+  .adventure-bear {
+    width: 38%;
+    left: 46%;
+    bottom: 37%;
+  }
+  .stage-search .adventure-rabbit,
+  .stage-bird .adventure-rabbit,
+  .stage-match .adventure-rabbit {
+    width: 23%;
+    left: 1%;
+    bottom: 53%;
+  }
+  .stage-search .adventure-bear,
+  .stage-bird .adventure-bear,
+  .stage-match .adventure-bear {
+    width: 33%;
+    left: 22%;
+    bottom: 52%;
+  }
+  .search-pine {
+    width: 37%;
+    right: 2%;
+    bottom: 49%;
+  }
+  .search-snow {
+    width: 47%;
+    right: 18%;
+    bottom: 30%;
+  }
+  .adventure-robin {
+    width: 20%;
+    right: 7%;
+    top: 24%;
+  }
+  .ground-mitten {
+    width: 25%;
+    bottom: 30%;
+  }
+  .ground-dot {
+    left: 18%;
+  }
+  .ground-stripe {
+    left: 59%;
+  }
+  .snow-reveal {
+    width: 80%;
+    left: 10%;
+    bottom: 30%;
+  }
+  .is-warm .adventure-rabbit {
+    width: 23%;
+    left: 1%;
+    bottom: 49%;
+  }
+  .is-warm .adventure-bear {
+    width: 34%;
+    left: 25%;
+    bottom: 49%;
+  }
+  .warmth-sparks {
+    font-size: 21px;
+    left: 22%;
+    top: 23%;
+  }
+  .flying-mitten {
+    left: 68%;
+    bottom: 31%;
+    width: 21%;
+    animation-name: mitten-home-mobile;
+  }
+  .play-snowman {
+    width: 29%;
+    left: 13%;
+    bottom: 29%;
+  }
+  .play-footprints {
+    width: 37%;
+    left: 56%;
+    bottom: 31%;
+  }
+  .snowman-scene {
+    width: 43%;
+    left: 50%;
+    bottom: 31%;
+  }
+  .footprint-path {
+    width: 62%;
+    left: 32%;
+    bottom: 29%;
+  }
+  .adventure-dialogue {
+    left: 10px;
+    right: 10px;
+    bottom: 12px;
+    padding: 10px 15px 13px;
+    border-radius: 18px;
+  }
+  .adventure-dialogue p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 6px 0 10px;
+  }
+  .adventure-cue {
+    font-size: 12px;
+    min-height: 25px;
+  }
+  .adventure-ending-actions {
+    padding: 16px 5px;
+    gap: 10px;
+  }
+  .adventure-ending-actions p {
+    font-size: 14px;
+  }
+  .adventure-feature {
+    padding: 22px 16px;
+    gap: 10px;
+  }
+  .adventure-feature-art {
+    flex-basis: 93px;
+    height: 123px;
+  }
+  .adventure-feature-art .dressed-bear {
+    width: 86px;
+    margin-left: 0;
+  }
+  .adventure-feature-art > .mitten-art {
+    width: 45px;
+    bottom: -5px;
+    right: -10px;
+  }
+  .adventure-feature-copy h2 {
+    font-size: 23px;
+  }
+  .adventure-feature-copy p {
+    font-size: 13px;
+  }
+  .adventure-feature-copy > span:first-child {
+    font-size: 11px;
+  }
+}
+@keyframes mitten-home-mobile {
+  70% {
+    opacity: 1;
+  }
+  to {
+    left: 48%;
+    bottom: 53%;
+    width: 10%;
+    opacity: 0;
+    rotate: -25deg;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .adventure-shell *,
+  .adventure-shell *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .snow-reveal,
+  .flying-mitten,
+  .falling-snow,
+  .cold-breath {
+    display: none;
+  }
+}

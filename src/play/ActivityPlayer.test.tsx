@@ -1,4 +1,6 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import type { SpeechRequest } from '../runtime/audio/SpeechProvider'
+import { FEEDBACK_MIN_MS } from './useInteractionGuard'
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { activities, advance, newActivityState, itemNames } from './activities'
 import { ActivityPlayer } from './ActivityPlayer'
@@ -8,12 +10,13 @@ import { ObservationHistory } from './Observation'
 vi.mock('../runtime/audio/EdgeAudioProvider', () => ({
   EdgeAudioProvider: class {
     available = true
-    speak = vi.fn()
+    speak = vi.fn((request: SpeechRequest) => request.onComplete?.())
     cancel = vi.fn()
     dispose = vi.fn()
   },
 }))
 beforeEach(() => {
+  vi.useFakeTimers()
   localStorage.clear()
   Object.defineProperty(HTMLDialogElement.prototype, 'showModal', {
     configurable: true,
@@ -31,9 +34,12 @@ beforeEach(() => {
 afterEach(() => {
   cleanup()
   vi.restoreAllMocks()
+  vi.useRealTimers()
 })
-const click = (name: string) =>
+const click = (name: string) => {
   fireEvent.click(screen.getByRole('button', { name }))
+  act(() => vi.advanceTimersByTime(FEEDBACK_MIN_MS))
+}
 describe('new activities', () => {
   for (const activity of activities)
     it(`finishes ${activity.title} with retries, saves only explicit observations and resets replay`, () => {

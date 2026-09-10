@@ -101,7 +101,7 @@ export function narration(state: StoryState): string {
   if (state.phase === 'finished')
     return '大家的手套都找齐啦！谢谢你。现在，和爸爸妈妈找一双真的袜子，帮它们也配成一对吧！'
   if (state.phase === 'matched')
-    return `找到啦！两只一样的手套，正好是一对。送给${round.friend}吧！`
+    return `${['你真棒！', '太厉害了！', '找齐啦！'][state.round]}谢谢你帮${round.friend}找到手套！`
   if (state.wrong)
     return `这两只不一样。看看${round.friend}的手套，${mittens[round.target].detail}。再找找吧。`
   return `${round.friend}有一只手套。哪一只和它一样呢？点一点吧。`

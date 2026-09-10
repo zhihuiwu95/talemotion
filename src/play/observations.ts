@@ -9,6 +9,7 @@ export interface RecordEntry {
   replay: string
   reuse: string
   note: string
+  mode?: 'story'
 }
 export function readObservations(): RecordEntry[] {
   try {

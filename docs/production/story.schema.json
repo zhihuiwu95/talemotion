@@ -1,0 +1,443 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "catalogVersion": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,47}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 18
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "help",
+        "build",
+        "negotiate"
+      ]
+    },
+    "audience": {
+      "type": "object",
+      "properties": {
+        "minAge": {
+          "type": "number",
+          "minimum": 3,
+          "maximum": 6
+        },
+        "maxAge": {
+          "type": "number",
+          "minimum": 3,
+          "maximum": 6
+        },
+        "support": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        }
+      },
+      "required": [
+        "minAge",
+        "maxAge",
+        "support"
+      ],
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "original",
+            "adapted"
+          ]
+        },
+        "sourceTitle": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "license": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "attribution": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "changes": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        }
+      },
+      "required": [
+        "kind",
+        "sourceTitle",
+        "license",
+        "attribution",
+        "changes"
+      ],
+      "additionalProperties": false
+    },
+    "learning": {
+      "type": "object",
+      "properties": {
+        "objective": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 140
+        },
+        "evidenceIds": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,47}$"
+          }
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "observation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 180
+        },
+        "offline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 180
+        },
+        "limitation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      },
+      "required": [
+        "objective",
+        "evidenceIds",
+        "rationale",
+        "observation",
+        "offline",
+        "limitation"
+      ],
+      "additionalProperties": false
+    },
+    "start": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,47}$"
+    },
+    "nodes": {
+      "minItems": 4,
+      "maxItems": 24,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,47}$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "interactive",
+              "beat",
+              "ending"
+            ]
+          },
+          "backdrop": {
+            "type": "string",
+            "enum": [
+              "snow",
+              "meadow",
+              "rain"
+            ]
+          },
+          "entities": {
+            "minItems": 1,
+            "maxItems": 7,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                },
+                "asset": {
+                  "type": "string",
+                  "enum": [
+                    "bear-cold",
+                    "bear-warm",
+                    "bear",
+                    "fox",
+                    "cat",
+                    "rabbit",
+                    "mitten-stripe",
+                    "mitten-dot",
+                    "snow",
+                    "pine",
+                    "bird",
+                    "snowman",
+                    "footprints",
+                    "blocks",
+                    "posts",
+                    "roof-coral",
+                    "roof-blue",
+                    "shelter-coral",
+                    "shelter-blue",
+                    "shelter-coral-full",
+                    "shelter-blue-full",
+                    "basket",
+                    "drum",
+                    "wait",
+                    "clap",
+                    "flower"
+                  ]
+                },
+                "slot": {
+                  "type": "string",
+                  "enum": [
+                    "actor-left",
+                    "actor-right",
+                    "prop-left",
+                    "prop-center",
+                    "prop-right",
+                    "sky-left",
+                    "sky-right"
+                  ]
+                },
+                "mood": {
+                  "type": "string",
+                  "enum": [
+                    "neutral",
+                    "happy"
+                  ]
+                },
+                "motion": {
+                  "type": "string",
+                  "enum": [
+                    "still",
+                    "arrive",
+                    "wiggle",
+                    "celebrate",
+                    "deliver",
+                    "build",
+                    "play"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "asset",
+                "slot",
+                "mood",
+                "motion"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "line": {
+            "type": "object",
+            "properties": {
+              "speaker": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 12
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64
+              },
+              "style": {
+                "type": "string",
+                "enum": [
+                  "story",
+                  "affectionate",
+                  "cheerful",
+                  "excited",
+                  "empathetic"
+                ]
+              }
+            },
+            "required": [
+              "speaker",
+              "text",
+              "style"
+            ],
+            "additionalProperties": false
+          },
+          "cue": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+          },
+          "interaction": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "goal",
+                  "free",
+                  "explore"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 140
+              },
+              "choices": {
+                "minItems": 1,
+                "maxItems": 3,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                    },
+                    "target": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 18
+                    },
+                    "next": {
+                      "type": "string",
+                      "pattern": "^[a-z][a-z0-9-]{0,47}$"
+                    },
+                    "outcome": {
+                      "type": "string",
+                      "enum": [
+                        "progress",
+                        "retry",
+                        "choice",
+                        "discover"
+                      ]
+                    },
+                    "consequence": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "target",
+                    "label",
+                    "next",
+                    "outcome",
+                    "consequence"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "kind",
+              "reason",
+              "choices"
+            ],
+            "additionalProperties": false
+          },
+          "next": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,47}$"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "backdrop",
+          "entities",
+          "line",
+          "cue"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "acceptance": {
+      "minItems": 2,
+      "maxItems": 16,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "choices": {
+            "minItems": 1,
+            "maxItems": 40,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,47}$"
+            }
+          },
+          "ending": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,47}$"
+          }
+        },
+        "required": [
+          "name",
+          "choices",
+          "ending"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "catalogVersion",
+    "id",
+    "title",
+    "summary",
+    "theme",
+    "audience",
+    "provenance",
+    "learning",
+    "start",
+    "nodes",
+    "acceptance"
+  ],
+  "additionalProperties": false
+}

@@ -1,3 +1,4 @@
+import { FEEDBACK_MIN_MS, useInteractionGuard } from './useInteractionGuard'
 import { useEffect, useRef, useState } from 'react'
 import { EdgeAudioProvider } from '../runtime/audio/EdgeAudioProvider'
 import { ActivityArt } from './ActivityArt'
@@ -27,18 +28,34 @@ export function ActivityPlayer({
   const [session, setSession] = useState(0)
   const dialog = useRef<HTMLDialogElement>(null)
   const heading = useRef<HTMLHeadingElement>(null)
+  const guard = useInteractionGuard()
   const stateRef = useRef(state)
   const round = activity.rounds[state.round] ?? activity.rounds[0]
   const message = activityNarration(activity, state)
   const active = state.phase === 'playing' || state.phase === 'success'
   const completed = state.completed
   function speak(text: string, force = false) {
-    if (!muted || force) audio.speak({ text })
+    const done =
+      stateRef.current.phase === 'success'
+        ? guard.hold(FEEDBACK_MIN_MS, true)
+        : undefined
+    if ((muted && !force) || !audio.available) {
+      done?.()
+      return
+    }
+    try {
+      audio.speak({ text, onComplete: done })
+    } catch {
+      setFailed(true)
+      done?.()
+    }
   }
   function act(event: ActivityEvent) {
+    if (event.type !== 'close' && (guard.isLocked() || overlay)) return
     const previous = stateRef.current
     const next = advance(activity, previous, event)
     if (previous === next) return
+    guard.hold()
     stateRef.current = next
     setState(next)
     if (event.type === 'start') setSession((value) => value + 1)
@@ -50,6 +67,7 @@ export function ActivityPlayer({
   }
   function open(kind: 'parent' | 'pause') {
     audio.cancel()
+    guard.finishAudio()
     setOverlay(kind)
   }
   function close() {
@@ -75,7 +93,7 @@ export function ActivityPlayer({
     return () => document.removeEventListener('visibilitychange', hide)
   }, [active, audio])
   return (
-    <main className="play-shell">
+    <main className={`play-shell ${overlay ? 'is-paused' : ''}`}>
       <header className="play-header">
         <button className="parent-button" onClick={onHome}>
           ← 故事小屋
@@ -86,8 +104,10 @@ export function ActivityPlayer({
             aria-label={muted ? '打开声音' : '关闭声音'}
             aria-pressed={muted}
             onClick={() => {
-              if (!muted) audio.cancel()
-              else speak(message, true)
+              if (!muted) {
+                audio.cancel()
+                guard.finishAudio()
+              } else speak(message, true)
               setMuted(!muted)
             }}
           >
@@ -108,6 +128,7 @@ export function ActivityPlayer({
         </div>
       </header>
       <section
+        {...guard.gestureProps}
         className={`storybook activity-book phase-${state.phase}`}
         aria-label={`${activity.title}互动故事`}
       >
@@ -211,6 +232,7 @@ export function ActivityPlayer({
                       className={`choice ${state.wrong === item ? 'was-tried' : ''}`}
                       key={item}
                       aria-label={itemNames[item]}
+                      disabled={guard.locked}
                       onClick={() => act({ type: 'choose', item })}
                     >
                       <ActivityArt item={item} />
@@ -220,9 +242,13 @@ export function ActivityPlayer({
                 </div>
               ) : (
                 <div className="activity-result">
+                  <p className="feedback-wait" role="status">
+                    {guard.locked ? '看看，你帮上忙啦…' : '准备好了再继续'}
+                  </p>
                   <ActivityArt item={round.target} />
                   <button
                     className="big-button"
+                    disabled={guard.locked}
                     onClick={() => act({ type: 'next' })}
                   >
                     {state.round === activity.rounds.length - 1

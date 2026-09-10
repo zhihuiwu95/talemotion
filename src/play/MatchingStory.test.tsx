@@ -1,11 +1,13 @@
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import type { SpeechRequest } from '../runtime/audio/SpeechProvider'
+import { FEEDBACK_MIN_MS } from './useInteractionGuard'
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { MatchingStory } from './MatchingStory'
 import { initialState, storyReducer } from './story'
 
 const audio = vi.hoisted(() => ({
   available: true,
-  speak: vi.fn(),
+  speak: vi.fn((request: SpeechRequest) => request.onComplete?.()),
   cancel: vi.fn(),
   dispose: vi.fn(),
 }))
@@ -19,6 +21,7 @@ vi.mock('../runtime/audio/EdgeAudioProvider', () => ({
 }))
 
 beforeEach(() => {
+  vi.useFakeTimers()
   audio.available = true
   vi.clearAllMocks()
   Object.defineProperty(HTMLDialogElement.prototype, 'showModal', {
@@ -37,11 +40,30 @@ beforeEach(() => {
 afterEach(() => {
   cleanup()
   vi.restoreAllMocks()
+  vi.useRealTimers()
 })
-const click = (name: string) =>
+const click = (name: string) => {
   fireEvent.click(screen.getByRole('button', { name }))
+  act(() => vi.advanceTimersByTime(FEEDBACK_MIN_MS))
+}
 
 describe('matching story', () => {
+  it('keeps the result visible across repeated taps and waits for the praise to finish', () => {
+    render(<MatchingStory />)
+    click('一起出发')
+    audio.speak.mockImplementationOnce(() => {})
+    fireEvent.click(screen.getByRole('button', { name: '红色条纹手套' }))
+    const next = screen.getByRole('button', { name: '送给小熊' })
+    fireEvent.click(next)
+    act(() => vi.advanceTimersByTime(FEEDBACK_MIN_MS))
+    expect(next).toBeDisabled()
+    expect(screen.getByText('帮小熊找手套')).toBeVisible()
+    const callback = audio.speak.mock.calls.at(-1)?.[0].onComplete
+    act(() => callback?.())
+    expect(next).toBeEnabled()
+    fireEvent.click(next)
+    expect(screen.getByText('帮小狐狸找手套')).toBeVisible()
+  })
   it('lets a child retry, finish all three deliveries, leave for offline play, and replay cleanly', () => {
     render(<MatchingStory />)
     expect(audio.speak).not.toHaveBeenCalled()

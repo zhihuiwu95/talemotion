@@ -1,0 +1,38 @@
+[
+  {
+    "id": "moe-play",
+    "kind": "guidance",
+    "title": "教育部《3—6岁儿童学习与发展指南》及负责人解读",
+    "url": "https://www.moe.gov.cn/jyb_xwfb/s271/201210/t20121015_143257.html",
+    "checked": "2026-09-09",
+    "supports": "以生活、游戏、直接操作支持发展；按个体兴趣与需要设计活动。",
+    "limits": "教育指导，不是对本产品的实验；年龄目标不能直接照搬为单次游戏考核。"
+  },
+  {
+    "id": "moe-social",
+    "kind": "guidance",
+    "title": "《3—6岁儿童学习与发展指南》社会领域",
+    "url": "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/jyzt_2015nztzl/xueqianjiaoyu/yaowen/202104/W020210820338905908083.pdf",
+    "checked": "2026-09-09",
+    "supports": "在具体活动中体验合作；支持通过协商、交换、轮流等方式处理同伴冲突。",
+    "limits": "不把孩子是否分享当作人格评价；不同年龄与个体需要不同程度的成人支持。"
+  },
+  {
+    "id": "naeyc-play",
+    "kind": "guidance",
+    "title": "NAEYC Principles of Child Development and Learning",
+    "url": "https://www.naeyc.org/node/3796",
+    "checked": "2026-09-09",
+    "supports": "有目标的游戏保留孩子的选择、探索和愉悦，成人提供适当支持。",
+    "limits": "设计原则，不能证明某个数字故事改善了儿童能力。"
+  },
+  {
+    "id": "takacs-2015",
+    "kind": "meta-analysis",
+    "title": "Takacs, Swart & Bus (2015), Benefits and Pitfalls of Multimedia and Interactive Features in Technology-Enhanced Storybooks",
+    "url": "https://journals.sagepub.com/doi/10.3102/0034654314566989",
+    "checked": "2026-09-09",
+    "supports": "与叙事一致的多媒体可能支持理解；热点和小游戏可能分散注意力。",
+    "limits": "43项研究、2147名3—10岁儿童，主要为较早的电子故事技术；不能直接推断现代H5的效果，更不能推出互动越多越好。"
+  }
+]

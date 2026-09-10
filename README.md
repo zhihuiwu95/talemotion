@@ -2,11 +2,32 @@
 
 # TaleMotion
 
+## Current production validation: 三种故事样板
+
+Three **data-driven story packs** now run through one shared SVG/CSS/React player:
+
+- `/?story=snow-mittens` — 雪松下的小手套: exploration, perceptual retry, helping, and two free endings.
+- `/?story=rain-shelter` — 一起搭个小雨棚: collaborative sequence and a choice of canopy color.
+- `/?story=little-drum` — 小鼓咚咚响: listening to both wishes, voluntary turn-taking or joining by clapping.
+
+These packs target approximately ages 3–4 with adult support. Add a validated `src/stories/packs/*.json` to register another story; the gallery, narration collector, and acceptance-path UI tests discover it automatically. There are no per-story branches in the new player. Existing activities and the first mitten sample remain intact.
+
+**Start here: [Story production kit](docs/production/README.md).** It contains the authoring contract, assets/actions catalog, machine-readable schema, evidence register, reviewed sample storyboards, evaluation rubric, and a copyable task for a cheaper model. The fourth story is a held-out task only; it has not been authored or benchmarked. These three examples establish an engineering workflow, not proof of cheaper-model reliability or child learning outcomes.
+
+```bash
+npm run stories:validate
+npm run stories:review
+npm run audio:generate
+npm run quality
+```
+
 ## Current product prototype: 森林故事小屋
 
 A mobile-first parent-child story collection for approximately ages 2.5–4, starring original rabbit officer 朵朵. Four curated activities cover matching mittens, comparing picnic item sizes, finding a ball by position, and watering a flower in order. Each has two large choices, descriptive retries, pause/mute/repeat, and an off-screen activity ending. The flower activity is marked as a slightly more advanced parent-assisted option.
 
-Narration now uses **57 pre-generated Edge TTS MP3 clips**, with a consistent Mandarin Xiaoxiao voice and slower pace. End users play local website audio; they do not need Edge, Python, or a system Chinese voice. No live generation is performed during play. There are no timers, scores, ads, accounts, or recorded child voices.
+Narration now uses **95 pre-generated Azure Speech MP3 clips**, with Xiaoxiao Multilingual and scene-specific storytelling, warm, cheerful, excited, and empathetic styles. End users play local website audio; they do not need Edge, Python, or a system Chinese voice. No live generation is performed during play. There are no timers, scores, ads, accounts, or recorded child voices.
+
+A new short story, **雪地里的手套** (`/?story=mittens-story`), lets children ask the bear for help, explore the snow and an optional bird clue, return a mitten, then choose to build a snowman or make footprints. The original four activities remain available for comparison. Game text cannot be selected, and cross-screen touch guards preserve feedback before accepting the next action. See [the sample and comparison protocol](docs/MITTEN_STORY_SAMPLE.md).
 
 Parents can explicitly save observations about understanding, replay interest, and willingness to reuse. Records stay in this browser's local storage; the homepage offers viewing, JSON export, and confirmed clearing. Current game progress remains in memory. This is a curated product experiment, not a validated cognitive assessment.
 
@@ -30,7 +51,7 @@ Phase 0 and Phase 1 are implemented, and the winter-cottage golden scene now run
 - Restart restores object transforms, visibility, opacity, textures, camera state, effects, and audio before replaying.
 - The renderer contains no rabbit, cottage, or story-specific behavior.
 
-No online AI API is called during playback. Edge TTS is used only when regenerating audio. All visual assets in the demo are local SVG files.
+No online AI API is called during playback. Azure Speech is used only when regenerating audio; the key is read from the local shell environment. All visual assets in the demo are local SVG files.
 
 ## Run locally
 
@@ -50,6 +71,7 @@ npm test
 npm run lint
 npm run build
 npm run scene:validate
+npm run stories:validate
 npm run audio:verify
 # Or run all checks:
 npm run quality
@@ -60,9 +82,10 @@ npm run quality
 ## Product and production decisions
 
 - [`docs/PRODUCT_VISION.md`](docs/PRODUCT_VISION.md) explains the final product shape and why production two-minute stories should use multiple scenes.
-- [`docs/ANIMATION_WORKFLOW.md`](docs/ANIMATION_WORKFLOW.md) defines the repeatable “tell us the plot → receive a validated animation” workflow.
-- [`docs/TTS_DECISION.md`](docs/TTS_DECISION.md) records the current Edge TTS generation and playback workflow.
-- [`templates/story-brief.template.md`](templates/story-brief.template.md) is the minimal reusable input template; only the plot is required.
+- [`docs/production/README.md`](docs/production/README.md) is the current workflow for making new interactive story packs.
+- [`docs/ANIMATION_WORKFLOW.md`](docs/ANIMATION_WORKFLOW.md) preserves the earlier Pixi/GSAP animation workflow, separate from story-pack v1.
+- [`docs/TTS_DECISION.md`](docs/TTS_DECISION.md) records the current Azure Speech generation and playback workflow.
+- [`templates/story-brief.template.md`](templates/story-brief.template.md) is the earlier animation brief. New story-pack authors use the production kit above.
 
 ## Project structure
 
@@ -119,7 +142,7 @@ Add or change the demo in [`src/demo/winter-cottage.scene.json`](src/demo/winter
 - [x] React + TypeScript + Vite project
 - [x] PixiJS scene renderer and GSAP timeline
 - [x] Local-only demo resources; no AI or backend calls
-- [x] Two-minute winter-cottage demo with staged movement, door, snow, camera work, captions, controls, and segmented browser narration
+- [x] Two-minute winter-cottage demo with staged movement, door, snow, camera work, captions, controls, and segmented recorded narration
 - [x] Animation fully driven by Scene JSON
 - [x] Zod validation before runtime creation
 - [x] Allowlisted Action Registry; no dynamic script execution
@@ -133,10 +156,10 @@ Add or change the demo in [`src/demo/winter-cottage.scene.json`](src/demo/winter
 ## Known limitations and debt before Phase 2
 
 1. Add a browser-level visual/interaction regression test. Unit tests cover contracts and lifecycle, but do not yet compare rendered frames.
-2. Split or lazy-load the PixiJS renderer if startup size becomes a product constraint. The current production JavaScript bundle is roughly 608 kB before gzip and 187 kB after gzip.
+2. Keep measuring bundle size as content grows. The classic Pixi/GSAP demo is lazy loaded; story-pack data and schema currently load with the main application.
 3. Define a formal Scene JSON compatibility and migration policy before an LLM starts producing contract version `1.0` at scale.
 4. Add asset load timeouts, cancellation, and per-asset diagnostics before remote generated assets are allowed.
-5. Browser speech has provider- and OS-dependent voices and timing. Real timestamp-aligned narration and ducking remain intentionally deferred to Phase 4.
+5. Recorded narration now has a consistent Azure voice. Word-level timestamps, subtitle alignment, and music ducking remain deferred; device/browser audio acceptance still requires real-device testing.
 6. Seek/scrub is not exposed yet; introducing it requires deterministic reconstruction of call-based effects, expressions, and audio at arbitrary timestamps.
 
-Phase 2 should add only a structured-output Director adapter that produces this validated contract. It should not bypass the schema or emit runtime code.
+This section describes the earlier animation-engine roadmap. Current interactive story production uses the separate story-pack contract and shared player in `src/stories/`; neither path accepts arbitrary runtime code from content.

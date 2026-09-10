@@ -4,6 +4,8 @@ export interface SpeechRequest {
   lang?: string
   rate?: number
   pitch?: number
+  /** Called once on completion or playback failure; cancellation suppresses it. */
+  onComplete?: () => void
 }
 
 export interface SpeechProvider {

@@ -1,0 +1,7 @@
+{
+  "version": "azure-ssml-v1",
+  "provider": "azure",
+  "region": "eastus",
+  "voice": "zh-CN-XiaoxiaoMultilingualNeural",
+  "format": "audio-24khz-96kbitrate-mono-mp3"
+}

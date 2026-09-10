@@ -1,0 +1,450 @@
+{
+  "schemaVersion": "1.0",
+  "catalogVersion": "1.0",
+  "id": "rain-shelter",
+  "title": "一起搭个小雨棚",
+  "summary": "小雨来了，和小狐狸给野餐篮搭个家。",
+  "theme": "build",
+  "audience": {
+    "minAge": 3,
+    "maxAge": 4,
+    "support": "建议亲子共玩；先等孩子反应，需要时再示范，不用完成速度评价能力。"
+  },
+  "provenance": {
+    "kind": "original",
+    "sourceTitle": "TaleMotion 森林日常原创故事",
+    "license": "项目自有原创内容；第三方引用仅作为设计依据。",
+    "attribution": "TaleMotion；AI辅助编写与代码绘制，尚未经幼教专业人员审阅。",
+    "changes": "为结构化故事播放器制作的原创样板。"
+  },
+  "learning": {
+    "objective": "在共同搭建玩具雨棚的过程中，体验先支撑、再覆盖的顺序与分工。",
+    "evidenceIds": [
+      "moe-play",
+      "moe-social",
+      "naeyc-play"
+    ],
+    "rationale": "用角色的具体需要带动操作，让动作产生可见后果；教育目标是设计假设，保留儿童选择和成人支持。",
+    "observation": "孩子是否注意到支架、棚顶和篮子的变化？是否关注小狐狸一起帮忙？",
+    "offline": "和家人用积木、布给玩具搭一个小棚，比较先后顺序；不攀爬。",
+    "limitation": "本故事未验证学习效果；完成、重玩或尝试次数不能作为能力测评。"
+  },
+  "start": "meet",
+  "nodes": [
+    {
+      "id": "meet",
+      "kind": "interactive",
+      "backdrop": "rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "小雨来了，野餐篮还在外面。问问小狐狸吧！",
+        "style": "story"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "ask",
+            "target": "fox",
+            "label": "问问小狐狸",
+            "next": "plan",
+            "outcome": "progress",
+            "consequence": "角色回应孩子的动作，故事继续。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "plan",
+      "kind": "interactive",
+      "backdrop": "rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "blocks",
+          "asset": "blocks",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "一起搭个小雨棚吧！先把积木支架立起来。",
+        "style": "affectionate"
+      },
+      "cue": "点点积木，先立起支架",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "posts",
+            "target": "blocks",
+            "label": "立起积木支架",
+            "next": "posts-ready",
+            "outcome": "progress",
+            "consequence": "支架从地面立起，小狐狸扶住它。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "posts-ready",
+      "kind": "beat",
+      "backdrop": "rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "posts",
+          "asset": "posts",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "build"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "你立起支架，我来扶稳。我们一起搭！",
+        "style": "cheerful"
+      },
+      "cue": "点点画面，和朋友一起玩",
+      "next": "roof"
+    },
+    {
+      "id": "roof",
+      "kind": "interactive",
+      "backdrop": "rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "posts",
+          "asset": "posts",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "coral",
+          "asset": "roof-coral",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "blue",
+          "asset": "roof-blue",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "棚顶用珊瑚色，还是蓝色？都可以挡小雨。",
+        "style": "story"
+      },
+      "cue": "选一个喜欢的棚顶",
+      "interaction": {
+        "kind": "free",
+        "reason": "功能相同的两种颜色供孩子自由选择，保留创作自主性。",
+        "choices": [
+          {
+            "id": "coral",
+            "target": "coral",
+            "label": "盖上珊瑚色棚顶",
+            "next": "coral-ready",
+            "outcome": "choice",
+            "consequence": "珊瑚色棚顶落到支架上，形成雨棚。"
+          },
+          {
+            "id": "blue",
+            "target": "blue",
+            "label": "盖上蓝色棚顶",
+            "next": "blue-ready",
+            "outcome": "choice",
+            "consequence": "蓝色棚顶落到支架上，形成雨棚。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "coral-ready",
+      "kind": "interactive",
+      "backdrop": "rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "shelter",
+          "asset": "shelter-coral",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "build"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "棚顶盖好啦！把篮子送进小雨棚吧。",
+        "style": "cheerful"
+      },
+      "cue": "点点野餐篮，送到棚下",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "basket",
+            "target": "basket",
+            "label": "把篮子送进雨棚",
+            "next": "coral-end",
+            "outcome": "progress",
+            "consequence": "篮子移到棚下，小动物在棚外开心看着。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "blue-ready",
+      "kind": "interactive",
+      "backdrop": "rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "shelter",
+          "asset": "shelter-blue",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "build"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "蓝色小雨棚搭好啦！把篮子送进去吧。",
+        "style": "cheerful"
+      },
+      "cue": "点点野餐篮，送到棚下",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助角色解决眼前的困难。",
+        "choices": [
+          {
+            "id": "basket",
+            "target": "basket",
+            "label": "把篮子送进雨棚",
+            "next": "blue-end",
+            "outcome": "progress",
+            "consequence": "篮子移到蓝色棚顶下，小动物庆祝共同完成。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "coral-end",
+      "kind": "ending",
+      "backdrop": "rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "shelter",
+          "asset": "shelter-coral-full",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "你搭支架，我扶稳，篮子有地方躲雨啦！谢谢你！",
+        "style": "excited"
+      },
+      "cue": "生活里，也可以一起给玩具搭个小棚。"
+    },
+    {
+      "id": "blue-end",
+      "kind": "ending",
+      "backdrop": "rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "shelter",
+          "asset": "shelter-blue-full",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我们一起搭好了！篮子在棚下，小雨淋不到啦！",
+        "style": "excited"
+      },
+      "cue": "想给这个蓝色小雨棚起个名字吗？"
+    }
+  ],
+  "acceptance": [
+    {
+      "name": "珊瑚色雨棚",
+      "choices": [
+        "ask",
+        "posts",
+        "coral",
+        "basket"
+      ],
+      "ending": "coral-end"
+    },
+    {
+      "name": "蓝色雨棚",
+      "choices": [
+        "ask",
+        "posts",
+        "blue",
+        "basket"
+      ],
+      "ending": "blue-end"
+    }
+  ]
+}

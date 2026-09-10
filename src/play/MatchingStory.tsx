@@ -1,3 +1,4 @@
+import { FEEDBACK_MIN_MS, useInteractionGuard } from './useInteractionGuard'
 import { useEffect, useReducer, useRef, useState } from 'react'
 import { EdgeAudioProvider } from '../runtime/audio/EdgeAudioProvider'
 import { ObservationForm } from './Observation'
@@ -18,6 +19,7 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
   const [overlay, setOverlay] = useState<'parent' | 'pause' | null>(null)
   const [audioFailed, setAudioFailed] = useState(false)
   const [speech] = useState(() => new EdgeAudioProvider(setAudioFailed))
+  const guard = useInteractionGuard()
   const stateRef = useRef(state)
   const dialogRef = useRef<HTMLDialogElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
@@ -28,17 +30,27 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
   const completed = state.found
 
   function speak(text: string, force = false) {
-    if (muted && !force) return
+    const done =
+      stateRef.current.phase === 'matched'
+        ? guard.hold(FEEDBACK_MIN_MS, true)
+        : undefined
+    if ((muted && !force) || !speech.available) {
+      done?.()
+      return
+    }
     try {
-      speech.speak({ text, rate: 0.8, pitch: 1.05 })
+      speech.speak({ text, onComplete: done })
     } catch {
       setAudioFailed(true)
+      done?.()
     }
   }
   function act(event: StoryEvent) {
+    if (event.type !== 'close' && (guard.isLocked() || overlay)) return
     const previous = stateRef.current
     const next = storyReducer(previous, event)
     if (next === previous) return
+    guard.hold()
     stateRef.current = next
     if (event.type === 'start') setSession((value) => value + 1)
     dispatch(event)
@@ -50,6 +62,7 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
   }
   function openOverlay(kind: 'parent' | 'pause') {
     speech.cancel()
+    guard.finishAudio()
     setOverlay(kind)
   }
   function closeOverlay() {
@@ -77,7 +90,7 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
   }, [active, speech])
 
   return (
-    <main className="play-shell">
+    <main className={`play-shell ${overlay ? 'is-paused' : ''}`}>
       <header className="play-header">
         {onHome ? (
           <button className="parent-button" onClick={onHome}>
@@ -101,8 +114,10 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
             aria-label={muted ? '打开声音' : '关闭声音'}
             aria-pressed={muted}
             onClick={() => {
-              if (!muted) speech.cancel()
-              else speak(message, true)
+              if (!muted) {
+                speech.cancel()
+                guard.finishAudio()
+              } else speak(message, true)
               setMuted(!muted)
             }}
           >
@@ -127,6 +142,7 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
       </header>
 
       <section
+        {...guard.gestureProps}
         className={`storybook phase-${state.phase}`}
         aria-label="手套找朋友互动故事"
       >
@@ -259,6 +275,7 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
                       key={kind}
                       className={`choice ${state.wrong === kind ? 'was-tried' : ''}`}
                       aria-label={mittens[kind].name}
+                      disabled={guard.locked}
                       onClick={() => act({ type: 'choose', kind })}
                     >
                       <Mitten kind={kind} />
@@ -270,12 +287,18 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
                 </div>
               ) : (
                 <div className="deliver-action">
+                  <p className="feedback-wait" role="status">
+                    {guard.locked
+                      ? '看看，小伙伴在说谢谢呢…'
+                      : '现在可以把手套送给它啦'}
+                  </p>
                   <div className="pair-note">
                     <Icon name="leaf" />
                     <span>你帮{round.friend}找齐了手套</span>
                   </div>
                   <button
                     className="big-button"
+                    disabled={guard.locked}
                     onClick={() => act({ type: 'next' })}
                   >
                     送给{round.friend}
