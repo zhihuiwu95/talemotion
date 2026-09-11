@@ -1,29 +1,28 @@
-# TaleMotion 故事生产验证 v1
+# TaleMotion 故事生产工具包 v1.1
 
-更新：2026-09-09。目标是让后续模型通过填写故事包制作新故事，复用播放器与素材。当前三个样板由同一个强模型制作，用于建立规范；**便宜模型的独立生产能力、成本优势与儿童学习效果均尚未验证**。第四个故事留给用户后续运行。
+更新：2026-09-11。三个样板和第四篇已通过工程校验；第四篇已完成两轮内容修订，但没有获认可的内容评分，修订版视觉/播放、实机和家庭试玩仍待验证。成本优势与儿童学习效果尚未验证。先看[第四篇复审](runs/fourth-story-review.md)和[修订记录](runs/fourth-story-revision.md)；原首次制作记录保留，v1.1 改进用于后续制作。
 
 ## 从哪里开始
 
 | 使用者 | 入口 |
 |---|---|
-| 想先试玩 | `/?story=snow-mittens`、`/?story=rain-shelter`、`/?story=little-drum` |
+| 想先试玩 | `/?story=snow-mittens`、`/?story=rain-shelter`、`/?story=little-drum`；已本地工程验证、待内容/实机确认的第四篇 `/?story=garden-gathering` |
 | 想了解制作流程 | [生产规范](STORY_STANDARD.md) |
 | 要让其他模型开始制作 | [可直接使用的任务提示](AUTHOR_PROMPT.md) + [第四个故事任务书](FOURTH_STORY_BRIEF.md) |
 | 想知道能画什么、怎么动 | [能力说明](CAPABILITIES.md) + [机器可读能力目录](capabilities.json) |
 | 要检查数据格式 | [JSON Schema](story.schema.json) + `src/stories/schema.ts` 的语义检查 |
-| 要审看三个样板 | [从 JSON 导出的分镜表](SAMPLE_STORYBOARDS.md) |
+| 要审看当前故事包 | [从 JSON 导出的分镜表](SAMPLE_STORYBOARDS.md) |
 | 要判断是否合格、省钱 | [验收规则与记录模板](EVALUATION.md) |
-| 要看本轮做到了哪里 | [验证记录](VALIDATION.md) |
+| 要看做到了哪里 | [前三篇历史验证](VALIDATION.md) + [第四篇复审](runs/fourth-story-review.md) + [第四篇修订记录](runs/fourth-story-revision.md) |
 
 ## 一条最短制作路径
 
-1. 阅读任务书、规范、能力说明和三个故事包。确定一个主要目标；只使用已核实的依据。
-2. 先写故事与分镜审阅稿，再生成 `src/stories/packs/<id>.json`。每个选择必须有可见后果，所有路径必须可结束。
-3. 运行 `npm run stories:validate`。错误信息指出具体字段或节点；修改故事包后重跑。
-4. 运行 `npm run stories:review` 导出可审阅分镜，检查角色愿望、动作因果、自由选择、重试表达。
-5. 台词通过内容检查后，运行 `npm run audio:generate`。已有音频复用，新台词使用本地环境中的 Azure 凭据生成。不要输出密钥或把它写入故事包。
-6. 运行 `npm run quality`。通过后打开 `/?story=<id>`，检查手机尺寸、声音、每个结尾、暂停与连击。
-7. 按评测模板记录真实结果。家庭试玩另行记录，不把软件测试等同于儿童效果。
+1. 阅读任务书、规范、能力说明与一个相关合格样板，写简短目标和梗概；按需查其他样板。
+2. 制作 JSON，运行 `npm run stories:validate -- src/stories/packs/<id>.json`。
+3. 运行 `npm run stories:review -- src/stories/packs/<id>.json`，只输出本篇分镜和实际前后差异。逐项审天气、双方同意、口头操作提示和真实后果，不只看总分。
+4. 先修内容，再运行 `npm run audio:generate` 与一次 `npm run quality`；缓存复用已有音频。
+5. 纯 JSON 复用既有能力默认不使用 computer use。按[分层验收](EVALUATION.md)记录已完成和待预览维度，有具体布局、资产或播放风险才针对性检查。
+6. 写一份结果记录，区分作者自查、额外审阅、成本来源和家庭试玩。完整分镜由 JSON 导出，不重复手写。
 
 无需修改首页注册列表、播放器、语音采集器、测试列表。它们自动发现 `src/stories/packs/*.json`。开发时新增文件由 Vite 发现，生产构建打包静态内容；不是线上上传系统，也不在儿童游玩时调用模型。
 

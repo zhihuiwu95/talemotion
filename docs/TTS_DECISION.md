@@ -1,11 +1,11 @@
 # 当前语音方案：Azure 晓晓多语言预生成音频
 
-更新：2026-09-09。四个原版活动、第一版手套样片、三个结构化故事包及旧动画入口，统一播放 Azure Speech 生成的 MP3。`zh-CN-XiaoxiaoMultilingualNeural` 在本次 eastus 资源的实时声线列表中为 GA；已验证支持使用的五种风格。
+更新：2026-09-09。四个原版活动、第一版手套样片、四个结构化故事包及旧动画入口，统一播放 Azure Speech 生成的 MP3。`zh-CN-XiaoxiaoMultilingualNeural` 在本次 eastus 资源的实时声线列表中为 GA；已验证支持使用的五种风格。
 
 ## 制作与播放
 
 - `scripts/tts-config.json`：eastus、晓晓多语言、24 kHz 单声道 96 kbps MP3。
-- `scripts/collect-narration.ts`：自动发现 `src/stories/packs/*.json` 并收集所有当前文案分支，当前 95 段；同文不同风格会报错，显式指定 `story`、`affectionate`、`cheerful`、`excited`、`empathetic`。语速 -5%，音高 +0 Hz；兴奋强度 1.1，其余 1.0。
+- `scripts/collect-narration.ts`：自动发现 `src/stories/packs/*.json` 并收集所有当前文案分支，当前 102 段（2026-09-11，含第四篇第二轮修订稿）；同文不同风格会报错，显式指定 `story`、`affectionate`、`cheerful`、`excited`、`empathetic`。语速 -5%，音高 +0 Hz；兴奋强度 1.1，其余 1.0。
 - `scripts/generate-audio.py`：Python 标准库调用 Azure REST。运行前读取环境变量 `AZURE_SPEECH_KEY`，检查实际声线及风格；两路并发、单次 40 秒超时，暂时故障最多四次尝试。先生成全部音频，再原子发布清单；中断后可复用成功文件。
 - 音频路径 hash 包括合成版本、声线、格式、文本、风格、情绪强度、速度和音高，避免改情绪后错误复用旧录音。
 - `src/generated/narration.json`：当前发布清单；`public/audio/`：音频资产。为保留已有素材，不清除未引用的历史录音；当前播放只使用清单。

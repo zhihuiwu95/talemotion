@@ -1,0 +1,409 @@
+{
+  "schemaVersion": "1.0",
+  "catalogVersion": "1.0",
+  "id": "garden-gathering",
+  "title": "雨后的花园小聚会",
+  "summary": "听听两位朋友的愿望，一起决定小聚会的位置。",
+  "theme": "negotiate",
+  "audience": {
+    "minAge": 3,
+    "maxAge": 4,
+    "support": "建议亲子共玩；先等孩子回应，语言理解需要时再用自己的话复述，不用完成速度评价能力。"
+  },
+  "provenance": {
+    "kind": "original",
+    "sourceTitle": "TaleMotion 森林日常原创故事",
+    "license": "项目自有原创内容；第三方引用仅作为设计依据。",
+    "attribution": "TaleMotion；AI辅助编写与代码绘制，尚未经幼教专业人员审阅。",
+    "changes": "为结构化故事播放器制作的第四个原创故事包。"
+  },
+  "learning": {
+    "objective": "在准备小聚会时，体验听见两位朋友的愿望，并选择双方接受的篮子摆放安排。",
+    "evidenceIds": [
+      "moe-social",
+      "naeyc-play",
+      "takacs-2015"
+    ],
+    "rationale": "用同一件物品的具体位置带动协商；共同移动篮子和自由选择都服务聚会情节，保留成人支持与孩子自主性。",
+    "observation": "孩子是否注意到小狐狸想靠花、小猫想留空地？可以指画面或用动作表示，不要求说出固定答案。",
+    "offline": "和家人给玩具找两个都舒服的位置，说说各自想法，再一起选一个；不要求分享自己的物品。",
+    "limitation": "本故事未验证学习效果；完成、重玩、点击或分享都不能作为能力或品德测评。"
+  },
+  "start": "meet",
+  "nodes": [
+    {
+      "id": "meet",
+      "kind": "interactive",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "flower",
+          "asset": "flower",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "小狐狸和小猫想办小聚会。先听听小狐狸吧。",
+        "style": "story"
+      },
+      "cue": "点点小狐狸，听听它的想法",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子先让小狐狸说出具体愿望，才知道聚会要商量什么。",
+        "choices": [
+          {
+            "id": "fox",
+            "target": "fox",
+            "label": "听听小狐狸的愿望",
+            "next": "fox-wish",
+            "outcome": "progress",
+            "consequence": "小狐狸轻轻摇动，说想把篮子摆在花旁。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "fox-wish",
+      "kind": "interactive",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "wiggle"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "flower",
+          "asset": "flower",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我想把野餐篮摆在花旁，边吃点心边看花。点点小猫，听听它吧。",
+        "style": "affectionate"
+      },
+      "cue": "点点小猫，听听它吧",
+      "interaction": {
+        "kind": "goal",
+        "reason": "听见另一位朋友的愿望，孩子才能参与双方接受的安排。",
+        "choices": [
+          {
+            "id": "cat",
+            "target": "cat",
+            "label": "点点小猫，听听它吧",
+            "next": "cat-wish",
+            "outcome": "progress",
+            "consequence": "小猫轻轻摇动，说想给花旁留一点空地，也接受两个位置。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cat-wish",
+      "kind": "interactive",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "wiggle"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "flower",
+          "asset": "flower",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "花旁留点空地就好。篮子放花边、放左边草地，我都愿意。",
+        "style": "affectionate"
+      },
+      "cue": "点点野餐篮，一起搬到中间",
+      "interaction": {
+        "kind": "goal",
+        "reason": "孩子的动作帮助两位朋友先完成共同接受的准备步骤。",
+        "choices": [
+          {
+            "id": "basket",
+            "target": "basket",
+            "label": "把野餐篮搬到中间",
+            "next": "basket-set",
+            "outcome": "progress",
+            "consequence": "篮子移入草地中央，花留在右侧，花旁留出空地。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "basket-set",
+      "kind": "beat",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "deliver"
+        },
+        {
+          "id": "flower",
+          "asset": "flower",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "谢谢你帮忙搬篮子！它到中间了，花旁也留着空地。",
+        "style": "cheerful"
+      },
+      "cue": "看，篮子到中间啦",
+      "next": "choose-place"
+    },
+    {
+      "id": "choose-place",
+      "kind": "interactive",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "flower",
+          "asset": "flower",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "两个地方我也都喜欢。点花留在这里，点篮子去左边草地。",
+        "style": "cheerful"
+      },
+      "cue": "点花留这里，点篮子去左边",
+      "interaction": {
+        "kind": "free",
+        "reason": "两位角色已说出愿望并接受两种安排，孩子自由决定小聚会的位置。",
+        "choices": [
+          {
+            "id": "flower",
+            "target": "flower",
+            "label": "点花，篮子留在这里",
+            "next": "flower-end",
+            "outcome": "choice",
+            "consequence": "花儿轻轻摇动，篮子留在中央靠近花，两位朋友接受花边安排。"
+          },
+          {
+            "id": "grass",
+            "target": "basket",
+            "label": "点篮子，去左边草地",
+            "next": "grass-end",
+            "outcome": "choice",
+            "consequence": "篮子移到左侧开阔草地，花留在右侧，两位朋友开心接受这个安排。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flower-end",
+      "kind": "ending",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "flower",
+          "asset": "flower",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "wiggle"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "谢谢你帮我们选好地方！花儿轻轻点头。我们在花边小聚会吧！",
+        "style": "cheerful"
+      },
+      "cue": "想再选一次，也可以从头再玩。"
+    },
+    {
+      "id": "grass-end",
+      "kind": "ending",
+      "backdrop": "meadow",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "celebrate"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "deliver"
+        },
+        {
+          "id": "flower",
+          "asset": "flower",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "谢谢你帮我们选好地方！篮子留在开阔草地，花也有自己的小空间。",
+        "style": "cheerful"
+      },
+      "cue": "想再选一次，也可以从头再玩。"
+    }
+  ],
+  "acceptance": [
+    {
+      "name": "花边小聚会",
+      "choices": [
+        "fox",
+        "cat",
+        "basket",
+        "flower"
+      ],
+      "ending": "flower-end"
+    },
+    {
+      "name": "开阔草地小聚会",
+      "choices": [
+        "fox",
+        "cat",
+        "basket",
+        "grass"
+      ],
+      "ending": "grass-end"
+    }
+  ]
+}

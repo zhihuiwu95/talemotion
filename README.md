@@ -2,17 +2,18 @@
 
 # TaleMotion
 
-## Current production validation: 三种故事样板
+## Current production validation: 三种样板与第四篇试产
 
-Three **data-driven story packs** now run through one shared SVG/CSS/React player:
+Four **data-driven story packs** now run through one shared SVG/CSS/React player:
 
 - `/?story=snow-mittens` — 雪松下的小手套: exploration, perceptual retry, helping, and two free endings.
 - `/?story=rain-shelter` — 一起搭个小雨棚: collaborative sequence and a choice of canopy color.
 - `/?story=little-drum` — 小鼓咚咚响: listening to both wishes, voluntary turn-taking or joining by clapping.
+- `/?story=garden-gathering` — 雨后的花园小聚会: a two-round revised production trial; local engineering passes, while content approval and revised visual/device review remain pending.
 
 These packs target approximately ages 3–4 with adult support. Add a validated `src/stories/packs/*.json` to register another story; the gallery, narration collector, and acceptance-path UI tests discover it automatically. There are no per-story branches in the new player. Existing activities and the first mitten sample remain intact.
 
-**Start here: [Story production kit](docs/production/README.md).** It contains the authoring contract, assets/actions catalog, machine-readable schema, evidence register, reviewed sample storyboards, evaluation rubric, and a copyable task for a cheaper model. The fourth story is a held-out task only; it has not been authored or benchmarked. These three examples establish an engineering workflow, not proof of cheaper-model reliability or child learning outcomes.
+**Start here: [Story production kit](docs/production/README.md).** It contains the authoring contract, assets/actions catalog, machine-readable schema, evidence register, reviewed sample storyboards, evaluation rubric, and a copyable task for a cheaper model. The fourth story, `/?story=garden-gathering`, has completed two content-revision rounds and passes local engineering checks; its content score, revised visual/playback review, real-device and family acceptance remain pending. See the [review](docs/production/runs/fourth-story-review.md) and [revision record](docs/production/runs/fourth-story-revision.md). The three original samples and this fourth trial establish an engineering workflow, not proof of cheaper-model reliability or child learning outcomes.
 
 ```bash
 npm run stories:validate
@@ -25,7 +26,7 @@ npm run quality
 
 A mobile-first parent-child story collection for approximately ages 2.5–4, starring original rabbit officer 朵朵. Four curated activities cover matching mittens, comparing picnic item sizes, finding a ball by position, and watering a flower in order. Each has two large choices, descriptive retries, pause/mute/repeat, and an off-screen activity ending. The flower activity is marked as a slightly more advanced parent-assisted option.
 
-Narration now uses **95 pre-generated Azure Speech MP3 clips**, with Xiaoxiao Multilingual and scene-specific storytelling, warm, cheerful, excited, and empathetic styles. End users play local website audio; they do not need Edge, Python, or a system Chinese voice. No live generation is performed during play. There are no timers, scores, ads, accounts, or recorded child voices.
+Narration now uses **102 pre-generated Azure Speech MP3 clips**, with Xiaoxiao Multilingual and scene-specific storytelling, warm, cheerful, excited, and empathetic styles. End users play local website audio; they do not need Edge, Python, or a system Chinese voice. No live generation is performed during play. There are no timers, scores, ads, accounts, or recorded child voices.
 
 A new short story, **雪地里的手套** (`/?story=mittens-story`), lets children ask the bear for help, explore the snow and an optional bird clue, return a mitten, then choose to build a snowman or make footprints. The original four activities remain available for comparison. Game text cannot be selected, and cross-screen touch guards preserve feedback before accepting the next action. See [the sample and comparison protocol](docs/MITTEN_STORY_SAMPLE.md).
 

@@ -14,18 +14,21 @@ import { z } from 'zod'
 
 const args = process.argv.slice(2)
 if (args.includes('--review')) {
-  const files = readdirSync('src/stories/packs').filter((file) =>
-    file.endsWith('.json'),
-  )
+  const requested = args.filter((arg) => arg !== '--review')
+  const files = requested.length
+    ? requested
+    : readdirSync('src/stories/packs')
+        .filter((file) => file.endsWith('.json'))
+        .map((file) => `src/stories/packs/${file}`)
   const output = [
-    '# 三种故事样板的审阅分镜',
+    '# 故事包审阅分镜',
     '',
     '由 `npm run stories:review` 从故事 JSON 生成。表格帮助人工核对，不代表内容质量自动通过。',
     '',
   ]
   for (const file of files) {
     const p = storySchema.parse(
-      JSON.parse(readFileSync(`src/stories/packs/${file}`, 'utf8')),
+      JSON.parse(readFileSync(file, 'utf8')),
     )
     output.push(
       `## ${p.title} (${p.id})`,
@@ -43,8 +46,32 @@ if (args.includes('--review')) {
       value.replaceAll('|', '／').replaceAll('\n', ' ')
     for (const n of p.nodes)
       output.push(
-        `| ${n.id} · ${n.kind} | ${cell(n.line.speaker + '：' + n.line.text)} (${n.line.style}) | ${n.entities.map((e) => `${e.asset}@${e.slot}/${e.motion}`).join('<br>')} | ${n.interaction ? n.interaction.choices.map((c) => `${cell(c.label)} → ${c.next}：${cell(c.consequence)}`).join('<br>') : n.next ? `演出结束 → ${n.next}` : '主动结束／重玩'} |`,
+        `| ${n.id} · ${n.kind} | ${cell(n.line.speaker + '：' + n.line.text)} (${n.line.style})<br>文字提示：${cell(n.cue)} | ${n.backdrop}<br>${n.entities.map((e) => `${e.asset}@${e.slot}/${e.motion}`).join('<br>')} | ${n.interaction ? n.interaction.choices.map((c) => `${cell(c.label)} → ${c.next}：${cell(c.consequence)}`).join('<br>') : n.next ? `演出结束 → ${n.next}` : '主动结束／重玩'} |`,
       )
+    output.push('', '### 选择前后的实际差异', '',
+      '只比较 JSON 快照；动效执行、空间含义和双方同意仍需审阅。无位置变化不一定是错误，不能用动效自动证明协商成立。', '',
+      '| 选择 | 实际目标 / 口头提示 | 下一幕状态差异 | 作者承诺 |',
+      '|---|---|---|---|')
+    for (const n of p.nodes) {
+      for (const c of n.interaction?.choices ?? []) {
+        const next = p.nodes.find((node) => node.id === c.next)!
+        const changes: string[] = []
+        if (n.backdrop !== next.backdrop)
+          changes.push(`背景 ${n.backdrop} → ${next.backdrop}`)
+        for (const entity of next.entities) {
+          const before = n.entities.find((e) => e.id === entity.id)
+          if (!before) changes.push(`新增 ${entity.id}: ${entity.asset}@${entity.slot}`)
+          else for (const key of ['asset', 'slot', 'mood', 'motion'] as const)
+            if (before[key] !== entity[key])
+              changes.push(`${entity.id}.${key}: ${before[key]} → ${entity[key]}`)
+        }
+        for (const entity of n.entities)
+          if (!next.entities.some((e) => e.id === entity.id))
+            changes.push(`移除 ${entity.id}`)
+        const target = n.entities.find((e) => e.id === c.target)!
+        output.push(`| ${n.id}/${c.id} → ${next.id} | ${target.asset}@${target.slot}<br>口头：${cell(n.line.text)}<br>文字标签：${cell(c.label)} | ${changes.join('<br>') || '实体和背景属性无变化'} | ${cell(c.consequence)} |`)
+      }
+    }
     output.push(
       '',
       '验收路径：',
@@ -55,11 +82,11 @@ if (args.includes('--review')) {
       '',
     )
   }
-  writeFileSync(
-    'docs/production/SAMPLE_STORYBOARDS.md',
-    output.join('\n') + '\n',
-  )
-  console.log('Exported review storyboards from current JSON.')
+  if (requested.length) console.log(output.join('\n'))
+  else {
+    writeFileSync('docs/production/SAMPLE_STORYBOARDS.md', output.join('\n') + '\n')
+    console.log('Exported review storyboards from current JSON.')
+  }
 } else if (args.includes('--export')) {
   writeFileSync(
     'docs/production/story.schema.json',
