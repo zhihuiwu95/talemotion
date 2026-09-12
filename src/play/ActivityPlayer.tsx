@@ -1,3 +1,4 @@
+import { legacyClipId } from '../runtime/audio/narrationLookup'
 import { FEEDBACK_MIN_MS, useInteractionGuard } from './useInteractionGuard'
 import { useEffect, useRef, useState } from 'react'
 import { EdgeAudioProvider } from '../runtime/audio/EdgeAudioProvider'
@@ -44,7 +45,7 @@ export function ActivityPlayer({
       return
     }
     try {
-      audio.speak({ text, onComplete: done })
+      audio.speak({ id: legacyClipId(text), text, onComplete: done })
     } catch {
       setFailed(true)
       done?.()

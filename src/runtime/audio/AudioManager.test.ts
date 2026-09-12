@@ -31,6 +31,7 @@ describe('AudioManager', () => {
       '当前浏览器无法播放旁白，动画将继续静音播放。',
     )
     expect(speech.speak).toHaveBeenCalledWith({
+      id: 'missing:legacy',
       text: '从前有一片森林',
       voice: undefined,
       lang: 'zh-CN',

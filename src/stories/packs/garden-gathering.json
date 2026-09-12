@@ -68,7 +68,22 @@
       "line": {
         "speaker": "朵朵",
         "text": "小狐狸和小猫想办小聚会。先听听小狐狸吧。",
-        "style": "story"
+        "style": "story",
+        "segments": [
+          {
+            "text": "小狐狸和小猫想办小聚会。先听听小狐狸吧。",
+            "pronunciations": [
+              {
+                "text": "和",
+                "phoneme": "he2"
+              },
+              {
+                "text": "会",
+                "phoneme": "hui4"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点小狐狸，听听它的想法",
       "interaction": {
@@ -123,7 +138,22 @@
       "line": {
         "speaker": "小狐狸",
         "text": "我想把野餐篮摆在花旁，边吃点心边看花。点点小猫，听听它吧。",
-        "style": "affectionate"
+        "style": "affectionate",
+        "segments": [
+          {
+            "text": "我想把野餐篮摆在花旁，边吃点心边看花。点点小猫，听听它吧。",
+            "pronunciations": [
+              {
+                "text": "把",
+                "phoneme": "ba3"
+              },
+              {
+                "text": "看",
+                "phoneme": "kan4"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点小猫，听听它吧",
       "interaction": {
@@ -178,7 +208,36 @@
       "line": {
         "speaker": "小猫",
         "text": "花旁留点空地就好。篮子放花边、放左边草地，我都愿意。",
-        "style": "affectionate"
+        "style": "affectionate",
+        "segments": [
+          {
+            "text": "花旁留点空地就好。篮子放花边、放左边草地，我都愿意。",
+            "pronunciations": [
+              {
+                "text": "空",
+                "phoneme": "kong4"
+              },
+              {
+                "text": "地",
+                "phoneme": "di4",
+                "occurrence": 1
+              },
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              },
+              {
+                "text": "地",
+                "phoneme": "di4",
+                "occurrence": 2
+              },
+              {
+                "text": "都",
+                "phoneme": "dou1"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点野餐篮，一起搬到中间",
       "interaction": {
@@ -233,7 +292,38 @@
       "line": {
         "speaker": "朵朵",
         "text": "谢谢你帮忙搬篮子！它到中间了，花旁也留着空地。",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "谢谢你帮忙搬篮子！它到中间了，花旁也留着空地。",
+            "pronunciations": [
+              {
+                "text": "中",
+                "phoneme": "zhong1"
+              },
+              {
+                "text": "间",
+                "phoneme": "jian1"
+              },
+              {
+                "text": "了",
+                "phoneme": "le5"
+              },
+              {
+                "text": "着",
+                "phoneme": "zhe5"
+              },
+              {
+                "text": "空",
+                "phoneme": "kong4"
+              },
+              {
+                "text": "地",
+                "phoneme": "di4"
+              }
+            ]
+          }
+        ]
       },
       "cue": "看，篮子到中间啦",
       "next": "choose-place"
@@ -275,7 +365,28 @@
       "line": {
         "speaker": "小狐狸",
         "text": "两个地方我也都喜欢。点花留在这里，点篮子去左边草地。",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "两个地方我也都喜欢。点花留在这里，点篮子去左边草地。",
+            "pronunciations": [
+              {
+                "text": "地",
+                "phoneme": "di4",
+                "occurrence": 1
+              },
+              {
+                "text": "都",
+                "phoneme": "dou1"
+              },
+              {
+                "text": "地",
+                "phoneme": "di4",
+                "occurrence": 2
+              }
+            ]
+          }
+        ]
       },
       "cue": "点花留这里，点篮子去左边",
       "interaction": {
@@ -338,7 +449,26 @@
       "line": {
         "speaker": "小狐狸",
         "text": "谢谢你帮我们选好地方！花儿轻轻点头。我们在花边小聚会吧！",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "谢谢你帮我们选好地方！花儿轻轻点头。我们在花边小聚会吧！",
+            "pronunciations": [
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              },
+              {
+                "text": "地",
+                "phoneme": "di4"
+              },
+              {
+                "text": "会",
+                "phoneme": "hui4"
+              }
+            ]
+          }
+        ]
       },
       "cue": "想再选一次，也可以从头再玩。"
     },
@@ -379,7 +509,40 @@
       "line": {
         "speaker": "小猫",
         "text": "谢谢你帮我们选好地方！篮子留在开阔草地，花也有自己的小空间。",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "谢谢你帮我们选好地方！篮子留在开阔草地，花也有自己的小空间。",
+            "pronunciations": [
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              },
+              {
+                "text": "地",
+                "phoneme": "di4",
+                "occurrence": 1
+              },
+              {
+                "text": "地",
+                "phoneme": "di4",
+                "occurrence": 2
+              },
+              {
+                "text": "的",
+                "phoneme": "de5"
+              },
+              {
+                "text": "空",
+                "phoneme": "kong1"
+              },
+              {
+                "text": "间",
+                "phoneme": "jian1"
+              }
+            ]
+          }
+        ]
       },
       "cue": "想再选一次，也可以从头再玩。"
     }

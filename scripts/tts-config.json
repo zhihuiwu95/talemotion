@@ -1,7 +1,206 @@
 {
-  "version": "azure-ssml-v1",
+  "version": "azure-director-v3-approved",
   "provider": "azure",
   "region": "eastus",
-  "voice": "zh-CN-XiaoxiaoMultilingualNeural",
-  "format": "audio-24khz-96kbitrate-mono-mp3"
+  "format": "audio-24khz-96kbitrate-mono-mp3",
+  "voiceProfiles": {
+    "narrator": {
+      "voice": "zh-CN-XiaoxiaoMultilingualNeural",
+      "defaultStyle": "story",
+      "rate": "-8%",
+      "pitch": "+0Hz",
+      "styleDegree": 1.0
+    },
+    "duoduo": {
+      "voice": "zh-CN-XiaoyiNeural",
+      "defaultStyle": "cheerful",
+      "rate": "-1%",
+      "pitch": "+1Hz",
+      "styleDegree": 1.0,
+      "styleMap": {
+        "excited": "cheerful",
+        "empathetic": "gentle",
+        "story": "gentle"
+      }
+    },
+    "bear": {
+      "voice": "zh-CN-YunxiNeural",
+      "defaultStyle": "narration-relaxed",
+      "rate": "-6%",
+      "pitch": "-3Hz",
+      "styleDegree": 1.0,
+      "styleMap": {
+        "excited": "narration-relaxed",
+        "affectionate": "narration-relaxed",
+        "gentle": "narration-relaxed",
+        "empathetic": "narration-relaxed",
+        "story": "narration-relaxed",
+        "cheerful": "narration-relaxed"
+      },
+      "emotionOverrides": {
+        "curious": {
+          "pitch": "-1Hz"
+        },
+        "cheerful": {
+          "style": "narration-relaxed",
+          "styleDegree": 1.1,
+          "rate": "-2%",
+          "pitch": "-3Hz"
+        },
+        "excited": {
+          "style": "narration-relaxed",
+          "styleDegree": 1.1,
+          "rate": "-2%",
+          "pitch": "-3Hz"
+        },
+        "surprised": {
+          "pitch": "-1Hz"
+        }
+      }
+    },
+    "fox": {
+      "voice": "zh-CN-XiaohanNeural",
+      "defaultStyle": "cheerful",
+      "rate": "+1%",
+      "pitch": "+1Hz",
+      "styleDegree": 1.0,
+      "styleMap": {
+        "excited": "cheerful",
+        "empathetic": "gentle",
+        "story": "gentle"
+      }
+    }
+  },
+  "speakers": {
+    "narrator": {
+      "speaker": "narrator",
+      "voiceProfile": "narrator"
+    },
+    "旁白": {
+      "speaker": "narrator",
+      "voiceProfile": "narrator"
+    },
+    "duoduo": {
+      "speaker": "duoduo",
+      "voiceProfile": "duoduo"
+    },
+    "朵朵": {
+      "speaker": "duoduo",
+      "voiceProfile": "duoduo"
+    },
+    "朵朵警官": {
+      "speaker": "duoduo",
+      "voiceProfile": "duoduo"
+    },
+    "bear": {
+      "speaker": "bear",
+      "voiceProfile": "bear"
+    },
+    "小熊": {
+      "speaker": "bear",
+      "voiceProfile": "bear"
+    },
+    "fox": {
+      "speaker": "fox",
+      "voiceProfile": "fox"
+    },
+    "小狐狸": {
+      "speaker": "fox",
+      "voiceProfile": "fox"
+    },
+    "cat": {
+      "speaker": "cat",
+      "voiceProfile": "duoduo"
+    },
+    "小猫": {
+      "speaker": "cat",
+      "voiceProfile": "duoduo"
+    },
+    "rabbit": {
+      "speaker": "rabbit",
+      "voiceProfile": "duoduo"
+    },
+    "小兔": {
+      "speaker": "rabbit",
+      "voiceProfile": "duoduo"
+    }
+  },
+  "intentPresets": {
+    "narration": {
+      "rate": "-8%"
+    },
+    "dialogue": {},
+    "prompt": {
+      "rate": "-2%"
+    },
+    "hint": {
+      "rate": "-10%"
+    },
+    "success": {
+      "styleDegree": 1.15
+    },
+    "comfort": {
+      "rate": "-10%"
+    },
+    "question": {
+      "rate": "-2%"
+    },
+    "ending": {
+      "rate": "-8%"
+    }
+  },
+  "emotionPresets": {
+    "neutral": {},
+    "warm": {
+      "style": "affectionate",
+      "styleDegree": 1.1,
+      "rate": "-8%"
+    },
+    "gentle": {
+      "style": "gentle",
+      "styleDegree": 1.1,
+      "rate": "-10%"
+    },
+    "curious": {
+      "styleDegree": 1.1,
+      "rate": "-2%",
+      "pitch": "+2Hz"
+    },
+    "cheerful": {
+      "style": "cheerful",
+      "styleDegree": 1.2,
+      "rate": "+0%",
+      "pitch": "+2Hz"
+    },
+    "excited": {
+      "style": "excited",
+      "styleDegree": 1.35,
+      "rate": "+5%",
+      "pitch": "+3Hz"
+    },
+    "empathetic": {
+      "style": "empathetic",
+      "styleDegree": 1.15,
+      "rate": "-10%"
+    },
+    "sad": {
+      "style": "sad",
+      "styleDegree": 1.1,
+      "rate": "-12%"
+    },
+    "surprised": {
+      "styleDegree": 1.2,
+      "rate": "+2%",
+      "pitch": "+3Hz"
+    }
+  },
+  "segmentation": {
+    "default": "none",
+    "pauseMs": {
+      "。": 220,
+      "！": 180,
+      "？": 220,
+      "……": 260
+    }
+  }
 }

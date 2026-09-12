@@ -2,7 +2,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import manifest from '../../generated/narration.json'
 import { EdgeAudioProvider } from './EdgeAudioProvider'
 
-const text = Object.keys(manifest.clips)[0]!
+const id = Object.keys(manifest.clips)[0]!
+const text = (manifest.clips as Record<string, { text: string }>)[id]!.text
 let play: ReturnType<typeof vi.spyOn>
 beforeEach(() => {
   play = vi
@@ -16,23 +17,34 @@ afterEach(() => {
   vi.restoreAllMocks()
 })
 describe('Edge audio playback', () => {
+  it('uses the explicit clip ID, never another character recording with matching text', () => {
+    const status = vi.fn()
+    const speech = new EdgeAudioProvider(status)
+    speech.speak({ id, text: 'text is not used to choose audio' })
+    expect(document.querySelector('audio')!.getAttribute('src')).toBe(`/${(manifest.clips as Record<string, { src: string }>)[id]!.src}`)
+    speech.speak({ id: 'unknown:clip', text })
+    expect(status).toHaveBeenLastCalledWith(true)
+    expect(play).toHaveBeenCalledOnce()
+    speech.dispose()
+  })
+
   it('signals completion once, ignores cancelled clips, and releases missing/failed audio', async () => {
     const done = vi.fn()
     const speech = new EdgeAudioProvider()
-    speech.speak({ text, onComplete: done })
+    speech.speak({ id, text, onComplete: done })
     const element = document.querySelector('audio')!
     const stale = element.onended as () => void
     speech.cancel()
     stale()
     expect(done).not.toHaveBeenCalled()
-    speech.speak({ text, onComplete: done })
+    speech.speak({ id, text, onComplete: done })
     element.dispatchEvent(new Event('ended'))
     element.dispatchEvent(new Event('ended'))
     expect(done).toHaveBeenCalledOnce()
     speech.speak({ text: 'missing', onComplete: done })
     expect(done).toHaveBeenCalledTimes(2)
     play.mockRejectedValueOnce(new Error('denied'))
-    speech.speak({ text, onComplete: done })
+    speech.speak({ id, text, onComplete: done })
     await Promise.resolve()
     await Promise.resolve()
     expect(done).toHaveBeenCalledTimes(3)
@@ -41,13 +53,13 @@ describe('Edge audio playback', () => {
   it('starts immediately on the caller gesture, reuses the element and disposes it', async () => {
     const status = vi.fn()
     const speech = new EdgeAudioProvider(status)
-    speech.speak({ text })
+    speech.speak({ id, text })
     expect(play).toHaveBeenCalledOnce()
     const element = document.querySelector('audio')!
     expect(element.src).toContain('/audio/')
     await Promise.resolve()
     expect(status).toHaveBeenLastCalledWith(false)
-    speech.speak({ text })
+    speech.speak({ id, text })
     expect(document.querySelectorAll('audio')).toHaveLength(1)
     speech.pause()
     speech.resume()
@@ -67,18 +79,18 @@ describe('Edge audio playback', () => {
     )
     const status = vi.fn()
     const speech = new EdgeAudioProvider(status)
-    speech.speak({ text })
-    speech.speak({ text })
+    speech.speak({ id, text })
+    speech.speak({ id, text })
     rejectOld(new Error('old request aborted'))
     await Promise.resolve()
     await Promise.resolve()
     expect(status).not.toHaveBeenCalledWith(true)
     play.mockRejectedValueOnce(new Error('autoplay denied'))
-    speech.speak({ text })
+    speech.speak({ id, text })
     await Promise.resolve()
     await Promise.resolve()
     expect(status).toHaveBeenLastCalledWith(true)
-    speech.speak({ text })
+    speech.speak({ id, text })
     await Promise.resolve()
     expect(status).toHaveBeenLastCalledWith(false)
     speech.dispose()
@@ -86,7 +98,7 @@ describe('Edge audio playback', () => {
   it('reports missing recordings and cancels current speech without falling back to device TTS', () => {
     const status = vi.fn()
     const speech = new EdgeAudioProvider(status)
-    speech.speak({ text })
+    speech.speak({ id, text })
     speech.speak({ text: 'unpublished recording' })
     expect(status).toHaveBeenLastCalledWith(true)
     expect(document.querySelector('audio')!.getAttribute('src')).toBeNull()

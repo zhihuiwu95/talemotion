@@ -54,7 +54,30 @@
       "line": {
         "speaker": "朵朵",
         "text": "小熊少了一只手套。点点它，问问怎么啦？",
-        "style": "story"
+        "style": "story",
+        "segments": [
+          {
+            "text": "小熊少了一只手套。点点它，问问怎么啦？",
+            "pronunciations": [
+              {
+                "text": "少",
+                "phoneme": "shao3"
+              },
+              {
+                "text": "了",
+                "phoneme": "le5"
+              },
+              {
+                "text": "只",
+                "phoneme": "zhi1"
+              },
+              {
+                "text": "啦",
+                "phoneme": "la5"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点画面，和朋友一起玩",
       "interaction": {
@@ -109,7 +132,22 @@
       "line": {
         "speaker": "小熊",
         "text": "手套落在雪松旁了。帮我找找吧！",
-        "style": "affectionate"
+        "style": "affectionate",
+        "segments": [
+          {
+            "text": "手套落在雪松旁了。帮我找找吧！",
+            "pronunciations": [
+              {
+                "text": "落",
+                "phoneme": "luo4"
+              },
+              {
+                "text": "了",
+                "phoneme": "le5"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点积雪，也可以看看雪松",
       "interaction": {
@@ -172,7 +210,30 @@
       "line": {
         "speaker": "朵朵",
         "text": "小鸟飞出来啦！它指着那堆雪呢！",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "小鸟飞出来啦！它指着那堆雪呢！",
+            "pronunciations": [
+              {
+                "text": "啦",
+                "phoneme": "la5"
+              },
+              {
+                "text": "着",
+                "phoneme": "zhe5"
+              },
+              {
+                "text": "那",
+                "phoneme": "na4"
+              },
+              {
+                "text": "呢",
+                "phoneme": "ne5"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点画面，和朋友一起玩",
       "next": "search-clue"
@@ -207,7 +268,36 @@
       "line": {
         "speaker": "朵朵",
         "text": "雪里露出了一角，拨开看看吧！",
-        "style": "story"
+        "style": "story",
+        "segments": [
+          {
+            "text": "雪里露出了一角，拨开看看吧！",
+            "pronunciations": [
+              {
+                "text": "露",
+                "phoneme": "lu4"
+              },
+              {
+                "text": "了",
+                "phoneme": "le5"
+              },
+              {
+                "text": "角",
+                "phoneme": "jiao3"
+              },
+              {
+                "text": "看",
+                "phoneme": "kan4",
+                "occurrence": 1
+              },
+              {
+                "text": "看",
+                "phoneme": "kan4",
+                "occurrence": 2
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点画面，和朋友一起玩",
       "interaction": {
@@ -262,7 +352,36 @@
       "line": {
         "speaker": "小熊",
         "text": "我戴的是红色条纹手套。把一样的送给我吧！",
-        "style": "story"
+        "style": "story",
+        "segments": [
+          {
+            "text": "我戴的是红色条纹手套。把一样的送给我吧！",
+            "pronunciations": [
+              {
+                "text": "的",
+                "phoneme": "de5",
+                "occurrence": 1
+              },
+              {
+                "text": "色",
+                "phoneme": "se4"
+              },
+              {
+                "text": "把",
+                "phoneme": "ba3"
+              },
+              {
+                "text": "的",
+                "phoneme": "de5",
+                "occurrence": 2
+              },
+              {
+                "text": "给",
+                "phoneme": "gei3"
+              }
+            ]
+          }
+        ]
       },
       "cue": "看看小熊的手套，再点点一样的",
       "interaction": {
@@ -325,7 +444,48 @@
       "line": {
         "speaker": "朵朵",
         "text": "这只是蓝色圆点的。再看看小熊的红色条纹吧。",
-        "style": "empathetic"
+        "style": "empathetic",
+        "segments": [
+          {
+            "text": "这只是蓝色圆点的。再看看小熊的红色条纹吧。",
+            "pronunciations": [
+              {
+                "text": "只",
+                "phoneme": "zhi1"
+              },
+              {
+                "text": "色",
+                "phoneme": "se4",
+                "occurrence": 1
+              },
+              {
+                "text": "的",
+                "phoneme": "de5",
+                "occurrence": 1
+              },
+              {
+                "text": "看",
+                "phoneme": "kan4",
+                "occurrence": 1
+              },
+              {
+                "text": "看",
+                "phoneme": "kan4",
+                "occurrence": 2
+              },
+              {
+                "text": "的",
+                "phoneme": "de5",
+                "occurrence": 2
+              },
+              {
+                "text": "色",
+                "phoneme": "se4",
+                "occurrence": 2
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点画面，和朋友一起玩",
       "next": "match"
@@ -360,7 +520,30 @@
       "line": {
         "speaker": "小熊",
         "text": "你找到一样的条纹啦！手暖和了，谢谢你！",
-        "style": "excited"
+        "style": "excited",
+        "segments": [
+          {
+            "text": "你找到一样的条纹啦！手暖和了，谢谢你！",
+            "pronunciations": [
+              {
+                "text": "的",
+                "phoneme": "de5"
+              },
+              {
+                "text": "啦",
+                "phoneme": "la5"
+              },
+              {
+                "text": "和",
+                "phoneme": "huo5"
+              },
+              {
+                "text": "了",
+                "phoneme": "le5"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点画面，和朋友一起玩",
       "next": "play"
@@ -402,7 +585,18 @@
       "line": {
         "speaker": "小熊",
         "text": "一起堆雪人，还是踩脚印？你来选！",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "一起堆雪人，还是踩脚印？你来选！",
+            "pronunciations": [
+              {
+                "text": "还",
+                "phoneme": "hai2"
+              }
+            ]
+          }
+        ]
       },
       "cue": "堆雪人、踩脚印，都可以",
       "interaction": {
@@ -458,7 +652,26 @@
       "line": {
         "speaker": "小熊",
         "text": "小雪人堆好啦！和你一起玩，真开心！",
-        "style": "excited"
+        "style": "excited",
+        "segments": [
+          {
+            "text": "小雪人堆好啦！和你一起玩，真开心！",
+            "pronunciations": [
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              },
+              {
+                "text": "啦",
+                "phoneme": "la5"
+              },
+              {
+                "text": "和",
+                "phoneme": "he2"
+              }
+            ]
+          }
+        ]
       },
       "cue": "想说说你帮了小熊什么吗？"
     },
@@ -492,7 +705,18 @@
       "line": {
         "speaker": "小熊",
         "text": "一串大脚印，一串小脚印！一起走吧！",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "一串大脚印，一串小脚印！一起走吧！",
+            "pronunciations": [
+              {
+                "text": "大",
+                "phoneme": "da4"
+              }
+            ]
+          }
+        ]
       },
       "cue": "也可以和家人一起找找生活里的脚印。"
     }

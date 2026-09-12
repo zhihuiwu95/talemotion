@@ -1,4 +1,5 @@
-import manifest from '../../generated/narration.json'
+import playback from '../../generated/narration-playback.json'
+import { legacyClipId } from './narrationLookup'
 import type { SpeechProvider, SpeechRequest } from './SpeechProvider'
 
 /** Plays published narration on one reusable media element (legacy class name). */
@@ -19,9 +20,10 @@ export class EdgeAudioProvider implements SpeechProvider {
     }
     return this.audio
   }
-  speak({ text, onComplete }: SpeechRequest): void {
+  speak({ id, text, onComplete }: SpeechRequest): void {
     this.cancel()
-    const source = (manifest.clips as Record<string, string>)[text]
+    const clipId = id ?? legacyClipId(text)
+    const source = (playback as Record<string, string>)[clipId]
     if (!this.available || !source) {
       this.onStatus?.(true)
       onComplete?.()

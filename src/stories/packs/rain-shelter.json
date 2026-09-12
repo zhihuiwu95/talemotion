@@ -61,7 +61,22 @@
       "line": {
         "speaker": "朵朵",
         "text": "小雨来了，野餐篮还在外面。问问小狐狸吧！",
-        "style": "story"
+        "style": "story",
+        "segments": [
+          {
+            "text": "小雨来了，野餐篮还在外面。问问小狐狸吧！",
+            "pronunciations": [
+              {
+                "text": "了",
+                "phoneme": "le5"
+              },
+              {
+                "text": "还",
+                "phoneme": "hai2"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点画面，和朋友一起玩",
       "interaction": {
@@ -116,7 +131,18 @@
       "line": {
         "speaker": "小狐狸",
         "text": "一起搭个小雨棚吧！先把积木支架立起来。",
-        "style": "affectionate"
+        "style": "affectionate",
+        "segments": [
+          {
+            "text": "一起搭个小雨棚吧！先把积木支架立起来。",
+            "pronunciations": [
+              {
+                "text": "把",
+                "phoneme": "ba3"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点积木，先立起支架",
       "interaction": {
@@ -220,7 +246,32 @@
       "line": {
         "speaker": "小狐狸",
         "text": "棚顶用珊瑚色，还是蓝色？都可以挡小雨。",
-        "style": "story"
+        "style": "story",
+        "segments": [
+          {
+            "text": "棚顶用珊瑚色，还是蓝色？都可以挡小雨。",
+            "pronunciations": [
+              {
+                "text": "色",
+                "phoneme": "se4",
+                "occurrence": 1
+              },
+              {
+                "text": "还",
+                "phoneme": "hai2"
+              },
+              {
+                "text": "色",
+                "phoneme": "se4",
+                "occurrence": 2
+              },
+              {
+                "text": "都",
+                "phoneme": "dou1"
+              }
+            ]
+          }
+        ]
       },
       "cue": "选一个喜欢的棚顶",
       "interaction": {
@@ -283,7 +334,30 @@
       "line": {
         "speaker": "小狐狸",
         "text": "棚顶盖好啦！把篮子送进小雨棚吧。",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "棚顶盖好啦！把篮子送进小雨棚吧。",
+            "pronunciations": [
+              {
+                "text": "盖",
+                "phoneme": "gai4"
+              },
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              },
+              {
+                "text": "啦",
+                "phoneme": "la5"
+              },
+              {
+                "text": "把",
+                "phoneme": "ba3"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点野餐篮，送到棚下",
       "interaction": {
@@ -338,7 +412,30 @@
       "line": {
         "speaker": "小狐狸",
         "text": "蓝色小雨棚搭好啦！把篮子送进去吧。",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "蓝色小雨棚搭好啦！把篮子送进去吧。",
+            "pronunciations": [
+              {
+                "text": "色",
+                "phoneme": "se4"
+              },
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              },
+              {
+                "text": "啦",
+                "phoneme": "la5"
+              },
+              {
+                "text": "把",
+                "phoneme": "ba3"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点野餐篮，送到棚下",
       "interaction": {
@@ -386,7 +483,22 @@
       "line": {
         "speaker": "小狐狸",
         "text": "你搭支架，我扶稳，篮子有地方躲雨啦！谢谢你！",
-        "style": "excited"
+        "style": "excited",
+        "segments": [
+          {
+            "text": "你搭支架，我扶稳，篮子有地方躲雨啦！谢谢你！",
+            "pronunciations": [
+              {
+                "text": "地",
+                "phoneme": "di4"
+              },
+              {
+                "text": "啦",
+                "phoneme": "la5"
+              }
+            ]
+          }
+        ]
       },
       "cue": "生活里，也可以一起给玩具搭个小棚。"
     },
@@ -420,7 +532,30 @@
       "line": {
         "speaker": "小狐狸",
         "text": "我们一起搭好了！篮子在棚下，小雨淋不到啦！",
-        "style": "excited"
+        "style": "excited",
+        "segments": [
+          {
+            "text": "我们一起搭好了！篮子在棚下，小雨淋不到啦！",
+            "pronunciations": [
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              },
+              {
+                "text": "了",
+                "phoneme": "le5"
+              },
+              {
+                "text": "淋",
+                "phoneme": "lin2"
+              },
+              {
+                "text": "啦",
+                "phoneme": "la5"
+              }
+            ]
+          }
+        ]
       },
       "cue": "想给这个蓝色小雨棚起个名字吗？"
     }

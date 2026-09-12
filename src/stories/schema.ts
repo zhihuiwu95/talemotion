@@ -6,9 +6,9 @@ import {
   moods,
   motions,
   slots,
-  styles,
 } from './catalog'
 import evidence from './evidence.json'
+import { speechLineSchema } from './speech'
 
 const id = z.string().regex(/^[a-z][a-z0-9-]{0,47}$/)
 const text = (max: number) => z.string().trim().min(1).max(max)
@@ -37,9 +37,7 @@ const node = z
     kind: z.enum(['interactive', 'beat', 'ending']),
     backdrop: z.enum(backdrops),
     entities: z.array(entity).min(1).max(7),
-    line: z
-      .object({ speaker: text(12), text: text(64), style: z.enum(styles) })
-      .strict(),
+    line: speechLineSchema.safeExtend({ text: text(64) }),
     cue: text(32),
     interaction: z
       .object({

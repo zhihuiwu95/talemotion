@@ -1,4 +1,6 @@
 export interface SpeechRequest {
+  /** Published clip identity; preferred by static playback. */
+  id?: string
   text: string
   voice?: string
   lang?: string

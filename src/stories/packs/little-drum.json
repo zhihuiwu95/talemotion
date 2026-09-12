@@ -109,7 +109,22 @@
       "line": {
         "speaker": "小猫",
         "text": "我还想敲完这一小段。也听听小狐狸的想法吧。",
-        "style": "affectionate"
+        "style": "affectionate",
+        "segments": [
+          {
+            "text": "我还想敲完这一小段。也听听小狐狸的想法吧。",
+            "pronunciations": [
+              {
+                "text": "还",
+                "phoneme": "hai2"
+              },
+              {
+                "text": "的",
+                "phoneme": "de5"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点画面，和朋友一起玩",
       "interaction": {
@@ -171,7 +186,22 @@
       "line": {
         "speaker": "小狐狸",
         "text": "我也想参加。等一小段再敲，还是先拍手一起玩？",
-        "style": "affectionate"
+        "style": "affectionate",
+        "segments": [
+          {
+            "text": "我也想参加。等一小段再敲，还是先拍手一起玩？",
+            "pronunciations": [
+              {
+                "text": "参",
+                "phoneme": "can1"
+              },
+              {
+                "text": "还",
+                "phoneme": "hai2"
+              }
+            ]
+          }
+        ]
       },
       "cue": "等一等，或先拍手，都可以",
       "interaction": {
@@ -227,7 +257,18 @@
       "line": {
         "speaker": "小猫",
         "text": "好呀！我敲完这一小段，就轮到你。",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "好呀！我敲完这一小段，就轮到你。",
+            "pronunciations": [
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点画面，和朋友一起玩",
       "next": "pass"
@@ -262,7 +303,26 @@
       "line": {
         "speaker": "小猫",
         "text": "我敲完啦！把小鼓轻轻递给小狐狸吧。",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "我敲完啦！把小鼓轻轻递给小狐狸吧。",
+            "pronunciations": [
+              {
+                "text": "啦",
+                "phoneme": "la5"
+              },
+              {
+                "text": "把",
+                "phoneme": "ba3"
+              },
+              {
+                "text": "给",
+                "phoneme": "gei3"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点小鼓，轻轻递过去",
       "interaction": {
@@ -310,7 +370,26 @@
       "line": {
         "speaker": "小狐狸",
         "text": "谢谢你把小鼓递过来！轮到我敲一小段啦。",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "谢谢你把小鼓递过来！轮到我敲一小段啦。",
+            "pronunciations": [
+              {
+                "text": "把",
+                "phoneme": "ba3"
+              },
+              {
+                "text": "过",
+                "phoneme": "guo4"
+              },
+              {
+                "text": "啦",
+                "phoneme": "la5"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点画面，和朋友一起玩",
       "next": "tap"
@@ -345,7 +424,18 @@
       "line": {
         "speaker": "朵朵",
         "text": "点点小鼓，和小狐狸一起敲一小段吧！",
-        "style": "story"
+        "style": "story",
+        "segments": [
+          {
+            "text": "点点小鼓，和小狐狸一起敲一小段吧！",
+            "pronunciations": [
+              {
+                "text": "和",
+                "phoneme": "he2"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点画面，和朋友一起玩",
       "interaction": {
@@ -393,7 +483,22 @@
       "line": {
         "speaker": "小狐狸",
         "text": "咚咚，咚咚！我们轮流玩，都有自己的小节奏。",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "咚咚，咚咚！我们轮流玩，都有自己的小节奏。",
+            "pronunciations": [
+              {
+                "text": "都",
+                "phoneme": "dou1"
+              },
+              {
+                "text": "的",
+                "phoneme": "de5"
+              }
+            ]
+          }
+        ]
       },
       "cue": "生活里，也可以说说自己想怎么玩。"
     },
@@ -434,7 +539,18 @@
       "line": {
         "speaker": "小猫",
         "text": "好呀，我敲鼓，你拍手！点点小手，一起试试。",
-        "style": "cheerful"
+        "style": "cheerful",
+        "segments": [
+          {
+            "text": "好呀，我敲鼓，你拍手！点点小手，一起试试。",
+            "pronunciations": [
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              }
+            ]
+          }
+        ]
       },
       "cue": "点点小手，加入小乐队",
       "interaction": {

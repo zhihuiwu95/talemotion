@@ -9,3 +9,5 @@ coverage
 __pycache__/
 scripts/narration-input.json
 public/audio/*.tmp
+
+tmp/

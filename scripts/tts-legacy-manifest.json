@@ -1,0 +1,725 @@
+{
+  "version": "azure-ssml-v1",
+  "provider": "azure",
+  "region": "eastus",
+  "voice": "zh-CN-XiaoxiaoMultilingualNeural",
+  "format": "audio-24khz-96kbitrate-mono-mp3",
+  "clips": {
+    "你好，我是朵朵警官。小伙伴的手套混在一起啦。一起帮手套找朋友吧！": "audio/51e629fcfc832e1b5c74.mp3",
+    "大家的手套都找齐啦！谢谢你。现在，和爸爸妈妈找一双真的袜子，帮它们也配成一对吧！": "audio/4d73dbec8a634de27e9f.mp3",
+    "今天先玩到这里。谢谢你帮忙，我们下次见！": "audio/91b0ef37feab33ff0470.mp3",
+    "小熊有一只手套。哪一只和它一样呢？点一点吧。": "audio/d674658ab8245b4b2c07.mp3",
+    "你真棒！谢谢你帮小熊找到手套！": "audio/9583f36d6d8257f20533.mp3",
+    "这两只不一样。看看小熊的手套，红红的，还有一道道条纹。再找找吧。": "audio/364ee7fc234a6af4e88b.mp3",
+    "小狐狸有一只手套。哪一只和它一样呢？点一点吧。": "audio/2fedd3d1c4a2ffe2a0bc.mp3",
+    "太厉害了！谢谢你帮小狐狸找到手套！": "audio/71b000605c854b3db1dd.mp3",
+    "这两只不一样。看看小狐狸的手套，蓝蓝的，还有圆圆的点点。再找找吧。": "audio/65ca4c608fb7bc158546.mp3",
+    "小猫有一只手套。哪一只和它一样呢？点一点吧。": "audio/b5c96bc6c69bcfd34a15.mp3",
+    "找齐啦！谢谢你帮小猫找到手套！": "audio/af3a33657128c061f52f.mp3",
+    "这两只不一样。看看小猫的手套，黄黄的，还有一颗星星。再找找吧。": "audio/23f6223b9a94cd03374a.mp3",
+    "你好，我是朵朵警官。小伙伴的手套混在一起啦。一起帮手套找朋友吧！小熊有一只手套。哪一只和它一样呢？点一点吧。": "audio/9d5449ee4826e281b4ff.mp3",
+    "小熊要去野餐啦。我们来帮忙，找找大大的、小小的东西。": "audio/f32763e34d873ae25575.mp3",
+    "野餐准备好啦！谢谢你。和爸爸妈妈找两个大小不同的杯子，指一指大杯子和小杯子吧。": "audio/7a4d83ab20dab5ba03eb.mp3",
+    "小熊要去野餐啦。我们来帮忙，找找大大的、小小的东西。小熊想用大碗。点一点大碗吧。": "audio/fb912f82243db880d8aa.mp3",
+    "小熊想用大碗。点一点大碗吧。": "audio/2011777287b3f378b3ba.mp3",
+    "两个碗放在一起，哪一个占的地方更大呢？": "audio/bdc382562767fcb9791c.mp3",
+    "你真棒！谢谢你帮小熊找到大碗！": "audio/20782df47a3597ab5df1.mp3",
+    "小猫想用小杯子。点一点小杯子吧。": "audio/d97185a64415b42735a6.mp3",
+    "看看两个杯子，找找小小的那一个。": "audio/7bfa51cb61b62d3a8548.mp3",
+    "太棒啦！小猫有杯子喝水了！": "audio/7896a82b4815db1d3be6.mp3",
+    "还要一块大野餐垫。点一点大垫子吧。": "audio/5bf456029060636dc87e.mp3",
+    "哪一块垫子能坐下更多小伙伴呢？": "audio/7fb7af26e11b64ae3ede.mp3",
+    "太厉害了！大家能坐在一起啦！": "audio/c006a630ecc210f5dca9.mp3",
+    "小猫要收好小球。我们一起找找，小球在哪里。": "audio/5fa3c791ab95a0cb0c21.mp3",
+    "小球找齐啦！现在拿一个真的玩具和盒子，和爸爸妈妈试试，把玩具放到盒子里面吧。": "audio/c828f688386ead53c52e.mp3",
+    "小猫要收好小球。我们一起找找，小球在哪里。点一点，盒子里面的小球。": "audio/be7613a4c46825186003.mp3",
+    "点一点，盒子里面的小球。": "audio/af65aab403cc791c4e52.mp3",
+    "小球躲进盒子里啦。看看盒子里有没有小球。": "audio/3dc6b08ccae321f0662f.mp3",
+    "你真棒！小球就在盒子里面！": "audio/05988c4c503a653c45d7.mp3",
+    "点一点，凳子上面的小球。": "audio/f8e000158650bfb2ccdb.mp3",
+    "看看凳子的座位，小球坐在上面呢。": "audio/8d15fce83b45aa5afef9.mp3",
+    "找到了！你看得真仔细！": "audio/5e131a49fbd73db5b1b9.mp3",
+    "点一点，凳子下面的小球。": "audio/494f8884309fd20b7c45.mp3",
+    "往凳子腿中间看看，小球躲在下面。": "audio/4cab58484ccb4bf2fa28.mp3",
+    "找齐啦！谢谢你帮助小猫！": "audio/7068b6855a3bc4200ac8.mp3",
+    "小熊种了一盆小花。土干干的。我们一起给小花浇水吧。": "audio/e2929e121dc7f7ec22af.mp3",
+    "小花喝到水啦。和爸爸妈妈照顾一盆真的植物吧。先装一点水，再慢慢浇到土里。": "audio/89a65100ab975457fecf.mp3",
+    "小熊种了一盆小花。土干干的。我们一起给小花浇水吧。要给花浇水，拿哪一个呢？": "audio/211d27e46e5bd7f6d2ae.mp3",
+    "要给花浇水，拿哪一个呢？": "audio/ea8b5f27709b1e6f115c.mp3",
+    "找找能装水、能把水倒出来的东西。": "audio/6c325309a6417d2d05b1.mp3",
+    "你真棒！拿到水壶啦！": "audio/be8a56de9c29c37030fc.mp3",
+    "水壶空空的。先给水壶装水吧。": "audio/473e5586f9435f0be0a3.mp3",
+    "空水壶还没有水。找找正在装水的那张图。": "audio/847c0dabe8651b731b75.mp3",
+    "太好了！可以给小花喝水啦！": "audio/607fa9446379faec81ea.mp3",
+    "水装好啦。现在给小花浇水吧。": "audio/3c7286f10f66c2064b2a.mp3",
+    "把水轻轻倒在花盆的土里。": "audio/9b2df319f0edbb1fb1d6.mp3",
+    "小花喝到水啦！谢谢你照顾它！": "audio/a0d3c24ae59b40efed85.mp3",
+    "咦，小熊在搓手。点点它，问问怎么啦？": "audio/47cdde343762c834968b.mp3",
+    "我的手套落在雪松旁了。帮我找找好吗？": "audio/5b73dd941b095d51bd4f.mp3",
+    "小鸟飞出来啦！它指着那堆雪呢！": "audio/8e5888ce20088a562e9d.mp3",
+    "雪里露出了小小的一角。点开看看吧！": "audio/a9b0668985cfcda438b1.mp3",
+    "我的手套是红色条纹的。把一样的送给我吧！": "audio/da58b3d9b33cf293d036.mp3",
+    "这只是蓝色圆点的。再找找红色条纹吧。": "audio/9356e505767502356a54.mp3",
+    "你真棒！我的手暖和啦，谢谢你！": "audio/4df04141f8ad60e55c63.mp3",
+    "一起堆雪人，还是踩脚印？你来选！": "audio/cc0b8e163c379c8225b2.mp3",
+    "点点小雪球，我们一起堆雪人！": "audio/aafbb28b36fca8c0a385.mp3",
+    "点点前面的雪地，和我一起踩脚印吧！": "audio/f176c89bfc2a50b8a101.mp3",
+    "太厉害了！我们的小雪人会笑啦！和你一起玩，真开心！": "audio/39a3958e5124c26f3641.mp3",
+    "一串大脚印，一串小脚印！和你一起走，真开心！": "audio/9b7dbc67274d0310eccf.mp3",
+    "小狐狸和小猫想办小聚会。先听听小狐狸吧。": "audio/039e9296325c5d7f1537.mp3",
+    "我想把野餐篮摆在花旁，边吃点心边看花。点点小猫，听听它吧。": "audio/99dc31c2eec049e80957.mp3",
+    "花旁留点空地就好。篮子放花边、放左边草地，我都愿意。": "audio/59c68b710e797e9c3662.mp3",
+    "谢谢你帮忙搬篮子！它到中间了，花旁也留着空地。": "audio/fbbaf844c692cdf2ace4.mp3",
+    "两个地方我也都喜欢。点花留在这里，点篮子去左边草地。": "audio/64116e586ced42cd883f.mp3",
+    "谢谢你帮我们选好地方！花儿轻轻点头。我们在花边小聚会吧！": "audio/ba749172121e35dc451f.mp3",
+    "谢谢你帮我们选好地方！篮子留在开阔草地，花也有自己的小空间。": "audio/7376f4499b0463dae467.mp3",
+    "小猫在敲小鼓，小狐狸也想玩。先听听小猫吧。": "audio/56aec980a537181957cf.mp3",
+    "我还想敲完这一小段。也听听小狐狸的想法吧。": "audio/e02526036593abd0cfc4.mp3",
+    "我也想参加。等一小段再敲，还是先拍手一起玩？": "audio/009f7272182fb972d0c2.mp3",
+    "好呀！我敲完这一小段，就轮到你。": "audio/524bcbecc57c7fc316a2.mp3",
+    "我敲完啦！把小鼓轻轻递给小狐狸吧。": "audio/6868694e8257878c08cd.mp3",
+    "谢谢你把小鼓递过来！轮到我敲一小段啦。": "audio/c5c463d43cc7b8df6c60.mp3",
+    "点点小鼓，和小狐狸一起敲一小段吧！": "audio/a2a70285044badd21cc2.mp3",
+    "咚咚，咚咚！我们轮流玩，都有自己的小节奏。": "audio/369d0b292a7fb207c620.mp3",
+    "好呀，我敲鼓，你拍手！点点小手，一起试试。": "audio/717d0227526829311dee.mp3",
+    "咚咚，拍拍！你敲鼓，我拍手，一起玩真开心！": "audio/d155d0ae349628000a11.mp3",
+    "小雨来了，野餐篮还在外面。问问小狐狸吧！": "audio/c4e67e9f93e39d91809d.mp3",
+    "一起搭个小雨棚吧！先把积木支架立起来。": "audio/52fe816677f4f3bd1ee1.mp3",
+    "你立起支架，我来扶稳。我们一起搭！": "audio/e774232c4772a9c74c2f.mp3",
+    "棚顶用珊瑚色，还是蓝色？都可以挡小雨。": "audio/38989bd7d14f7a6ae960.mp3",
+    "棚顶盖好啦！把篮子送进小雨棚吧。": "audio/56212b162e8bc36650fa.mp3",
+    "蓝色小雨棚搭好啦！把篮子送进去吧。": "audio/449c010abf8d561ce820.mp3",
+    "你搭支架，我扶稳，篮子有地方躲雨啦！谢谢你！": "audio/9e09a3f14ec3047d7b1e.mp3",
+    "我们一起搭好了！篮子在棚下，小雨淋不到啦！": "audio/db19e8a2f500fff2f4d4.mp3",
+    "小熊少了一只手套。点点它，问问怎么啦？": "audio/a9382cf8f1366c598be3.mp3",
+    "手套落在雪松旁了。帮我找找吧！": "audio/d984ba54ec9c31267c72.mp3",
+    "雪里露出了一角，拨开看看吧！": "audio/0350dee0a3691ccd7a02.mp3",
+    "我戴的是红色条纹手套。把一样的送给我吧！": "audio/73ef493a57d4152fd541.mp3",
+    "这只是蓝色圆点的。再看看小熊的红色条纹吧。": "audio/e91a988fb73985e46a22.mp3",
+    "你找到一样的条纹啦！手暖和了，谢谢你！": "audio/9a56096bbf29338f6f28.mp3",
+    "小雪人堆好啦！和你一起玩，真开心！": "audio/8f79f9b09c2973efeb22.mp3",
+    "一串大脚印，一串小脚印！一起走吧！": "audio/516664d2df59cf5f8745.mp3",
+    "冬夜很静，松林像一排沉睡的巨人。小兔皮普抱紧围巾，沿着雪地里忽明忽暗的微光，慢慢向前走。": "audio/05caa8718f92026bb82f.mp3",
+    "风把旧脚印一点点盖住，皮普有些害怕。每当它停下，前方的光就轻轻闪一下，像在说：别担心，我在这里。": "audio/5b91845450da899d4d00.mp3",
+    "穿过最后一排松树，它看见一间小木屋。窗边亮着蜂蜜色的灯，门前还留着一串新鲜的小脚印。": "audio/194761898660830309e3.mp3",
+    "皮普刚刚走近，木门便吱呀一声打开。暖光铺在雪上，屋里传来声音：快进来吧，我们一直在等你。": "audio/e2bef30e1ded0598a892.mp3",
+    "门后不是陌生人，而是走散许久的松鼠朋友。桌上有热汤、松果面包，还有一盏专门为皮普留着的小灯。": "audio/bdea7e98d9861404162a.mp3",
+    "朋友说，暴风雪来临前，它们每天都把灯挂在窗边，希望迷路的皮普，能够认出回家的方向。": "audio/a1037f45a8d70ffc3a63.mp3",
+    "窗外的雪越下越轻，屋里的笑声却越来越暖。皮普终于明白，真正照亮森林的，从来不只是一盏灯。": "audio/1d9d84a921a2d00c55cd.mp3",
+    "那一夜，松林深处多了一扇永远为朋友打开的门。无论风雪多大，只要记得彼此，回家的路就不会消失。": "audio/9ebf6ab1a103ee5c7594.mp3"
+  },
+  "settings": {
+    "你好，我是朵朵警官。小伙伴的手套混在一起啦。一起帮手套找朋友吧！": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "大家的手套都找齐啦！谢谢你。现在，和爸爸妈妈找一双真的袜子，帮它们也配成一对吧！": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "今天先玩到这里。谢谢你帮忙，我们下次见！": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小熊有一只手套。哪一只和它一样呢？点一点吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "你真棒！谢谢你帮小熊找到手套！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "这两只不一样。看看小熊的手套，红红的，还有一道道条纹。再找找吧。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小狐狸有一只手套。哪一只和它一样呢？点一点吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "太厉害了！谢谢你帮小狐狸找到手套！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "这两只不一样。看看小狐狸的手套，蓝蓝的，还有圆圆的点点。再找找吧。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小猫有一只手套。哪一只和它一样呢？点一点吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "找齐啦！谢谢你帮小猫找到手套！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "这两只不一样。看看小猫的手套，黄黄的，还有一颗星星。再找找吧。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "你好，我是朵朵警官。小伙伴的手套混在一起啦。一起帮手套找朋友吧！小熊有一只手套。哪一只和它一样呢？点一点吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小熊要去野餐啦。我们来帮忙，找找大大的、小小的东西。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "野餐准备好啦！谢谢你。和爸爸妈妈找两个大小不同的杯子，指一指大杯子和小杯子吧。": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小熊要去野餐啦。我们来帮忙，找找大大的、小小的东西。小熊想用大碗。点一点大碗吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小熊想用大碗。点一点大碗吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "两个碗放在一起，哪一个占的地方更大呢？": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "你真棒！谢谢你帮小熊找到大碗！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小猫想用小杯子。点一点小杯子吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "看看两个杯子，找找小小的那一个。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "太棒啦！小猫有杯子喝水了！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "还要一块大野餐垫。点一点大垫子吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "哪一块垫子能坐下更多小伙伴呢？": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "太厉害了！大家能坐在一起啦！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小猫要收好小球。我们一起找找，小球在哪里。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小球找齐啦！现在拿一个真的玩具和盒子，和爸爸妈妈试试，把玩具放到盒子里面吧。": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小猫要收好小球。我们一起找找，小球在哪里。点一点，盒子里面的小球。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "点一点，盒子里面的小球。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小球躲进盒子里啦。看看盒子里有没有小球。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "你真棒！小球就在盒子里面！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "点一点，凳子上面的小球。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "看看凳子的座位，小球坐在上面呢。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "找到了！你看得真仔细！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "点一点，凳子下面的小球。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "往凳子腿中间看看，小球躲在下面。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "找齐啦！谢谢你帮助小猫！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小熊种了一盆小花。土干干的。我们一起给小花浇水吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小花喝到水啦。和爸爸妈妈照顾一盆真的植物吧。先装一点水，再慢慢浇到土里。": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小熊种了一盆小花。土干干的。我们一起给小花浇水吧。要给花浇水，拿哪一个呢？": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "要给花浇水，拿哪一个呢？": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "找找能装水、能把水倒出来的东西。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "你真棒！拿到水壶啦！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "水壶空空的。先给水壶装水吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "空水壶还没有水。找找正在装水的那张图。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "太好了！可以给小花喝水啦！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "水装好啦。现在给小花浇水吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "把水轻轻倒在花盆的土里。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小花喝到水啦！谢谢你照顾它！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "咦，小熊在搓手。点点它，问问怎么啦？": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "我的手套落在雪松旁了。帮我找找好吗？": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小鸟飞出来啦！它指着那堆雪呢！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "雪里露出了小小的一角。点开看看吧！": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "我的手套是红色条纹的。把一样的送给我吧！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "这只是蓝色圆点的。再找找红色条纹吧。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "你真棒！我的手暖和啦，谢谢你！": {
+      "style": "excited",
+      "styleDegree": "1.1",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "一起堆雪人，还是踩脚印？你来选！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "点点小雪球，我们一起堆雪人！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "点点前面的雪地，和我一起踩脚印吧！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "太厉害了！我们的小雪人会笑啦！和你一起玩，真开心！": {
+      "style": "excited",
+      "styleDegree": "1.1",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "一串大脚印，一串小脚印！和你一起走，真开心！": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小狐狸和小猫想办小聚会。先听听小狐狸吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "我想把野餐篮摆在花旁，边吃点心边看花。点点小猫，听听它吧。": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "花旁留点空地就好。篮子放花边、放左边草地，我都愿意。": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "谢谢你帮忙搬篮子！它到中间了，花旁也留着空地。": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "两个地方我也都喜欢。点花留在这里，点篮子去左边草地。": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "谢谢你帮我们选好地方！花儿轻轻点头。我们在花边小聚会吧！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "谢谢你帮我们选好地方！篮子留在开阔草地，花也有自己的小空间。": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小猫在敲小鼓，小狐狸也想玩。先听听小猫吧。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "我还想敲完这一小段。也听听小狐狸的想法吧。": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "我也想参加。等一小段再敲，还是先拍手一起玩？": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "好呀！我敲完这一小段，就轮到你。": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "我敲完啦！把小鼓轻轻递给小狐狸吧。": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "谢谢你把小鼓递过来！轮到我敲一小段啦。": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "点点小鼓，和小狐狸一起敲一小段吧！": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "咚咚，咚咚！我们轮流玩，都有自己的小节奏。": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "好呀，我敲鼓，你拍手！点点小手，一起试试。": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "咚咚，拍拍！你敲鼓，我拍手，一起玩真开心！": {
+      "style": "excited",
+      "styleDegree": "1.1",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小雨来了，野餐篮还在外面。问问小狐狸吧！": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "一起搭个小雨棚吧！先把积木支架立起来。": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "你立起支架，我来扶稳。我们一起搭！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "棚顶用珊瑚色，还是蓝色？都可以挡小雨。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "棚顶盖好啦！把篮子送进小雨棚吧。": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "蓝色小雨棚搭好啦！把篮子送进去吧。": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "你搭支架，我扶稳，篮子有地方躲雨啦！谢谢你！": {
+      "style": "excited",
+      "styleDegree": "1.1",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "我们一起搭好了！篮子在棚下，小雨淋不到啦！": {
+      "style": "excited",
+      "styleDegree": "1.1",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小熊少了一只手套。点点它，问问怎么啦？": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "手套落在雪松旁了。帮我找找吧！": {
+      "style": "affectionate",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "雪里露出了一角，拨开看看吧！": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "我戴的是红色条纹手套。把一样的送给我吧！": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "这只是蓝色圆点的。再看看小熊的红色条纹吧。": {
+      "style": "empathetic",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "你找到一样的条纹啦！手暖和了，谢谢你！": {
+      "style": "excited",
+      "styleDegree": "1.1",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "小雪人堆好啦！和你一起玩，真开心！": {
+      "style": "excited",
+      "styleDegree": "1.1",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "一串大脚印，一串小脚印！一起走吧！": {
+      "style": "cheerful",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "冬夜很静，松林像一排沉睡的巨人。小兔皮普抱紧围巾，沿着雪地里忽明忽暗的微光，慢慢向前走。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "风把旧脚印一点点盖住，皮普有些害怕。每当它停下，前方的光就轻轻闪一下，像在说：别担心，我在这里。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "穿过最后一排松树，它看见一间小木屋。窗边亮着蜂蜜色的灯，门前还留着一串新鲜的小脚印。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "皮普刚刚走近，木门便吱呀一声打开。暖光铺在雪上，屋里传来声音：快进来吧，我们一直在等你。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "门后不是陌生人，而是走散许久的松鼠朋友。桌上有热汤、松果面包，还有一盏专门为皮普留着的小灯。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "朋友说，暴风雪来临前，它们每天都把灯挂在窗边，希望迷路的皮普，能够认出回家的方向。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "窗外的雪越下越轻，屋里的笑声却越来越暖。皮普终于明白，真正照亮森林的，从来不只是一盏灯。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    },
+    "那一夜，松林深处多了一扇永远为朋友打开的门。无论风雪多大，只要记得彼此，回家的路就不会消失。": {
+      "style": "story",
+      "styleDegree": "1.0",
+      "rate": "-5%",
+      "pitch": "+0Hz"
+    }
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "region": "eastus",
+  "queriedAt": "2026-09-12",
+  "voices": [
+    {
+      "Name": "Microsoft Server Speech Text to Speech Voice (zh-CN, YunxiNeural)",
+      "DisplayName": "Yunxi",
+      "LocalName": "云希",
+      "ShortName": "zh-CN-YunxiNeural",
+      "Gender": "Male",
+      "Locale": "zh-CN",
+      "LocaleName": "Chinese (Mandarin, Simplified)",
+      "StyleList": [
+        "narration-relaxed",
+        "embarrassed",
+        "fearful",
+        "cheerful",
+        "disgruntled",
+        "serious",
+        "angry",
+        "sad",
+        "depressed",
+        "chat",
+        "assistant",
+        "newscast"
+      ],
+      "SampleRateHertz": "48000",
+      "VoiceType": "Neural",
+      "Status": "GA",
+      "RolePlayList": [
+        "Narrator",
+        "YoungAdultMale",
+        "Boy"
+      ],
+      "VoiceTag": {
+        "Capabilities": [
+          "multi-style"
+        ],
+        "ModelSeries": [
+          "Monolingual"
+        ],
+        "PersonaId": [
+          "Yunxi"
+        ],
+        "Source": [
+          "Azure"
+        ],
+        "TailoredScenarios": [
+          "Chat",
+          "Audiobooks"
+        ],
+        "VoicePersonalities": [
+          "Bright",
+          "Animated",
+          "Cheerful"
+        ]
+      },
+      "WordsPerMinute": "293"
+    },
+    {
+      "Name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoyiNeural)",
+      "DisplayName": "Xiaoyi",
+      "LocalName": "晓伊",
+      "ShortName": "zh-CN-XiaoyiNeural",
+      "Gender": "Female",
+      "Locale": "zh-CN",
+      "LocaleName": "Chinese (Mandarin, Simplified)",
+      "StyleList": [
+        "angry",
+        "disgruntled",
+        "affectionate",
+        "cheerful",
+        "fearful",
+        "sad",
+        "embarrassed",
+        "serious",
+        "gentle"
+      ],
+      "SampleRateHertz": "48000",
+      "VoiceType": "Neural",
+      "Status": "GA",
+      "VoiceTag": {
+        "Capabilities": [
+          "multi-style"
+        ],
+        "ModelSeries": [
+          "Monolingual"
+        ],
+        "PersonaId": [
+          "Xiaoyi"
+        ],
+        "Source": [
+          "Azure"
+        ],
+        "TailoredScenarios": [
+          "Chat",
+          "Audiobook"
+        ],
+        "VoicePersonalities": [
+          "Bright",
+          "Emotional",
+          "Engaging"
+        ]
+      },
+      "WordsPerMinute": "263"
+    },
+    {
+      "Name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaohanNeural)",
+      "DisplayName": "Xiaohan",
+      "LocalName": "晓涵",
+      "ShortName": "zh-CN-XiaohanNeural",
+      "Gender": "Female",
+      "Locale": "zh-CN",
+      "LocaleName": "Chinese (Mandarin, Simplified)",
+      "StyleList": [
+        "calm",
+        "fearful",
+        "cheerful",
+        "disgruntled",
+        "serious",
+        "angry",
+        "sad",
+        "gentle",
+        "affectionate",
+        "embarrassed"
+      ],
+      "SampleRateHertz": "48000",
+      "VoiceType": "Neural",
+      "Status": "GA",
+      "VoiceTag": {
+        "Capabilities": [
+          "multi-style"
+        ],
+        "ModelSeries": [
+          "Monolingual"
+        ],
+        "PersonaId": [
+          "Xiaohan"
+        ],
+        "Source": [
+          "Azure"
+        ],
+        "TailoredScenarios": [
+          "Audiobook",
+          "Narration"
+        ],
+        "VoicePersonalities": [
+          "Gentle",
+          "Warm",
+          "Emotional"
+        ]
+      },
+      "WordsPerMinute": "259"
+    },
+    {
+      "Name": "Microsoft Server Speech Text to Speech Voice (zh-CN, XiaoxiaoMultilingualNeural)",
+      "DisplayName": "Xiaoxiao Multilingual",
+      "LocalName": "晓晓 多语言",
+      "ShortName": "zh-CN-XiaoxiaoMultilingualNeural",
+      "Gender": "Female",
+      "Locale": "zh-CN",
+      "LocaleName": "Chinese (Mandarin, Simplified)",
+      "StyleList": [
+        "affectionate",
+        "cheerful",
+        "empathetic",
+        "excited",
+        "poetry-reading",
+        "sorry",
+        "story"
+      ],
+      "SecondaryLocaleList": [
+        "af-ZA",
+        "am-ET",
+        "ar-EG",
+        "ar-SA",
+        "az-AZ",
+        "bg-BG",
+        "bn-BD",
+        "bn-IN",
+        "bs-BA",
+        "ca-ES",
+        "cs-CZ",
+        "cy-GB",
+        "da-DK",
+        "de-AT",
+        "de-CH",
+        "de-DE",
+        "el-GR",
+        "en-AU",
+        "en-CA",
+        "en-GB",
+        "en-IE",
+        "en-IN",
+        "en-US",
+        "es-ES",
+        "es-MX",
+        "es-US",
+        "et-EE",
+        "eu-ES",
+        "fa-IR",
+        "fi-FI",
+        "fil-PH",
+        "fr-BE",
+        "fr-CA",
+        "fr-CH",
+        "fr-FR",
+        "ga-IE",
+        "gl-ES",
+        "he-IL",
+        "hi-IN",
+        "hr-HR",
+        "hu-HU",
+        "hy-AM",
+        "id-ID",
+        "is-IS",
+        "it-IT",
+        "ja-JP",
+        "jv-ID",
+        "ka-GE",
+        "kk-KZ",
+        "km-KH",
+        "kn-IN",
+        "ko-KR",
+        "lo-LA",
+        "lt-LT",
+        "lv-LV",
+        "mk-MK",
+        "ml-IN",
+        "mn-MN",
+        "ms-MY",
+        "mt-MT",
+        "my-MM",
+        "nb-NO",
+        "ne-NP",
+        "nl-BE",
+        "nl-NL",
+        "pl-PL",
+        "ps-AF",
+        "pt-BR",
+        "pt-PT",
+        "ro-RO",
+        "ru-RU",
+        "si-LK",
+        "sk-SK",
+        "sl-SI",
+        "so-SO",
+        "sq-AL",
+        "sr-RS",
+        "su-ID",
+        "sv-SE",
+        "sw-KE",
+        "ta-IN",
+        "te-IN",
+        "th-TH",
+        "tr-TR",
+        "uk-UA",
+        "ur-PK",
+        "uz-UZ",
+        "vi-VN",
+        "zh-CN",
+        "zh-HK",
+        "zh-TW",
+        "zu-ZA"
+      ],
+      "SampleRateHertz": "24000",
+      "VoiceType": "Neural",
+      "Status": "GA",
+      "VoiceTag": {
+        "Capabilities": [
+          "multi-lingual",
+          "multi-style"
+        ],
+        "ModelSeries": [
+          "Multilingual"
+        ],
+        "PersonaId": [
+          "Xiaoxiao"
+        ],
+        "Source": [
+          "Azure"
+        ],
+        "TailoredScenarios": [
+          "Assistant",
+          "Narration"
+        ],
+        "VoicePersonalities": [
+          "Warm",
+          "Animated",
+          "Bright"
+        ]
+      }
+    }
+  ]
+}

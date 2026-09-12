@@ -20,7 +20,7 @@
 1. 阅读任务书、规范、能力说明与一个相关合格样板，写简短目标和梗概；按需查其他样板。
 2. 制作 JSON，运行 `npm run stories:validate -- src/stories/packs/<id>.json`。
 3. 运行 `npm run stories:review -- src/stories/packs/<id>.json`，只输出本篇分镜和实际前后差异。逐项审天气、双方同意、口头操作提示和真实后果，不只看总分。
-4. 先修内容，再运行 `npm run audio:generate` 与一次 `npm run quality`；缓存复用已有音频。
+4. 先修内容，按[生产规范](STORY_STANDARD.md)逐句审阅多音字、标明拼音声调并更新发音审阅表；运行 `npm run audio:pronunciation`，再运行 `npm run audio:generate -- --publish` 与一次 `npm run quality`；缓存复用已有音频。
 5. 纯 JSON 复用既有能力默认不使用 computer use。按[分层验收](EVALUATION.md)记录已完成和待预览维度，有具体布局、资产或播放风险才针对性检查。
 6. 写一份结果记录，区分作者自查、额外审阅、成本来源和家庭试玩。完整分镜由 JSON 导出，不重复手写。
 

@@ -8,7 +8,7 @@
 
 你负责用 TaleMotion 现有能力制作一个亲子互动故事。先读本次任务书、`docs/production/STORY_STANDARD.md`、`CAPABILITIES.md`、`EVALUATION.md` 与 `src/stories/evidence.json`。选择一个最相关且已审阅的样板阅读完整 JSON；只有遇到不同结构才查第二个。第四篇虽已修订，仍未获独立内容评分或实机确认，不作为合格范文。结构不明确时查 Schema 的对应部分，不重复读取整个仓库和生成分镜全集。
 
-只新增 `src/stories/packs/<id>.json` 和 `docs/production/runs/<id>-result.md`。工具可更新旁白清单、音频和生成分镜。保留已有修改，不修改播放器、旧故事、测试、校验器、能力或证据目录；不删除历史音频，不提交、推送或部署。遇到能力缺口如实记录，不放宽规则。
+新增 `src/stories/packs/<id>.json` 和 `docs/production/runs/<id>-result.md`，并为本篇全部台词更新 `scripts/pronunciation-review.json`。工具可更新旁白清单、音频和生成分镜。保留已有修改，不修改播放器、旧故事、测试、校验器、能力或证据目录；不删除历史音频，不提交、推送或部署。遇到能力缺口如实记录，不放宽规则。
 
 按以下顺序执行，已明确的日常步骤无需再次请示：
 
@@ -16,8 +16,8 @@
 2. 制作 JSON，给出覆盖全部节点和选择的 acceptance。核对背景真实含义、关键操作的口头提示、双方实际同意、前后位置与具体感谢。元数据中的解释不能代替角色台词和画面。
 3. 运行 `npm run stories:validate -- src/stories/packs/<id>.json`，记录首次结果。运行 `npm run stories:review -- src/stories/packs/<id>.json`，只审本篇及每条选择的实际差异；此命令输出到终端，不覆盖全部分镜。按内容证据表检查，不能只报总分。
 4. 先修文本与数据，再生成语音。最多两轮针对性修订，分别记录结构错误、内容修稿及额外提示。若仍存在关键表达问题，交付 `content_revision_needed`；若能力不足，交付 `capability_gap`。不将作者自评称为人工或独立审核。
-5. 内容证据无已知阻断项后运行 `npm run audio:generate`，再运行一次 `npm run quality`。密钥只由环境提供，不读取或展示完整 shell 配置或密钥值。没有新修改或失败时不反复全量跑测试。
-6. 按 EVALUATION 的分层验收决定预览范围。纯 JSON 且复用既有资产时默认不使用 computer use；记录 DOM 测试通过，并把视觉、真实播放和实机项目分别标待验证。用户要求或发现布局、新资产、播放异常时才进行针对性浏览器检查，不逐幕截图。没有执行的检查不得写通过。
+5. 逐句执行 STORY_STANDARD 的“多音字与声调”规则：按语境标好拼音和第几声（1～4，轻声 5），把纠音写入 segments.pronunciations，为本篇每条台词保存发音审阅记录。运行 `npm run audio:pronunciation`，修复缺失/过期/不一致项；内容与读音无已知阻断项后运行 `npm run audio:generate -- --publish`，再运行一次 `npm run quality`。密钥只由环境提供，不读取或展示完整 shell 配置或密钥值。没有新修改或失败时不反复全量跑测试。
+6. 按 EVALUATION 的分层验收决定预览范围。纯 JSON 且复用既有资产时默认不使用 computer use；记录 DOM 测试通过，并把视觉、真实播放和实机项目分别标待验证。确需 computer use 时先征得用户明确确认，然后才进行针对性浏览器检查，不逐幕截图。没有执行的检查不得写通过。
 7. 填写结果记录，区分模型自查、其他审阅者和人工介入；身份或费用不知道就写未知，不自猜型号。交付本地路由、文件、检查结果及未完成项。按需运行全量 `stories:review` 更新生成分镜，无需再维护重复手写分镜。
 
 ---

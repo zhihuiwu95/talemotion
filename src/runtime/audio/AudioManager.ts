@@ -1,3 +1,4 @@
+import { legacyClipId } from './narrationLookup'
 import type { TimelineAction } from '../../schema/scene'
 import type { SpeechProvider } from './SpeechProvider'
 
@@ -20,6 +21,7 @@ export class AudioManager {
         this.warn('当前浏览器无法播放旁白，动画将继续静音播放。')
       }
       this.speech.speak({
+        id: legacyClipId(action.text),
         text: action.text,
         voice: action.voice,
         lang: action.lang,

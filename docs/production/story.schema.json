@@ -277,21 +277,163 @@
                 "minLength": 1,
                 "maxLength": 64
               },
-              "style": {
+              "intent": {
                 "type": "string",
                 "enum": [
-                  "story",
-                  "affectionate",
+                  "narration",
+                  "dialogue",
+                  "prompt",
+                  "hint",
+                  "success",
+                  "comfort",
+                  "question",
+                  "ending"
+                ]
+              },
+              "emotion": {
+                "type": "string",
+                "enum": [
+                  "neutral",
+                  "warm",
+                  "gentle",
+                  "curious",
                   "cheerful",
                   "excited",
-                  "empathetic"
+                  "empathetic",
+                  "sad",
+                  "surprised"
                 ]
+              },
+              "voiceProfile": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,31}$"
+              },
+              "segmentation": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "sentences"
+                ]
+              },
+              "segments": {
+                "minItems": 1,
+                "maxItems": 24,
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 300
+                        },
+                        "emotion": {
+                          "type": "string",
+                          "enum": [
+                            "neutral",
+                            "warm",
+                            "gentle",
+                            "curious",
+                            "cheerful",
+                            "excited",
+                            "empathetic",
+                            "sad",
+                            "surprised"
+                          ]
+                        },
+                        "pronunciations": {
+                          "minItems": 1,
+                          "maxItems": 32,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "text": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 40
+                              },
+                              "occurrence": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 300
+                              },
+                              "phoneme": {
+                                "type": "string",
+                                "maxLength": 240,
+                                "pattern": "^[a-zv]+[1-5]( [a-zv]+[1-5])*$"
+                              }
+                            },
+                            "required": [
+                              "text",
+                              "phoneme"
+                            ],
+                            "additionalProperties": false
+                          }
+                        },
+                        "style": {
+                          "type": "string",
+                          "pattern": "^[a-z][a-z-]{0,39}$"
+                        },
+                        "styleDegree": {
+                          "type": "number",
+                          "minimum": 0.01,
+                          "maximum": 2
+                        },
+                        "rate": {
+                          "type": "string",
+                          "pattern": "^[+-](?:[0-9]|[12][0-9]|30)%$"
+                        },
+                        "pitch": {
+                          "type": "string",
+                          "pattern": "^[+-](?:[0-9]|10)Hz$"
+                        }
+                      },
+                      "required": [
+                        "text"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "pauseMs": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 1000
+                        }
+                      },
+                      "required": [
+                        "pauseMs"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "style": {
+                "type": "string",
+                "pattern": "^[a-z][a-z-]{0,39}$"
+              },
+              "styleDegree": {
+                "type": "number",
+                "minimum": 0.01,
+                "maximum": 2
+              },
+              "rate": {
+                "type": "string",
+                "pattern": "^[+-](?:[0-9]|[12][0-9]|30)%$"
+              },
+              "pitch": {
+                "type": "string",
+                "pattern": "^[+-](?:[0-9]|10)Hz$"
               }
             },
             "required": [
               "speaker",
-              "text",
-              "style"
+              "text"
             ],
             "additionalProperties": false
           },

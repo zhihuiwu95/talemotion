@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { narrationClipId } from '../runtime/audio/narrationLookup'
 import { EdgeAudioProvider } from '../runtime/audio/EdgeAudioProvider'
 import { Icon } from '../play/Artwork'
 import { ObservationForm } from '../play/Observation'
@@ -43,7 +44,7 @@ export function PackPlayer({
       return
     }
     try {
-      audio.speak({ text: scene.line.text, onComplete: done })
+      audio.speak({ id: narrationClipId(`pack:${pack.id}:${scene.id}`), text: scene.line.text, onComplete: done })
     } catch {
       setFailed(true)
       done()

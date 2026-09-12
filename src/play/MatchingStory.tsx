@@ -1,3 +1,4 @@
+import { legacyClipId } from '../runtime/audio/narrationLookup'
 import { FEEDBACK_MIN_MS, useInteractionGuard } from './useInteractionGuard'
 import { useEffect, useReducer, useRef, useState } from 'react'
 import { EdgeAudioProvider } from '../runtime/audio/EdgeAudioProvider'
@@ -39,7 +40,7 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
       return
     }
     try {
-      speech.speak({ text, onComplete: done })
+      speech.speak({ id: legacyClipId(text), text, onComplete: done })
     } catch {
       setAudioFailed(true)
       done?.()

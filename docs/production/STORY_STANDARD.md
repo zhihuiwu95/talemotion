@@ -64,7 +64,7 @@
 - `id`：小写英文及数字、连字符，首字符字母，最长 48；不得占用原活动 ID；所有故事 ID 唯一。
 - 节点：`id/kind/backdrop/entities/line/cue`；交互节点有 `interaction`，演出节点有 `next`，结尾两者都没有。
 - 实体：`id/asset/slot/mood/motion`；一个节点内实体 ID 和 slot 各自唯一。每个节点是完整画面快照，未列出的实体消失，不继承上一幕隐藏状态。
-- 台词：`speaker/text/style`；speaker 是字幕署名，v1 仍使用同一个晓晓多语言声线，不能因此声称多角色音色。
+- 台词：`speaker/text`，可选 `intent/emotion/voiceProfile/style/styleDegree/rate/pitch/segmentation/segments`。speaker 在制作端登记为角色声线身份；旧 style 兼容映射为 emotion。当前正式录音仍处于 legacy-retained，候选多角色声音仅供试听，见 [TTS_DECISION](../TTS_DECISION.md)。
 - 选择：`id/target/label/next/outcome/consequence`；target 必须是本幕可见实体；label 是按钮与读屏名称；consequence 是人工审阅用的可见后果描述，程序不会自动把它变成动画。
 - `interaction.reason`：说明此处为什么需要孩子参与。`outcome` 是制作语义，不显示分数。
 - `acceptance`：给出 choice ID 序列和预期结尾。自动演出不写进选择序列。所有节点、所有选择必须至少被一条用例覆盖。
@@ -79,4 +79,28 @@
 
 静音保留最短演出时间。暂停冻结动画并取消音频，恢复重播当前台词。重玩从 start 开始清空内存中的历史；没有自动开下一集。声线与 SSML 参数由现有 Azure 工具统一控制。仅在台词审阅后生成，按内容和风格缓存。
 
-同一段台词若要两种语气，应先修改文案使语义区别明确；现有音频以文本索引，采集器拒绝同文不同 style。不要假定字幕 speaker 会改变音色。
+同一文字允许不同角色或 emotion，clipId 按来源与方向区分，不必为绕过缓存改写台词。新角色先登记 speaker/profile；只允许结构化 segments，不直接写 SSML；默认不自动分句。改变声音先 audio:sample，试听确认后显式 audio:generate -- --publish；当前过渡状态不声称正式声音已换成候选角色。
+
+## 多音字与声调：生成语音前必做
+
+1. 逐句审阅所有口头台词，包括旁白、角色对白、提示、重试、成功、结尾和动态拼接台词。按整句语境找多音字、轻声、人名/地名等读音风险；不能只改用户已指出的字，也不能把一个字全局固定为同一读音。
+2. 在 `line.segments[].pronunciations` 标注需要确定读音的字词；`phoneme` 必须用带数字声调的拼音：1/2/3/4 为四声，5 为轻声。例如 `shao3`、`zhong4`、`gan1`、`dao4`、`luo4`、`lu4`、`jiao3`、`huo5`。多字词逐音节空格分隔，如 `nuan3 huo5`；不写汉字谐音、不改字幕、不直接写 SSML。
+3. 同一段中目标文字出现多次时必须填写从 1 开始的 `occurrence`，逐次标明；省略时要求唯一出现。标注不得重叠、漏匹配或超界。每段最多 32 项。整句可放在一个 segment 中，纠音本身不要求拆句或插入停顿。
+4. 将每条输入（包含无须额外标注的台词）的 source、canonical speaker、完整 text、审阅者和最终 pronunciations 写入 `scripts/pronunciation-review.json`。故事包的标注必须同时落在 JSON；原活动/第一版手套/经典动画通过这个精确台词表补入标注。不得只写 reviewed 而不读整句；AI 自审写 AI-context-review，不冒称人工验收。文本变化必须重新审阅。
+5. 内容审定后运行 `npm run audio:pronunciation`；缺失、过期或与故事标注不一致的记录会阻止正式生成。该门禁检查审阅覆盖和一致性，不会自动判断汉语语义是否正确；不确定的读音先查可靠词典/请用户明确，不能猜测后合成。
+6. 再运行 `npm run audio:generate -- --publish` 和 `npm run quality`。标注纳入 clip ID/缓存，只有受影响音频重录。生产模型新增故事时允许更新审阅表、新故事 JSON 及其运行记录，不能修改旧故事的审阅结论来绕过门禁。
+
+```json
+{
+  "speaker": "朵朵",
+  "text": "小熊少了一只手套。",
+  "segments": [{
+    "text": "小熊少了一只手套。",
+    "pronunciations": [{"text": "少", "phoneme": "shao3"}]
+  }]
+}
+```
+
+易混示例：空水壶 kong1 / 空地 kong4；一只手套 zhi1 / 只要 zhi3；和你一起 he2 / 暖和 huo5。数字是审定的读音声调，不是 pitch 参数。普通话“一/不”变调、儿化和韵律另按语境处理，不通过全局字典强制所有字注音。
+
+完整现存台词审阅见 [发音审阅记录](runs/pronunciation-review.md)。工程门禁通过与实际听感验收分开记录。

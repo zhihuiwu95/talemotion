@@ -160,7 +160,7 @@ export const adventureLines: Record<string, AdventureLine> = {
     cue: '雪地记住了我们的好朋友时光',
   },
 }
-export function adventureLine(state: AdventureState): AdventureLine {
+export function adventureLineKey(state: AdventureState): string {
   const key =
     state.stage === 'ending'
       ? `ending-${state.ending}`
@@ -169,5 +169,8 @@ export function adventureLine(state: AdventureState): AdventureLine {
         : state.stage === 'search' && state.birdSeen
           ? 'search-after-bird'
           : state.stage
-  return adventureLines[key] ?? adventureLines.meet!
+  return key in adventureLines ? key : 'meet'
+}
+export function adventureLine(state: AdventureState): AdventureLine {
+  return adventureLines[adventureLineKey(state)]!
 }

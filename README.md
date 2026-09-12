@@ -82,6 +82,7 @@ npm run quality
 
 ## Product and production decisions
 
+- [`docs/sdd/README.md`](docs/sdd/README.md) is the project-level SDD entry: reusable PRD template, design constraints, and architecture constraints. Feature changes use requirement instances; JSON-only story production keeps the existing production workflow.
 - [`docs/PRODUCT_VISION.md`](docs/PRODUCT_VISION.md) explains the final product shape and why production two-minute stories should use multiple scenes.
 - [`docs/production/README.md`](docs/production/README.md) is the current workflow for making new interactive story packs.
 - [`docs/ANIMATION_WORKFLOW.md`](docs/ANIMATION_WORKFLOW.md) preserves the earlier Pixi/GSAP animation workflow, separate from story-pack v1.

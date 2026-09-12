@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { narrationClipId } from '../runtime/audio/narrationLookup'
 import { EdgeAudioProvider } from '../runtime/audio/EdgeAudioProvider'
 import { Icon, Mitten, Rabbit } from './Artwork'
 import {
@@ -13,6 +14,7 @@ import {
 import {
   adventureInitial,
   adventureLine,
+  adventureLineKey,
   adventureReducer,
   type AdventureAction,
   type AdventureState,
@@ -65,7 +67,7 @@ export function MittenAdventure({
       return
     }
     try {
-      audio.speak({ text: adventureLine(snapshot).text, onComplete: complete })
+      audio.speak({ id: narrationClipId(`adventure:${adventureLineKey(snapshot)}`), text: adventureLine(snapshot).text, onComplete: complete })
     } catch {
       setFailed(true)
       complete()

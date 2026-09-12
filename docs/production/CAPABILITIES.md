@@ -45,7 +45,7 @@
 
 动作在进入节点时执行；同一节点被重试重新进入时会重新执行。可减弱动态效果的系统设置会关闭这些动画，但完整的最终状态仍可见。字幕和最终画面必须在无动画、无声音时也能支撑成人陪玩。
 
-风格 `story / affectionate / cheerful / excited / empathetic` 分别用于叙述、温暖请求、轻快交流、短暂庆祝、理解与重试。统一 Azure `zh-CN-XiaoxiaoMultilingualNeural`，eastus；参数见 `scripts/tts-config.json` 和生成器。
+风格 `story / affectionate / cheerful / excited / empathetic` 分别用于叙述、温暖请求、轻快交流、短暂庆祝、理解与重试。旧 style 兼容映射到 emotion；新管线按 speaker/profile 选择 eastus 声线，并支持 intent、emotion、受限 prosody 与可选 segments，见 [TTS_DECISION](../TTS_DECISION.md)。当前正式录音保留旧晓晓，候选多角色音频需先试听。
 
 ## 缺口报告格式
 

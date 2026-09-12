@@ -1,0 +1,2558 @@
+{
+  "version": 1,
+  "scope": "All current narration inputs, context review; not a listening certification",
+  "entries": [
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "你好，我是朵朵警官。小伙伴的手套混在一起啦。一起帮手套找朋友吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "混",
+          "phoneme": "hun4"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "大家的手套都找齐啦！谢谢你。现在，和爸爸妈妈找一双真的袜子，帮它们也配成一对吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "大",
+          "phoneme": "da4"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "都",
+          "phoneme": "dou1"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "和",
+          "phoneme": "he2"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "今天先玩到这里。谢谢你帮忙，我们下次见！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "见",
+          "phoneme": "jian4"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小熊有一只手套。哪一只和它一样呢？点一点吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "只",
+          "phoneme": "zhi1",
+          "occurrence": 1
+        },
+        {
+          "text": "哪",
+          "phoneme": "na3"
+        },
+        {
+          "text": "只",
+          "phoneme": "zhi1",
+          "occurrence": 2
+        },
+        {
+          "text": "和",
+          "phoneme": "he2"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "你真棒！谢谢你帮小熊找到手套！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "这两只不一样。看看小熊的手套，红红的，还有一道道条纹。再找找吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "只",
+          "phoneme": "zhi1"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小狐狸有一只手套。哪一只和它一样呢？点一点吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "只",
+          "phoneme": "zhi1",
+          "occurrence": 1
+        },
+        {
+          "text": "哪",
+          "phoneme": "na3"
+        },
+        {
+          "text": "只",
+          "phoneme": "zhi1",
+          "occurrence": 2
+        },
+        {
+          "text": "和",
+          "phoneme": "he2"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "太厉害了！谢谢你帮小狐狸找到手套！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "了",
+          "phoneme": "le5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "这两只不一样。看看小狐狸的手套，蓝蓝的，还有圆圆的点点。再找找吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "只",
+          "phoneme": "zhi1"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 3
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小猫有一只手套。哪一只和它一样呢？点一点吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "只",
+          "phoneme": "zhi1",
+          "occurrence": 1
+        },
+        {
+          "text": "哪",
+          "phoneme": "na3"
+        },
+        {
+          "text": "只",
+          "phoneme": "zhi1",
+          "occurrence": 2
+        },
+        {
+          "text": "和",
+          "phoneme": "he2"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "找齐啦！谢谢你帮小猫找到手套！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "这两只不一样。看看小猫的手套，黄黄的，还有一颗星星。再找找吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "只",
+          "phoneme": "zhi1"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "你好，我是朵朵警官。小伙伴的手套混在一起啦。一起帮手套找朋友吧！小熊有一只手套。哪一只和它一样呢？点一点吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "混",
+          "phoneme": "hun4"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "只",
+          "phoneme": "zhi1",
+          "occurrence": 1
+        },
+        {
+          "text": "哪",
+          "phoneme": "na3"
+        },
+        {
+          "text": "只",
+          "phoneme": "zhi1",
+          "occurrence": 2
+        },
+        {
+          "text": "和",
+          "phoneme": "he2"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小熊要去野餐啦。我们来帮忙，找找大大的、小小的东西。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "要",
+          "phoneme": "yao4"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 1
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "野餐准备好啦！谢谢你。和爸爸妈妈找两个大小不同的杯子，指一指大杯子和小杯子吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "和",
+          "phoneme": "he2",
+          "occurrence": 1
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 1
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 2
+        },
+        {
+          "text": "和",
+          "phoneme": "he2",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小熊要去野餐啦。我们来帮忙，找找大大的、小小的东西。小熊想用大碗。点一点大碗吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "要",
+          "phoneme": "yao4"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 1
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 3
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 4
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小熊想用大碗。点一点大碗吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 1
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "两个碗放在一起，哪一个占的地方更大呢？",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "哪",
+          "phoneme": "na3"
+        },
+        {
+          "text": "占",
+          "phoneme": "zhan4"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "地",
+          "phoneme": "di4"
+        },
+        {
+          "text": "更",
+          "phoneme": "geng4"
+        },
+        {
+          "text": "大",
+          "phoneme": "da4"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "你真棒！谢谢你帮小熊找到大碗！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "大",
+          "phoneme": "da4"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小猫想用小杯子。点一点小杯子吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "看看两个杯子，找找小小的那一个。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "那",
+          "phoneme": "na4"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "太棒啦！小猫有杯子喝水了！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "喝",
+          "phoneme": "he1"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "还要一块大野餐垫。点一点大垫子吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        },
+        {
+          "text": "要",
+          "phoneme": "yao4"
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 1
+        },
+        {
+          "text": "大",
+          "phoneme": "da4",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "哪一块垫子能坐下更多小伙伴呢？",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "哪",
+          "phoneme": "na3"
+        },
+        {
+          "text": "更",
+          "phoneme": "geng4"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "太厉害了！大家能坐在一起啦！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "大",
+          "phoneme": "da4"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小猫要收好小球。我们一起找找，小球在哪里。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "要",
+          "phoneme": "yao4"
+        },
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "哪",
+          "phoneme": "na3"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小球找齐啦！现在拿一个真的玩具和盒子，和爸爸妈妈试试，把玩具放到盒子里面吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "和",
+          "phoneme": "he2",
+          "occurrence": 1
+        },
+        {
+          "text": "和",
+          "phoneme": "he2",
+          "occurrence": 2
+        },
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小猫要收好小球。我们一起找找，小球在哪里。点一点，盒子里面的小球。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "要",
+          "phoneme": "yao4"
+        },
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "哪",
+          "phoneme": "na3"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "点一点，盒子里面的小球。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小球躲进盒子里啦。看看盒子里有没有小球。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 2
+        },
+        {
+          "text": "没",
+          "phoneme": "mei2"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "你真棒！小球就在盒子里面！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "点一点，凳子上面的小球。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "看看凳子的座位，小球坐在上面呢。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "找到了！你看得真仔细！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4"
+        },
+        {
+          "text": "得",
+          "phoneme": "de5"
+        },
+        {
+          "text": "仔",
+          "phoneme": "zi3"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "点一点，凳子下面的小球。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "往凳子腿中间看看，小球躲在下面。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "中",
+          "phoneme": "zhong1"
+        },
+        {
+          "text": "间",
+          "phoneme": "jian1"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "找齐啦！谢谢你帮助小猫！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小熊种了一盆小花。土干干的。我们一起给小花浇水吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "种",
+          "phoneme": "zhong4"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "干",
+          "phoneme": "gan1",
+          "occurrence": 1
+        },
+        {
+          "text": "干",
+          "phoneme": "gan1",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "给",
+          "phoneme": "gei3"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小花喝到水啦。和爸爸妈妈照顾一盆真的植物吧。先装一点水，再慢慢浇到土里。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "喝",
+          "phoneme": "he1"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "和",
+          "phoneme": "he2"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小熊种了一盆小花。土干干的。我们一起给小花浇水吧。要给花浇水，拿哪一个呢？",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "种",
+          "phoneme": "zhong4"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "干",
+          "phoneme": "gan1",
+          "occurrence": 1
+        },
+        {
+          "text": "干",
+          "phoneme": "gan1",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "给",
+          "phoneme": "gei3",
+          "occurrence": 1
+        },
+        {
+          "text": "要",
+          "phoneme": "yao4"
+        },
+        {
+          "text": "给",
+          "phoneme": "gei3",
+          "occurrence": 2
+        },
+        {
+          "text": "哪",
+          "phoneme": "na3"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "要给花浇水，拿哪一个呢？",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "要",
+          "phoneme": "yao4"
+        },
+        {
+          "text": "给",
+          "phoneme": "gei3"
+        },
+        {
+          "text": "哪",
+          "phoneme": "na3"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "找找能装水、能把水倒出来的东西。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        },
+        {
+          "text": "倒",
+          "phoneme": "dao4"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "你真棒！拿到水壶啦！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "水壶空空的。先给水壶装水吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "空",
+          "phoneme": "kong1",
+          "occurrence": 1
+        },
+        {
+          "text": "空",
+          "phoneme": "kong1",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "给",
+          "phoneme": "gei3"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "空水壶还没有水。找找正在装水的那张图。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "空",
+          "phoneme": "kong1"
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        },
+        {
+          "text": "没",
+          "phoneme": "mei2"
+        },
+        {
+          "text": "正",
+          "phoneme": "zheng4"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "那",
+          "phoneme": "na4"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "太好了！可以给小花喝水啦！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "给",
+          "phoneme": "gei3"
+        },
+        {
+          "text": "喝",
+          "phoneme": "he1"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "水装好啦。现在给小花浇水吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "给",
+          "phoneme": "gei3"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "把水轻轻倒在花盆的土里。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        },
+        {
+          "text": "倒",
+          "phoneme": "dao4"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "duoduo",
+      "text": "小花喝到水啦！谢谢你照顾它！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "喝",
+          "phoneme": "he1"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "adventure:meet",
+      "speaker": "duoduo",
+      "text": "咦，小熊在搓手。点点它，问问怎么啦？",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "adventure:search",
+      "speaker": "bear",
+      "text": "我的手套落在雪松旁了。帮我找找好吗？",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "落",
+          "phoneme": "luo4"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        }
+      ]
+    },
+    {
+      "source": "adventure:bird",
+      "speaker": "duoduo",
+      "text": "小鸟飞出来啦！它指着那堆雪呢！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "着",
+          "phoneme": "zhe5"
+        },
+        {
+          "text": "那",
+          "phoneme": "na4"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "adventure:search-after-bird",
+      "speaker": "duoduo",
+      "text": "雪里露出了小小的一角。点开看看吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "露",
+          "phoneme": "lu4"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "角",
+          "phoneme": "jiao3"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "adventure:match",
+      "speaker": "bear",
+      "text": "我的手套是红色条纹的。把一样的送给我吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "色",
+          "phoneme": "se4"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        },
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 3
+        },
+        {
+          "text": "给",
+          "phoneme": "gei3"
+        }
+      ]
+    },
+    {
+      "source": "adventure:hint",
+      "speaker": "duoduo",
+      "text": "这只是蓝色圆点的。再找找红色条纹吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "只",
+          "phoneme": "zhi1"
+        },
+        {
+          "text": "色",
+          "phoneme": "se4",
+          "occurrence": 1
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "色",
+          "phoneme": "se4",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "adventure:thanks",
+      "speaker": "bear",
+      "text": "你真棒！我的手暖和啦，谢谢你！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "和",
+          "phoneme": "huo5"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "adventure:choose-play",
+      "speaker": "bear",
+      "text": "一起堆雪人，还是踩脚印？你来选！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        }
+      ]
+    },
+    {
+      "source": "adventure:snowman",
+      "speaker": "bear",
+      "text": "点点小雪球，我们一起堆雪人！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "adventure:footprints",
+      "speaker": "bear",
+      "text": "点点前面的雪地，和我一起踩脚印吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "地",
+          "phoneme": "di4"
+        },
+        {
+          "text": "和",
+          "phoneme": "he2"
+        }
+      ]
+    },
+    {
+      "source": "adventure:ending-snowman",
+      "speaker": "bear",
+      "text": "太厉害了！我们的小雪人会笑啦！和你一起玩，真开心！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "会",
+          "phoneme": "hui4"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "和",
+          "phoneme": "he2"
+        }
+      ]
+    },
+    {
+      "source": "adventure:ending-footprints",
+      "speaker": "bear",
+      "text": "一串大脚印，一串小脚印！和你一起走，真开心！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "大",
+          "phoneme": "da4"
+        },
+        {
+          "text": "和",
+          "phoneme": "he2"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering:meet",
+      "speaker": "duoduo",
+      "text": "小狐狸和小猫想办小聚会。先听听小狐狸吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "和",
+          "phoneme": "he2"
+        },
+        {
+          "text": "会",
+          "phoneme": "hui4"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering:fox-wish",
+      "speaker": "fox",
+      "text": "我想把野餐篮摆在花旁，边吃点心边看花。点点小猫，听听它吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering:cat-wish",
+      "speaker": "cat",
+      "text": "花旁留点空地就好。篮子放花边、放左边草地，我都愿意。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "空",
+          "phoneme": "kong4"
+        },
+        {
+          "text": "地",
+          "phoneme": "di4",
+          "occurrence": 1
+        },
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "地",
+          "phoneme": "di4",
+          "occurrence": 2
+        },
+        {
+          "text": "都",
+          "phoneme": "dou1"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering:basket-set",
+      "speaker": "duoduo",
+      "text": "谢谢你帮忙搬篮子！它到中间了，花旁也留着空地。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "中",
+          "phoneme": "zhong1"
+        },
+        {
+          "text": "间",
+          "phoneme": "jian1"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "着",
+          "phoneme": "zhe5"
+        },
+        {
+          "text": "空",
+          "phoneme": "kong4"
+        },
+        {
+          "text": "地",
+          "phoneme": "di4"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering:choose-place",
+      "speaker": "fox",
+      "text": "两个地方我也都喜欢。点花留在这里，点篮子去左边草地。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "地",
+          "phoneme": "di4",
+          "occurrence": 1
+        },
+        {
+          "text": "都",
+          "phoneme": "dou1"
+        },
+        {
+          "text": "地",
+          "phoneme": "di4",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering:flower-end",
+      "speaker": "fox",
+      "text": "谢谢你帮我们选好地方！花儿轻轻点头。我们在花边小聚会吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "地",
+          "phoneme": "di4"
+        },
+        {
+          "text": "会",
+          "phoneme": "hui4"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering:grass-end",
+      "speaker": "cat",
+      "text": "谢谢你帮我们选好地方！篮子留在开阔草地，花也有自己的小空间。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "地",
+          "phoneme": "di4",
+          "occurrence": 1
+        },
+        {
+          "text": "地",
+          "phoneme": "di4",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "空",
+          "phoneme": "kong1"
+        },
+        {
+          "text": "间",
+          "phoneme": "jian1"
+        }
+      ]
+    },
+    {
+      "source": "pack:little-drum:meet",
+      "speaker": "duoduo",
+      "text": "小猫在敲小鼓，小狐狸也想玩。先听听小猫吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "pack:little-drum:cat-wish",
+      "speaker": "cat",
+      "text": "我还想敲完这一小段。也听听小狐狸的想法吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        }
+      ]
+    },
+    {
+      "source": "pack:little-drum:fox-wish",
+      "speaker": "fox",
+      "text": "我也想参加。等一小段再敲，还是先拍手一起玩？",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "参",
+          "phoneme": "can1"
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        }
+      ]
+    },
+    {
+      "source": "pack:little-drum:agree-wait",
+      "speaker": "cat",
+      "text": "好呀！我敲完这一小段，就轮到你。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        }
+      ]
+    },
+    {
+      "source": "pack:little-drum:pass",
+      "speaker": "cat",
+      "text": "我敲完啦！把小鼓轻轻递给小狐狸吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        },
+        {
+          "text": "给",
+          "phoneme": "gei3"
+        }
+      ]
+    },
+    {
+      "source": "pack:little-drum:fox-turn",
+      "speaker": "fox",
+      "text": "谢谢你把小鼓递过来！轮到我敲一小段啦。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        },
+        {
+          "text": "过",
+          "phoneme": "guo4"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "pack:little-drum:tap",
+      "speaker": "duoduo",
+      "text": "点点小鼓，和小狐狸一起敲一小段吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "和",
+          "phoneme": "he2"
+        }
+      ]
+    },
+    {
+      "source": "pack:little-drum:wait-end",
+      "speaker": "fox",
+      "text": "咚咚，咚咚！我们轮流玩，都有自己的小节奏。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "都",
+          "phoneme": "dou1"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        }
+      ]
+    },
+    {
+      "source": "pack:little-drum:agree-clap",
+      "speaker": "cat",
+      "text": "好呀，我敲鼓，你拍手！点点小手，一起试试。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        }
+      ]
+    },
+    {
+      "source": "pack:little-drum:clap-end",
+      "speaker": "fox",
+      "text": "咚咚，拍拍！你敲鼓，我拍手，一起玩真开心！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "pack:rain-shelter:meet",
+      "speaker": "duoduo",
+      "text": "小雨来了，野餐篮还在外面。问问小狐狸吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        }
+      ]
+    },
+    {
+      "source": "pack:rain-shelter:plan",
+      "speaker": "fox",
+      "text": "一起搭个小雨棚吧！先把积木支架立起来。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        }
+      ]
+    },
+    {
+      "source": "pack:rain-shelter:posts-ready",
+      "speaker": "fox",
+      "text": "你立起支架，我来扶稳。我们一起搭！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "pack:rain-shelter:roof",
+      "speaker": "fox",
+      "text": "棚顶用珊瑚色，还是蓝色？都可以挡小雨。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "色",
+          "phoneme": "se4",
+          "occurrence": 1
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        },
+        {
+          "text": "色",
+          "phoneme": "se4",
+          "occurrence": 2
+        },
+        {
+          "text": "都",
+          "phoneme": "dou1"
+        }
+      ]
+    },
+    {
+      "source": "pack:rain-shelter:coral-ready",
+      "speaker": "fox",
+      "text": "棚顶盖好啦！把篮子送进小雨棚吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "盖",
+          "phoneme": "gai4"
+        },
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        }
+      ]
+    },
+    {
+      "source": "pack:rain-shelter:blue-ready",
+      "speaker": "fox",
+      "text": "蓝色小雨棚搭好啦！把篮子送进去吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "色",
+          "phoneme": "se4"
+        },
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        }
+      ]
+    },
+    {
+      "source": "pack:rain-shelter:coral-end",
+      "speaker": "fox",
+      "text": "你搭支架，我扶稳，篮子有地方躲雨啦！谢谢你！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "地",
+          "phoneme": "di4"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "pack:rain-shelter:blue-end",
+      "speaker": "fox",
+      "text": "我们一起搭好了！篮子在棚下，小雨淋不到啦！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "淋",
+          "phoneme": "lin2"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "pack:snow-mittens:meet",
+      "speaker": "duoduo",
+      "text": "小熊少了一只手套。点点它，问问怎么啦？",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "少",
+          "phoneme": "shao3"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "只",
+          "phoneme": "zhi1"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        }
+      ]
+    },
+    {
+      "source": "pack:snow-mittens:search",
+      "speaker": "bear",
+      "text": "手套落在雪松旁了。帮我找找吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "落",
+          "phoneme": "luo4"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        }
+      ]
+    },
+    {
+      "source": "pack:snow-mittens:bird",
+      "speaker": "duoduo",
+      "text": "小鸟飞出来啦！它指着那堆雪呢！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "着",
+          "phoneme": "zhe5"
+        },
+        {
+          "text": "那",
+          "phoneme": "na4"
+        },
+        {
+          "text": "呢",
+          "phoneme": "ne5"
+        }
+      ]
+    },
+    {
+      "source": "pack:snow-mittens:search-clue",
+      "speaker": "duoduo",
+      "text": "雪里露出了一角，拨开看看吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "露",
+          "phoneme": "lu4"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "角",
+          "phoneme": "jiao3"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "pack:snow-mittens:match",
+      "speaker": "bear",
+      "text": "我戴的是红色条纹手套。把一样的送给我吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "色",
+          "phoneme": "se4"
+        },
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        },
+        {
+          "text": "给",
+          "phoneme": "gei3"
+        }
+      ]
+    },
+    {
+      "source": "pack:snow-mittens:hint",
+      "speaker": "duoduo",
+      "text": "这只是蓝色圆点的。再看看小熊的红色条纹吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "只",
+          "phoneme": "zhi1"
+        },
+        {
+          "text": "色",
+          "phoneme": "se4",
+          "occurrence": 1
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 1
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4",
+          "occurrence": 2
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        },
+        {
+          "text": "色",
+          "phoneme": "se4",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "pack:snow-mittens:thanks",
+      "speaker": "bear",
+      "text": "你找到一样的条纹啦！手暖和了，谢谢你！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "和",
+          "phoneme": "huo5"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        }
+      ]
+    },
+    {
+      "source": "pack:snow-mittens:play",
+      "speaker": "bear",
+      "text": "一起堆雪人，还是踩脚印？你来选！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        }
+      ]
+    },
+    {
+      "source": "pack:snow-mittens:snowman-end",
+      "speaker": "bear",
+      "text": "小雪人堆好啦！和你一起玩，真开心！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "啦",
+          "phoneme": "la5"
+        },
+        {
+          "text": "和",
+          "phoneme": "he2"
+        }
+      ]
+    },
+    {
+      "source": "pack:snow-mittens:prints-end",
+      "speaker": "bear",
+      "text": "一串大脚印，一串小脚印！一起走吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "大",
+          "phoneme": "da4"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "narrator",
+      "text": "冬夜很静，松林像一排沉睡的巨人。小兔皮普抱紧围巾，沿着雪地里忽明忽暗的微光，慢慢向前走。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "着",
+          "phoneme": "zhe5"
+        },
+        {
+          "text": "地",
+          "phoneme": "di4"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "narrator",
+      "text": "风把旧脚印一点点盖住，皮普有些害怕。每当它停下，前方的光就轻轻闪一下，像在说：别担心，我在这里。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        },
+        {
+          "text": "盖",
+          "phoneme": "gai4"
+        },
+        {
+          "text": "当",
+          "phoneme": "dang1"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5"
+        },
+        {
+          "text": "说",
+          "phoneme": "shuo1"
+        },
+        {
+          "text": "别",
+          "phoneme": "bie2"
+        },
+        {
+          "text": "担",
+          "phoneme": "dan1"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "narrator",
+      "text": "穿过最后一排松树，它看见一间小木屋。窗边亮着蜂蜜色的灯，门前还留着一串新鲜的小脚印。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "过",
+          "phoneme": "guo4"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4"
+        },
+        {
+          "text": "见",
+          "phoneme": "jian4"
+        },
+        {
+          "text": "间",
+          "phoneme": "jian1"
+        },
+        {
+          "text": "着",
+          "phoneme": "zhe5",
+          "occurrence": 1
+        },
+        {
+          "text": "色",
+          "phoneme": "se4"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        },
+        {
+          "text": "着",
+          "phoneme": "zhe5",
+          "occurrence": 2
+        },
+        {
+          "text": "鲜",
+          "phoneme": "xian1"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "narrator",
+      "text": "皮普刚刚走近，木门便吱呀一声打开。暖光铺在雪上，屋里传来声音：快进来吧，我们一直在等你。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "便",
+          "phoneme": "bian4"
+        },
+        {
+          "text": "吱",
+          "phoneme": "zhi1"
+        },
+        {
+          "text": "铺",
+          "phoneme": "pu1"
+        },
+        {
+          "text": "传",
+          "phoneme": "chuan2"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "narrator",
+      "text": "门后不是陌生人，而是走散许久的松鼠朋友。桌上有热汤、松果面包，还有一盏专门为皮普留着的小灯。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "散",
+          "phoneme": "san4"
+        },
+        {
+          "text": "许",
+          "phoneme": "xu3"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        },
+        {
+          "text": "为",
+          "phoneme": "wei4"
+        },
+        {
+          "text": "着",
+          "phoneme": "zhe5"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "narrator",
+      "text": "朋友说，暴风雪来临前，它们每天都把灯挂在窗边，希望迷路的皮普，能够认出回家的方向。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "说",
+          "phoneme": "shuo1"
+        },
+        {
+          "text": "都",
+          "phoneme": "dou1"
+        },
+        {
+          "text": "把",
+          "phoneme": "ba3"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "narrator",
+      "text": "窗外的雪越下越轻，屋里的笑声却越来越暖。皮普终于明白，真正照亮森林的，从来不只是一盏灯。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        },
+        {
+          "text": "正",
+          "phoneme": "zheng4"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 3
+        },
+        {
+          "text": "只",
+          "phoneme": "zhi3"
+        }
+      ]
+    },
+    {
+      "source": "legacy",
+      "speaker": "narrator",
+      "text": "那一夜，松林深处多了一扇永远为朋友打开的门。无论风雪多大，只要记得彼此，回家的路就不会消失。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "那",
+          "phoneme": "na4"
+        },
+        {
+          "text": "处",
+          "phoneme": "chu4"
+        },
+        {
+          "text": "了",
+          "phoneme": "le5"
+        },
+        {
+          "text": "扇",
+          "phoneme": "shan4"
+        },
+        {
+          "text": "为",
+          "phoneme": "wei4"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 1
+        },
+        {
+          "text": "论",
+          "phoneme": "lun4"
+        },
+        {
+          "text": "大",
+          "phoneme": "da4"
+        },
+        {
+          "text": "只",
+          "phoneme": "zhi3"
+        },
+        {
+          "text": "要",
+          "phoneme": "yao4"
+        },
+        {
+          "text": "得",
+          "phoneme": "de5"
+        },
+        {
+          "text": "的",
+          "phoneme": "de5",
+          "occurrence": 2
+        },
+        {
+          "text": "会",
+          "phoneme": "hui4"
+        }
+      ]
+    }
+  ]
+}

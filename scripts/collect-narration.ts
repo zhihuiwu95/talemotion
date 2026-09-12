@@ -7,27 +7,15 @@ import {
 } from '../src/play/activities'
 import { initialState, narration, rounds } from '../src/play/story'
 import { adventureLines, type VoiceStyle } from '../src/play/adventureStory'
-const lines = new Map<
-  string,
-  {
-    text: string
-    style: VoiceStyle
-    styleDegree: string
-    rate: string
-    pitch: string
-  }
->()
-function add(text: string, style: VoiceStyle = 'story') {
-  const existing = lines.get(text)
-  if (existing && existing.style !== style)
-    throw new Error(`Same narration text has conflicting styles: ${text}`)
-  lines.set(text, {
-    text,
-    style,
-    styleDegree: style === 'excited' ? '1.1' : '1.0',
-    rate: '-5%',
-    pitch: '+0Hz',
-  })
+import { collectLine, type NarrationLine } from './narration'
+const lines = new Map<string, NarrationLine>()
+const sources: Record<string, string> = {}
+const legacy: Record<string, string> = {}
+function add(text: string, style: VoiceStyle = 'story', speaker = 'duoduo') {
+  const line = collectLine('legacy', { text, style, speaker }, 'narration')
+  if (legacy[text] && legacy[text] !== line.id) throw new Error('Ambiguous legacy text binding; use an explicit source ID')
+  lines.set(line.id, line)
+  legacy[text] = line.id // Compatibility lookup for original text-only activities only.
 }
 for (const phase of ['welcome', 'finished', 'goodbye'] as const)
   add(
@@ -64,24 +52,49 @@ for (const activity of activities) {
     add(round.success, 'cheerful')
   })
 }
-for (const line of Object.values(adventureLines)) add(line.text, line.style)
+for (const [key, value] of Object.entries(adventureLines)) {
+  const { cue: _cue, ...speech } = value
+  void _cue
+  const source = `adventure:${key}`
+  const line = collectLine(source, speech, key.startsWith('ending-') ? 'ending' : 'dialogue')
+  lines.set(line.id, line)
+  sources[source] = line.id
+}
 for (const file of readdirSync('src/stories/packs').filter((name) =>
   name.endsWith('.json'),
 )) {
   const pack = storySchema.parse(
     JSON.parse(readFileSync(`src/stories/packs/${file}`, 'utf8')),
   )
-  for (const node of pack.nodes) add(node.line.text, node.line.style)
+  for (const node of pack.nodes) {
+    const source = `pack:${pack.id}:${node.id}`
+    const line = collectLine(source, node.line, node.kind === 'ending' ? 'ending' : node.kind === 'interactive' ? 'prompt' : 'dialogue')
+    lines.set(line.id, line)
+    sources[source] = line.id
+  }
 }
 const classic = JSON.parse(
   readFileSync('src/demo/winter-cottage.scene.json', 'utf8'),
 )
 for (const action of classic.timeline)
-  if (action.type === 'audio.play' && action.text) add(action.text)
+  if (action.type === 'audio.play' && action.text) add(action.text, 'story', 'narrator')
 writeFileSync(
   'scripts/narration-input.json',
   JSON.stringify([...lines.values()], null, 2) + '\n',
 )
+writeFileSync('src/generated/narration-index.json', JSON.stringify({ sources, legacy }, null, 2) + '\n')
 console.log(
-  `Collected ${lines.size} narration lines with explicit speaking styles`,
+  `Collected ${lines.size} narration lines with speaker-aware identities`,
 )
+
+// A disposable projection of the published manifest. Shipping SSML and all
+// production metadata to children would needlessly enlarge the application.
+const published = JSON.parse(readFileSync('src/generated/narration.json', 'utf8')) as {
+  schemaVersion?: number
+  clips: Record<string, { src: string }>
+}
+if (published.schemaVersion === 2) {
+  writeFileSync('src/generated/narration-playback.json', JSON.stringify(
+    Object.fromEntries(Object.entries(published.clips).map(([id, clip]) => [id, clip.src])), null, 2,
+  ) + '\n')
+}

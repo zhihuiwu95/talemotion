@@ -15,12 +15,18 @@
     "stories:export": "tsx scripts/validate-stories.ts --export",
     "stories:review": "tsx scripts/validate-stories.ts --review",
     "quality": "npm run scene:validate && npm run stories:validate && npm run audio:verify && npm test && npm run lint && npm run build",
-    "test": "vitest run",
+    "test": "npm run audio:collect && vitest run && .venv/bin/python -m unittest discover -s scripts -p \"test_*.py\"",
     "test:watch": "vitest",
     "preview": "vite preview",
     "audio:collect": "tsx scripts/collect-narration.ts",
     "audio:generate": "npm run audio:collect && .venv/bin/python scripts/generate-audio.py",
-    "audio:verify": "npm run audio:collect && node scripts/verify-audio.mjs"
+    "audio:verify": "npm run audio:collect && node scripts/verify-audio.mjs",
+    "audio:sample": "npm run audio:collect && .venv/bin/python scripts/sample-audio.py",
+    "predev": "npm run audio:collect",
+    "prebuild": "npm run audio:collect",
+    "audio:sample:pronunciation": "npm run audio:collect && .venv/bin/python scripts/sample-pronunciation.py",
+    "audio:sample:bear": "npm run audio:collect && .venv/bin/python scripts/sample-bear.py",
+    "audio:pronunciation": "npm run audio:collect && .venv/bin/python scripts/pronunciation_review.py"
   },
   "dependencies": {
     "gsap": "^3.15.0",

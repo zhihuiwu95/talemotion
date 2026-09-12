@@ -61,5 +61,26 @@
     "cheerful",
     "excited",
     "empathetic"
+  ],
+  "voiceIntents": [
+    "narration",
+    "dialogue",
+    "prompt",
+    "hint",
+    "success",
+    "comfort",
+    "question",
+    "ending"
+  ],
+  "voiceEmotions": [
+    "neutral",
+    "warm",
+    "gentle",
+    "curious",
+    "cheerful",
+    "excited",
+    "empathetic",
+    "sad",
+    "surprised"
   ]
 }
