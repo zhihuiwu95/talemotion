@@ -1,8 +1,7 @@
 import { z } from 'zod'
 import {
   assets,
-  backdrops,
-  catalogVersion,
+  catalogs,
   moods,
   motions,
   slots,
@@ -31,11 +30,11 @@ const choice = z
     consequence: text(100),
   })
   .strict()
-const node = z
+const nodeV1 = z
   .object({
     id,
     kind: z.enum(['interactive', 'beat', 'ending']),
-    backdrop: z.enum(backdrops),
+    backdrop: z.enum(catalogs['1.0'].backdrops),
     entities: z.array(entity).min(1).max(7),
     line: speechLineSchema.safeExtend({ text: text(64) }),
     cue: text(32),
@@ -51,10 +50,8 @@ const node = z
   })
   .strict()
 
-export const storySchema = z
+const commonStory = z
   .object({
-    schemaVersion: z.literal('1.0'),
-    catalogVersion: z.literal(catalogVersion),
     id,
     title: text(18),
     summary: text(60),
@@ -87,7 +84,6 @@ export const storySchema = z
       })
       .strict(),
     start: id,
-    nodes: z.array(node).min(4).max(24),
     acceptance: z
       .array(
         z
@@ -102,109 +98,134 @@ export const storySchema = z
       .max(16),
   })
   .strict()
-  .superRefine((story, ctx) => {
-    const issue = (message: string, path: (string | number)[] = []) =>
-      ctx.addIssue({ code: 'custom', message, path })
-    if (
-      ['mittens', 'mittens-story', 'picnic', 'hide', 'garden'].includes(
-        story.id,
-      )
+
+const nodeV1_1 = nodeV1.extend({
+  backdrop: z.enum(catalogs['1.1'].backdrops),
+  soundCue: z.enum(catalogs['1.1'].soundCues).optional(),
+})
+const storyV1Shape = commonStory.extend({
+  schemaVersion: z.literal('1.0'),
+  catalogVersion: z.literal('1.0'),
+  nodes: z.array(nodeV1).min(4).max(24),
+})
+const storyV1_1Shape = commonStory.extend({
+  schemaVersion: z.literal('1.1'),
+  catalogVersion: z.literal('1.1'),
+  nodes: z.array(nodeV1_1).min(4).max(40),
+})
+const versionedStory = z.discriminatedUnion('schemaVersion', [storyV1Shape, storyV1_1Shape])
+type VersionedStory = z.infer<typeof versionedStory>
+
+// Cross-node rules cannot be expressed by the exported JSON Schema alone.
+function validateGraph(story: VersionedStory, ctx: z.RefinementCtx) {
+  const issue = (message: string, path: (string | number)[] = []) =>
+    ctx.addIssue({ code: 'custom', message, path })
+  if (
+    ['mittens', 'mittens-story', 'picnic', 'hide', 'garden'].includes(
+      story.id,
     )
-      issue('Story ID is reserved for an existing activity', ['id'])
-    if (story.audience.minAge > story.audience.maxAge)
-      issue('minAge must not exceed maxAge', ['audience'])
-    if (story.provenance.kind === 'adapted' && !story.provenance.sourceUrl)
-      issue('Adaptations require the exact source URL', ['provenance'])
-    story.learning.evidenceIds.forEach((ref) => {
-      if (!evidence.some((item) => item.id === ref))
-        issue(`Unknown evidence ${ref}`, ['learning', 'evidenceIds'])
-    })
-    const nodes = new Map(story.nodes.map((n) => [n.id, n]))
-    if (nodes.size !== story.nodes.length)
-      issue('Duplicate node IDs', ['nodes'])
-    if (!nodes.has(story.start)) issue('Start node is missing', ['start'])
-    if (nodes.get(story.start)?.kind !== 'interactive')
-      issue('Start must be interactive', ['start'])
-    const edges = (n: (typeof story.nodes)[number]) =>
-      n.next ? [n.next] : (n.interaction?.choices.map((c) => c.next) ?? [])
-    story.nodes.forEach((n, i) => {
-      const fail = (message: string) =>
-        issue(`${n.id}: ${message}`, ['nodes', i])
-      if (new Set(n.entities.map((e) => e.id)).size !== n.entities.length)
-        fail('Duplicate entity IDs')
-      if (new Set(n.entities.map((e) => e.slot)).size !== n.entities.length)
-        fail('Entities must occupy distinct slots')
-      if (n.kind === 'interactive' && (!n.interaction || n.next))
-        fail('Interactive nodes require choices and prohibit auto-next')
-      if (n.kind === 'beat' && (!n.next || n.interaction))
-        fail('Beat nodes require auto-next and prohibit choices')
-      if (n.kind === 'ending' && (n.next || n.interaction))
-        fail('Endings cannot transition automatically')
-      if (n.interaction) {
-        if (
-          new Set(n.interaction.choices.map((c) => c.id)).size !==
-          n.interaction.choices.length
-        )
-          fail('Duplicate choice IDs')
-        if (
-          new Set(n.interaction.choices.map((c) => c.target)).size !==
-          n.interaction.choices.length
-        )
-          fail('Each choice needs a distinct target')
-        for (const c of n.interaction.choices) {
-          if (!n.entities.some((e) => e.id === c.target))
-            fail(`Missing target ${c.target}`)
-          if (
-            n.entities.find((e) => e.id === c.target)?.slot.startsWith('sky-')
-          )
-            fail(
-              'Sky slots are display-only; use a ground or actor slot for touch targets',
-            )
-          if (n.interaction.kind !== 'goal' && c.outcome === 'retry')
-            fail('Free choice and exploration cannot have wrong answers')
-          if (n.interaction.kind === 'free' && c.outcome !== 'choice')
-            fail('Free choices must use outcome choice')
-        }
-      }
-      for (const next of edges(n))
-        if (!nodes.has(next)) fail(`Missing destination ${next}`)
-      // A muted player must never spin in an automatic loop.
-      let auto: typeof n | undefined = n
-      const seen = new Set<string>()
-      while (auto?.kind === 'beat') {
-        if (seen.has(auto.id)) {
-          fail('Automatic cycle')
-          break
-        }
-        seen.add(auto.id)
-        auto = nodes.get(auto.next!)
-      }
-    })
-    const reachable = new Set<string>()
-    const visit = (key: string) => {
-      if (reachable.has(key)) return
-      reachable.add(key)
-      const n = nodes.get(key)
-      if (n) edges(n).forEach(visit)
-    }
-    visit(story.start)
-    const terminating = new Set(
-      story.nodes.filter((n) => n.kind === 'ending').map((n) => n.id),
-    )
-    for (let pass = 0; pass < story.nodes.length; pass++)
-      for (const n of story.nodes)
-        if (edges(n).some((key) => terminating.has(key))) terminating.add(n.id)
-    for (const n of story.nodes) {
-      if (!reachable.has(n.id)) issue(`Unreachable node ${n.id}`, ['nodes'])
-      if (!terminating.has(n.id))
-        issue(`No route to an ending from ${n.id}`, ['nodes'])
-    }
-    for (const test of story.acceptance)
-      if (nodes.get(test.ending)?.kind !== 'ending')
-        issue(`Acceptance ending ${test.ending} is not an ending`, [
-          'acceptance',
-        ])
+  )
+    issue('Story ID is reserved for an existing activity', ['id'])
+  if (story.audience.minAge > story.audience.maxAge)
+    issue('minAge must not exceed maxAge', ['audience'])
+  if (story.provenance.kind === 'adapted' && !story.provenance.sourceUrl)
+    issue('Adaptations require the exact source URL', ['provenance'])
+  story.learning.evidenceIds.forEach((ref) => {
+    if (!evidence.some((item) => item.id === ref))
+      issue(`Unknown evidence ${ref}`, ['learning', 'evidenceIds'])
   })
+  const nodes = new Map(story.nodes.map((n) => [n.id, n]))
+  if (nodes.size !== story.nodes.length)
+    issue('Duplicate node IDs', ['nodes'])
+  if (!nodes.has(story.start)) issue('Start node is missing', ['start'])
+  const startKind = nodes.get(story.start)?.kind
+  if (story.schemaVersion === '1.0' && startKind !== 'interactive')
+    issue('Version 1.0 start must be interactive', ['start'])
+  if (story.schemaVersion === '1.1' && startKind !== 'interactive' && startKind !== 'beat')
+    issue('Version 1.1 start must be interactive or beat', ['start'])
+  const edges = (n: (typeof story.nodes)[number]) =>
+    n.next ? [n.next] : (n.interaction?.choices.map((c) => c.next) ?? [])
+  story.nodes.forEach((n, i) => {
+    const fail = (message: string) =>
+      issue(`${n.id}: ${message}`, ['nodes', i])
+    if (new Set(n.entities.map((e) => e.id)).size !== n.entities.length)
+      fail('Duplicate entity IDs')
+    if (new Set(n.entities.map((e) => e.slot)).size !== n.entities.length)
+      fail('Entities must occupy distinct slots')
+    if (n.kind === 'interactive' && (!n.interaction || n.next))
+      fail('Interactive nodes require choices and prohibit auto-next')
+    if (n.kind === 'beat' && (!n.next || n.interaction))
+      fail('Beat nodes require auto-next and prohibit choices')
+    if (n.kind === 'ending' && (n.next || n.interaction))
+      fail('Endings cannot transition automatically')
+    if (n.interaction) {
+      if (
+        new Set(n.interaction.choices.map((c) => c.id)).size !==
+        n.interaction.choices.length
+      )
+        fail('Duplicate choice IDs')
+      if (
+        new Set(n.interaction.choices.map((c) => c.target)).size !==
+        n.interaction.choices.length
+      )
+        fail('Each choice needs a distinct target')
+      for (const c of n.interaction.choices) {
+        if (!n.entities.some((e) => e.id === c.target))
+          fail(`Missing target ${c.target}`)
+        if (
+          n.entities.find((e) => e.id === c.target)?.slot.startsWith('sky-')
+        )
+          fail(
+            'Sky slots are display-only; use a ground or actor slot for touch targets',
+          )
+        if (n.interaction.kind !== 'goal' && c.outcome === 'retry')
+          fail('Free choice and exploration cannot have wrong answers')
+        if (n.interaction.kind === 'free' && c.outcome !== 'choice')
+          fail('Free choices must use outcome choice')
+      }
+    }
+    for (const next of edges(n))
+      if (!nodes.has(next)) fail(`Missing destination ${next}`)
+    // A muted player must never spin in an automatic loop.
+    let auto: typeof n | undefined = n
+    const seen = new Set<string>()
+    while (auto?.kind === 'beat') {
+      if (seen.has(auto.id)) {
+        fail('Automatic cycle')
+        break
+      }
+      seen.add(auto.id)
+      auto = nodes.get(auto.next!)
+    }
+  })
+  const reachable = new Set<string>()
+  const visit = (key: string) => {
+    if (reachable.has(key)) return
+    reachable.add(key)
+    const n = nodes.get(key)
+    if (n) edges(n).forEach(visit)
+  }
+  visit(story.start)
+  const terminating = new Set(
+    story.nodes.filter((n) => n.kind === 'ending').map((n) => n.id),
+  )
+  for (let pass = 0; pass < story.nodes.length; pass++)
+    for (const n of story.nodes)
+      if (edges(n).some((key) => terminating.has(key))) terminating.add(n.id)
+  for (const n of story.nodes) {
+    if (!reachable.has(n.id)) issue(`Unreachable node ${n.id}`, ['nodes'])
+    if (!terminating.has(n.id))
+      issue(`No route to an ending from ${n.id}`, ['nodes'])
+  }
+  for (const test of story.acceptance)
+    if (nodes.get(test.ending)?.kind !== 'ending')
+      issue(`Acceptance ending ${test.ending} is not an ending`, [
+        'acceptance',
+      ])
+}
+export const storyV1Schema = storyV1Shape.superRefine(validateGraph)
+export const storyV1_1Schema = storyV1_1Shape.superRefine(validateGraph)
+export const storySchema = versionedStory.superRefine(validateGraph)
 export type StoryPack = z.infer<typeof storySchema>
 export type StoryNode = StoryPack['nodes'][number]
 export type StoryEntity = StoryNode['entities'][number]

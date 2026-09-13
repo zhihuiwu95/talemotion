@@ -4,6 +4,7 @@ import type { SpeechRequest } from '../runtime/audio/SpeechProvider'
 import { PackPlayer } from './PackPlayer'
 import { storyPacks } from './library'
 import { MIN_BEAT_MS } from './catalog'
+import type { StoryPack } from './schema'
 
 const audio = vi.hoisted(() => ({
   speak: vi.fn((request: SpeechRequest) => request.onComplete?.()),
@@ -48,6 +49,19 @@ const currentNode = (title: string) =>
     .getByRole('region', { name: `${title}互动故事` })
     .getAttribute('data-node')
 
+// Advance one node at a time, bounded by the graph size. An interactive node
+// remains visible; this never hides an automatic cycle with runAllTimers().
+function settlePath(pack: StoryPack) {
+  for (let steps = 0; steps <= pack.nodes.length; steps++) {
+    const node = pack.nodes.find(n => n.id === currentNode(pack.title))!
+    if (node.kind !== 'ending')
+      expect(screen.queryByRole('button', { name: '回到首页' })).not.toBeInTheDocument()
+    act(() => vi.advanceTimersByTime(MIN_BEAT_MS))
+    if (node.kind !== 'beat') return
+  }
+  throw new Error('Automatic path exceeded graph size')
+}
+
 describe('shared story player', () => {
   for (const pack of storyPacks)
     for (const path of pack.acceptance)
@@ -56,7 +70,7 @@ describe('shared story player', () => {
         render(<PackPlayer pack={pack} onHome={onHome} />)
         expect(audio.speak).not.toHaveBeenCalled()
         tap('走进故事')
-        settle()
+        settlePath(pack)
         for (const id of path.choices) {
           const node = pack.nodes.find((n) => n.id === currentNode(pack.title))!
           const choice = node.interaction!.choices.find((c) => c.id === id)!
@@ -64,18 +78,42 @@ describe('shared story player', () => {
             screen.getByRole('button', { name: choice.label }),
           ).toBeEnabled()
           tap(choice.label)
-          settle()
+          settlePath(pack)
         }
         expect(currentNode(pack.title)).toBe(path.ending)
         tap('回到首页')
         expect(onHome).toHaveBeenCalledOnce()
         tap('再玩一次')
-        settle()
         expect(currentNode(pack.title)).toBe(pack.start)
+        settlePath(pack)
+        let first = pack.nodes.find(n => n.id === pack.start)!
+        for (let i = 0; first.kind === 'beat' && i < pack.nodes.length; i++)
+          first = pack.nodes.find(n => n.id === first.next)!
+        expect(currentNode(pack.title)).toBe(first.id)
         tap('家长陪玩')
         expect(screen.getByText(pack.learning.offline)).toBeVisible()
         expect(localStorage.length).toBe(0)
       })
+  it('holds and restarts an automatic opening across pause while ignoring its old audio callback', () => {
+    const party = storyPacks.find(p => p.id === 'garden-gathering-party')!
+    const callbacks: (() => void)[] = []
+    audio.speak.mockImplementation(request => { if (request.onComplete) callbacks.push(request.onComplete) })
+    render(<PackPlayer pack={party} onHome={() => {}} />)
+    expect(audio.speak).not.toHaveBeenCalled()
+    tap('走进故事')
+    settle()
+    expect(currentNode(party.title)).toBe('s01')
+    tap('暂停故事')
+    act(() => callbacks[0]!())
+    settle()
+    expect(currentNode(party.title)).toBe('s01')
+    tap('继续故事')
+    act(() => callbacks[0]!())
+    settle()
+    expect(currentNode(party.title)).toBe('s01')
+    act(() => callbacks[1]!())
+    expect(currentNode(party.title)).toBe('s02')
+  })
   it('holds feedback until narration ends and rejects rapid and stale pointer taps', () => {
     let done: (() => void) | undefined
     audio.speak.mockImplementation((request) => {

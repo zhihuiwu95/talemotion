@@ -1,0 +1,88 @@
+[
+  {
+    "id": "sample:garden-party:B:x04c:b72692b88b90731236d9",
+    "source": "sample:garden-party:B:x04c",
+    "speaker": "cat",
+    "text": "听，我先敲起来啦！",
+    "intent": "dialogue",
+    "emotion": "cheerful",
+    "segments": [
+      {
+        "text": "听，我先敲起来啦！",
+        "pronunciations": [
+          {
+            "text": "起来",
+            "phoneme": "qi3 lai5"
+          }
+        ]
+      }
+    ],
+    "speakerLabel": "小猫",
+    "voiceProfile": "duoduo",
+    "legacyStyle": "story"
+  },
+  {
+    "id": "sample:garden-party:B:x06c:522ea80cea1785e79e27",
+    "source": "sample:garden-party:B:x06c",
+    "speaker": "fox",
+    "text": "我跟上鼓声啦！",
+    "intent": "dialogue",
+    "emotion": "cheerful",
+    "segments": [
+      {
+        "text": "我跟上鼓声啦！"
+      }
+    ],
+    "speakerLabel": "小狐狸",
+    "voiceProfile": "fox",
+    "legacyStyle": "story"
+  },
+  {
+    "id": "sample:garden-party:B:x04d:e416ecb66b543ee8873d",
+    "source": "sample:garden-party:B:x04d",
+    "speaker": "cat",
+    "text": "这一小段敲完啦，接下来请你和小狐狸一起！",
+    "intent": "dialogue",
+    "emotion": "cheerful",
+    "segments": [
+      {
+        "text": "这一小段敲完啦，接下来请你和小狐狸一起！",
+        "pronunciations": [
+          {
+            "text": "接下来",
+            "phoneme": "jie1 xia4 lai5"
+          },
+          {
+            "text": "一起",
+            "phoneme": "yi1 qi3"
+          }
+        ]
+      }
+    ],
+    "speakerLabel": "小猫",
+    "voiceProfile": "duoduo",
+    "legacyStyle": "story"
+  },
+  {
+    "id": "sample:garden-party:B:x06d:6bdf9992d0721921dcb5",
+    "source": "sample:garden-party:B:x06d",
+    "speaker": "fox",
+    "text": "我们的鼓声也响起来啦！",
+    "intent": "dialogue",
+    "emotion": "cheerful",
+    "segments": [
+      {
+        "text": "我们的鼓声也响起来啦！",
+        "pronunciations": [
+          {
+            "text": "起来",
+            "phoneme": "qi3 lai5"
+          }
+        ]
+      }
+    ],
+    "speakerLabel": "小狐狸",
+    "voiceProfile": "fox",
+    "legacyStyle": "story"
+  }
+]

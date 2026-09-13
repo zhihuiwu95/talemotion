@@ -2,7 +2,7 @@
 
 ## 1. 状态、依据与边界
 
-REQ-GARDEN-EXPANDED；架构 v0.2，2026-09-13；用户已授权落实 review 并进入 Plan；实施计划待确认。引用 [PRD v0.3](prd.md)、[Design v0.2](design.md)、[架构基线 v1.0](../../sdd/arch.md)。代码基线 `9f6cf8b`，本轮开始工作区干净。
+REQ-GARDEN-EXPANDED；架构 v0.3，2026-09-13；用户已授权落实 review 并进入 Plan；实施计划待确认。引用 [PRD v0.3](prd.md)、[Design v0.2](design.md)、[架构基线 v1.0](../../sdd/arch.md)。代码基线 `9f6cf8b`，本轮开始工作区干净。
 
 用户授权落实 Design review 并进入架构；本轮只修改需求/设计并新增架构、计划文档。新故事、能力扩展、音频及共享规则均未实现，性能与听感没有新测量结果。
 
@@ -117,7 +117,7 @@ Narration Line ID 沿用 collectLine 的 source + direction digest。实际人�
 
 当前 `--publish` 会解析全部输入并生成/替换整份角色语音清单，并非仅发布新故事。直接照用可能改变旧故事正式声音，与本需求的保留范围冲突。
 
-实施必须先增加显式 source 前缀筛选（拟定参数 `--source-prefix pack:garden-gathering-party:`），只生成和更新本篇记录；其他条目沿用已发布的实际声音与配置证据。A/B 都需要该隔离，不能依赖缓存命中作为范围保护。A 不做混音产物层，但若混合历史与新语音的 manifest 状态需要升级，同样使用 v3 的 speech/output=speech 包装，避免放宽全局 release 检查。
+实施必须先增加显式 source 前缀筛选（拟定参数 `--source-prefix pack:garden-gathering-party:`），只生成和更新本篇记录；其他条目沿用已发布的实际声音与配置证据。A/B 都需要该隔离，不能依赖缓存命中作为范围保护。A 默认保持 manifest v2，只实现限定发布、合并与原子替换；B 才进入 v3 的 speech/output 分层。若 A 遇到 v2 无法表达的明确阻断，报告证据并返回架构评审，不自行升级或放宽校验。
 
 发布器合并原清单与获准更新的条目，在临时产物通过完整验证后原子替换 manifest；失败保留原正式清单。playback 是可重建投影，构建前须从已发布清单再生成并验证。检查不在当前 narration-input 的旧身份应保存在历史记录中，不混入活动清单冒充当前台词。不将“保留旧文件”误写成“旧播放绑定没变化”。
 
@@ -166,3 +166,5 @@ Narration Line ID 沿用 collectLine 的 source + direction digest。实际人�
 本轮完成：代码静态核对、Design/PRD 修订、架构与 [实施计划](plan.md)。未实施、未生成音频、未运行产品测试、未提交/推送/部署。Plan 经用户确认后进入计划步骤 E1；任何声音分支的实际采用须有试听决策记录。
 
 修订记录 v0.2：接受本轮 review，明确目录导出格式、锁步理由、显式版本分支、人声/混音产物分层及轻量规模记录；Plan 核对补充限定发布与 manifest 验证迁移。均为待实施约束。
+
+修订 v0.3：明确 A 保持 v2/B 使用 v3；验证命令入口为 scripts/verify-audio.mjs，实际实现是确实存在的 scripts/verify_audio.py。E2 确认后冻结本需求契约，字段/能力/版本语义变化返回 E2；E3 采集允许新增 input/index，manifest 与 playback 保持已发布状态。用户授权修订并执行 E1。

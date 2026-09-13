@@ -1,0 +1,2109 @@
+{
+  "schemaVersion": "1.1",
+  "catalogVersion": "1.1",
+  "id": "garden-gathering-party",
+  "title": "雨后的花园小聚会：一起开场啦",
+  "summary": "一起试摆野餐篮，给小鼓腾出地方，再开一场花园小聚会。",
+  "theme": "negotiate",
+  "audience": {
+    "minAge": 3,
+    "maxAge": 4,
+    "support": "建议亲子共玩；先等孩子回应，语言理解需要时再用自己的话复述，不用完成速度评价能力。"
+  },
+  "provenance": {
+    "kind": "original",
+    "sourceTitle": "TaleMotion 森林日常原创故事",
+    "license": "项目自有原创内容；第三方引用仅作为设计依据。",
+    "attribution": "TaleMotion；AI辅助编写与代码绘制，尚未经幼教专业人员审阅。",
+    "changes": "依照用户确认的 SDD 梗概、B 声音与四布局样稿新增完整故事；保留旧 garden-gathering。"
+  },
+  "learning": {
+    "objective": "在准备聚会时，体验发现空间需要、听见双方愿望、共同调整，并享受一起准备的聚会。",
+    "evidenceIds": [
+      "moe-social",
+      "naeyc-play",
+      "takacs-2015"
+    ],
+    "rationale": "用首次合理试摆发现中间位置的需要；两种布局均保留到音乐和尾声，音乐只兑现共同成果，不增加轮流教学目标。",
+    "observation": "孩子是否注意到小狐狸想看花、小猫想在中间玩鼓？是否关注篮子移动后小鼓的位置变化？可以指认或用动作表达。",
+    "offline": "和家人给玩具找两个都舒服的位置，说说各自想法，再一起选一个；不要求分享自己的物品。",
+    "limitation": "本故事未验证学习效果；完成、重玩、点击或分享都不能作为能力或品德测评。"
+  },
+  "start": "s01",
+  "nodes": [
+    {
+      "id": "s01",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "雨停了，小狐狸和小猫带着篮子和小鼓，来到花园。",
+        "emotion": "neutral",
+        "intent": "narration",
+        "segments": [
+          {
+            "text": "雨停了，小狐狸和小猫带着篮子和小鼓，来到花园。",
+            "pronunciations": [
+              {
+                "text": "带着",
+                "phoneme": "dai4 zhe5"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "s02"
+    },
+    {
+      "id": "s02",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "wiggle"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我带了野餐篮，想找个能看见花的地方，和大家一起聚会。",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "我带了野餐篮，想找个能看见花的地方，和大家一起聚会。",
+            "pronunciations": [
+              {
+                "text": "地方",
+                "phoneme": "di4 fang5"
+              },
+              {
+                "text": "看",
+                "phoneme": "kan4"
+              },
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "s03"
+    },
+    {
+      "id": "s03",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "wiggle"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "我带了小鼓，等下我们一起玩音乐吧！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "我带了小鼓，等下我们一起玩音乐吧！",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "s04"
+    },
+    {
+      "id": "s04",
+      "kind": "interactive",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我们先放花这边试试吧。点点篮子，帮我挪到中间。",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "我们先放花这边试试吧。点点篮子，帮我挪到中间。",
+            "pronunciations": [
+              {
+                "text": "中间",
+                "phoneme": "zhong1 jian1"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "点点篮子，挪到中间。",
+      "interaction": {
+        "kind": "free",
+        "reason": "帮助完成小狐狸提出的合理试摆，随后共同发现新的空间需要。",
+        "choices": [
+          {
+            "id": "try-basket",
+            "target": "basket",
+            "label": "把篮子挪到中间",
+            "next": "s05",
+            "outcome": "choice",
+            "consequence": "篮子从左侧移到中间；小鼓仍在右侧。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "篮子摆好啦！我想把小鼓放在中间，让大家都能一起玩。咦，中间有篮子呢。",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "篮子摆好啦！我想把小鼓放在中间，让大家都能一起玩。咦，中间有篮子呢。",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              },
+              {
+                "text": "中间",
+                "phoneme": "zhong1 jian1",
+                "occurrence": 1
+              },
+              {
+                "text": "中间",
+                "phoneme": "zhong1 jian1",
+                "occurrence": 2
+              },
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "s06"
+    },
+    {
+      "id": "s06",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "wiggle"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "那我们挪一挪吧。我还是想让篮子靠花一点。",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "那我们挪一挪吧。我还是想让篮子靠花一点。",
+            "pronunciations": [
+              {
+                "text": "还",
+                "phoneme": "hai2"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "s07"
+    },
+    {
+      "id": "s07",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "wiggle"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "中间留给小鼓就好。篮子放花边或左边，我都喜欢。我来挪鼓！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "中间留给小鼓就好。篮子放花边或左边，我都喜欢。我来挪鼓！",
+            "pronunciations": [
+              {
+                "text": "中间",
+                "phoneme": "zhong1 jian1"
+              },
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "s08"
+    },
+    {
+      "id": "s08",
+      "kind": "interactive",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "左边也能看花，我也喜欢。点我，篮子去右边花旁；点小猫，篮子去左边草地。",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "左边也能看花，我也喜欢。点我，篮子去右边花旁；点小猫，篮子去左边草地。",
+            "pronunciations": [
+              {
+                "text": "看",
+                "phoneme": "kan4"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "点狐狸去花边，点小猫去左边。",
+      "interaction": {
+        "kind": "free",
+        "reason": "双方已接受两处；孩子选择篮子位置，中间留给共同音乐活动。",
+        "choices": [
+          {
+            "id": "flower",
+            "target": "fox",
+            "label": "篮子去右边花旁",
+            "next": "f01",
+            "outcome": "choice",
+            "consequence": "篮子中间→右侧，小鼓右侧→中间，花景保持。"
+          },
+          {
+            "id": "grass",
+            "target": "cat",
+            "label": "篮子去左边草地",
+            "next": "g01",
+            "outcome": "choice",
+            "consequence": "篮子中间→左侧，小鼓右侧→中间，花景保持。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f01",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "篮子靠着花，小鼓到了中间，真合适！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "篮子靠着花，小鼓到了中间，真合适！",
+            "pronunciations": [
+              {
+                "text": "中间",
+                "phoneme": "zhong1 jian1"
+              },
+              {
+                "text": "靠着",
+                "phoneme": "kao4 zhe5"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "f02"
+    },
+    {
+      "id": "f02",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "这里敲鼓，大家都能加入啦！谢谢你帮忙挪篮子。",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "这里敲鼓，大家都能加入啦！谢谢你帮忙挪篮子。"
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "f03"
+    },
+    {
+      "id": "f03",
+      "kind": "interactive",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "小聚会开场啦！想一起拍手，就点点我；想敲小鼓，就点小鼓。你来选！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "小聚会开场啦！想一起拍手，就点点我；想敲小鼓，就点小鼓。你来选！",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "点小猫选拍手，点鼓选敲鼓。",
+      "interaction": {
+        "kind": "free",
+        "reason": "让孩子选择享受共同准备好的聚会，不增加第二个协商任务。",
+        "choices": [
+          {
+            "id": "clap",
+            "target": "cat",
+            "label": "跟着一起拍手",
+            "next": "f04c",
+            "outcome": "choice",
+            "consequence": "小猫和鼓开始演奏，随后邀请点狐狸加入。"
+          },
+          {
+            "id": "drum",
+            "target": "drum",
+            "label": "听一小段再敲鼓",
+            "next": "f04d",
+            "outcome": "choice",
+            "consequence": "小猫先演奏短节奏，随后邀请孩子点鼓加入。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f04c",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "听，我先敲起来啦！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "听，我先敲起来啦！",
+            "pronunciations": [
+              {
+                "text": "起来",
+                "phoneme": "qi3 lai5"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "f05c",
+      "soundCue": "drum-short"
+    },
+    {
+      "id": "f05c",
+      "kind": "interactive",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我也想加入！点点我，我们一起拍拍手吧！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "我也想加入！点点我，我们一起拍拍手吧！",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "点点小狐狸，一起拍手。",
+      "interaction": {
+        "kind": "free",
+        "reason": "点狐狸触发狐狸加入，小猫继续演奏，享受腾出空间后的聚会。",
+        "choices": [
+          {
+            "id": "join-clap",
+            "target": "fox",
+            "label": "和小狐狸拍手",
+            "next": "f06c",
+            "outcome": "choice",
+            "consequence": "狐狸加入节奏摆动，小猫与鼓继续演奏；保留篮子位置。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f06c",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我跟上鼓声啦！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "我跟上鼓声啦！"
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "f06",
+      "soundCue": "drum-clap-short"
+    },
+    {
+      "id": "f04d",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "这一小段敲完啦，接下来请你和小狐狸一起！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "这一小段敲完啦，接下来请你和小狐狸一起！",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              },
+              {
+                "text": "接下来",
+                "phoneme": "jie1 xia4 lai5"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "f05d",
+      "soundCue": "drum-short"
+    },
+    {
+      "id": "f05d",
+      "kind": "interactive",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "小鼓就在中间呢。点点小鼓，和我一起敲吧！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "小鼓就在中间呢。点点小鼓，和我一起敲吧！",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              },
+              {
+                "text": "中间",
+                "phoneme": "zhong1 jian1"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "点点中间的小鼓。",
+      "interaction": {
+        "kind": "free",
+        "reason": "小猫自然演奏结束后邀请孩子加入，没有等待对错或新协商。",
+        "choices": [
+          {
+            "id": "join-drum",
+            "target": "drum",
+            "label": "和小狐狸敲鼓",
+            "next": "f06d",
+            "outcome": "choice",
+            "consequence": "狐狸与中间鼓节奏摆动，篮子保留所选位置。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "f06d",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我们的鼓声也响起来啦！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "我们的鼓声也响起来啦！",
+            "pronunciations": [
+              {
+                "text": "起来",
+                "phoneme": "qi3 lai5"
+              },
+              {
+                "text": "我们的",
+                "phoneme": "wo3 men5 de5"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "f06",
+      "soundCue": "drum-short"
+    },
+    {
+      "id": "f06",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "刚才还要找地方，现在我们都能围着小鼓玩啦。",
+        "emotion": "warm",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "刚才还要找地方，现在我们都能围着小鼓玩啦。",
+            "pronunciations": [
+              {
+                "text": "地方",
+                "phoneme": "di4 fang5"
+              },
+              {
+                "text": "还",
+                "phoneme": "hai2"
+              },
+              {
+                "text": "围着",
+                "phoneme": "wei2 zhe5"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "f07"
+    },
+    {
+      "id": "f07",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "花还看得见，咚咚歌也真好听。和你们一起，我真喜欢。",
+        "emotion": "warm",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "花还看得见，咚咚歌也真好听。和你们一起，我真喜欢。",
+            "pronunciations": [
+              {
+                "text": "看",
+                "phoneme": "kan4"
+              },
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              },
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              },
+              {
+                "text": "还",
+                "phoneme": "hai2"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "f08"
+    },
+    {
+      "id": "f08",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "花园里的小聚会，留下了一段咚咚歌。小狐狸、小猫，下次再一起玩吧。",
+        "emotion": "gentle",
+        "intent": "narration",
+        "segments": [
+          {
+            "text": "花园里的小聚会，留下了一段咚咚歌。小狐狸、小猫，下次再一起玩吧。",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "f09"
+    },
+    {
+      "id": "f09",
+      "kind": "ending",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-right",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "下次见！",
+        "emotion": "warm",
+        "intent": "ending",
+        "segments": [
+          {
+            "text": "下次见！"
+          }
+        ]
+      },
+      "cue": "下次再一起玩。"
+    },
+    {
+      "id": "g01",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "篮子在左边，也能看见花，小鼓到了中间，真合适！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "篮子在左边，也能看见花，小鼓到了中间，真合适！",
+            "pronunciations": [
+              {
+                "text": "看",
+                "phoneme": "kan4"
+              },
+              {
+                "text": "中间",
+                "phoneme": "zhong1 jian1"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "g02"
+    },
+    {
+      "id": "g02",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "这里敲鼓，大家都能加入啦！谢谢你帮忙挪篮子。",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "这里敲鼓，大家都能加入啦！谢谢你帮忙挪篮子。"
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "g03"
+    },
+    {
+      "id": "g03",
+      "kind": "interactive",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "小聚会开场啦！想一起拍手，就点点我；想敲小鼓，就点小鼓。你来选！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "小聚会开场啦！想一起拍手，就点点我；想敲小鼓，就点小鼓。你来选！",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "点小猫选拍手，点鼓选敲鼓。",
+      "interaction": {
+        "kind": "free",
+        "reason": "让孩子选择享受共同准备好的聚会，不增加第二个协商任务。",
+        "choices": [
+          {
+            "id": "clap",
+            "target": "cat",
+            "label": "跟着一起拍手",
+            "next": "g04c",
+            "outcome": "choice",
+            "consequence": "小猫和鼓开始演奏，随后邀请点狐狸加入。"
+          },
+          {
+            "id": "drum",
+            "target": "drum",
+            "label": "听一小段再敲鼓",
+            "next": "g04d",
+            "outcome": "choice",
+            "consequence": "小猫先演奏短节奏，随后邀请孩子点鼓加入。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g04c",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "听，我先敲起来啦！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "听，我先敲起来啦！",
+            "pronunciations": [
+              {
+                "text": "起来",
+                "phoneme": "qi3 lai5"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "g05c",
+      "soundCue": "drum-short"
+    },
+    {
+      "id": "g05c",
+      "kind": "interactive",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我也想加入！点点我，我们一起拍拍手吧！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "我也想加入！点点我，我们一起拍拍手吧！",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "点点小狐狸，一起拍手。",
+      "interaction": {
+        "kind": "free",
+        "reason": "点狐狸触发狐狸加入，小猫继续演奏，享受腾出空间后的聚会。",
+        "choices": [
+          {
+            "id": "join-clap",
+            "target": "fox",
+            "label": "和小狐狸拍手",
+            "next": "g06c",
+            "outcome": "choice",
+            "consequence": "狐狸加入节奏摆动，小猫与鼓继续演奏；保留篮子位置。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g06c",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我跟上鼓声啦！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "我跟上鼓声啦！"
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "g06",
+      "soundCue": "drum-clap-short"
+    },
+    {
+      "id": "g04d",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "这一小段敲完啦，接下来请你和小狐狸一起！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "这一小段敲完啦，接下来请你和小狐狸一起！",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              },
+              {
+                "text": "接下来",
+                "phoneme": "jie1 xia4 lai5"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "g05d",
+      "soundCue": "drum-short"
+    },
+    {
+      "id": "g05d",
+      "kind": "interactive",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "小鼓就在中间呢。点点小鼓，和我一起敲吧！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "小鼓就在中间呢。点点小鼓，和我一起敲吧！",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              },
+              {
+                "text": "中间",
+                "phoneme": "zhong1 jian1"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "点点中间的小鼓。",
+      "interaction": {
+        "kind": "free",
+        "reason": "小猫自然演奏结束后邀请孩子加入，没有等待对错或新协商。",
+        "choices": [
+          {
+            "id": "join-drum",
+            "target": "drum",
+            "label": "和小狐狸敲鼓",
+            "next": "g06d",
+            "outcome": "choice",
+            "consequence": "狐狸与中间鼓节奏摆动，篮子保留所选位置。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "g06d",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "play"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "play"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "我们的鼓声也响起来啦！",
+        "emotion": "cheerful",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "我们的鼓声也响起来啦！",
+            "pronunciations": [
+              {
+                "text": "起来",
+                "phoneme": "qi3 lai5"
+              },
+              {
+                "text": "我们的",
+                "phoneme": "wo3 men5 de5"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "g06",
+      "soundCue": "drum-short"
+    },
+    {
+      "id": "g06",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "刚才还要找地方，现在我们都能围着小鼓玩啦。",
+        "emotion": "warm",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "刚才还要找地方，现在我们都能围着小鼓玩啦。",
+            "pronunciations": [
+              {
+                "text": "地方",
+                "phoneme": "di4 fang5"
+              },
+              {
+                "text": "还",
+                "phoneme": "hai2"
+              },
+              {
+                "text": "围着",
+                "phoneme": "wei2 zhe5"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "g07"
+    },
+    {
+      "id": "g07",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小狐狸",
+        "text": "花还看得见，咚咚歌也真好听。和你们一起，我真喜欢。",
+        "emotion": "warm",
+        "intent": "dialogue",
+        "segments": [
+          {
+            "text": "花还看得见，咚咚歌也真好听。和你们一起，我真喜欢。",
+            "pronunciations": [
+              {
+                "text": "看",
+                "phoneme": "kan4"
+              },
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              },
+              {
+                "text": "好",
+                "phoneme": "hao3"
+              },
+              {
+                "text": "还",
+                "phoneme": "hai2"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "g08"
+    },
+    {
+      "id": "g08",
+      "kind": "beat",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "朵朵",
+        "text": "花园里的小聚会，留下了一段咚咚歌。小狐狸、小猫，下次再一起玩吧。",
+        "emotion": "gentle",
+        "intent": "narration",
+        "segments": [
+          {
+            "text": "花园里的小聚会，留下了一段咚咚歌。小狐狸、小猫，下次再一起玩吧。",
+            "pronunciations": [
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              }
+            ]
+          }
+        ]
+      },
+      "cue": "看一看，听听朋友的话。",
+      "next": "g09"
+    },
+    {
+      "id": "g09",
+      "kind": "ending",
+      "backdrop": "meadow-after-rain",
+      "entities": [
+        {
+          "id": "fox",
+          "asset": "fox",
+          "slot": "actor-left",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "cat",
+          "asset": "cat",
+          "slot": "actor-right",
+          "mood": "happy",
+          "motion": "still"
+        },
+        {
+          "id": "basket",
+          "asset": "basket",
+          "slot": "prop-left",
+          "mood": "neutral",
+          "motion": "still"
+        },
+        {
+          "id": "drum",
+          "asset": "drum",
+          "slot": "prop-center",
+          "mood": "neutral",
+          "motion": "still"
+        }
+      ],
+      "line": {
+        "speaker": "小猫",
+        "text": "下次见！",
+        "emotion": "warm",
+        "intent": "ending",
+        "segments": [
+          {
+            "text": "下次见！"
+          }
+        ]
+      },
+      "cue": "下次再一起玩。"
+    }
+  ],
+  "acceptance": [
+    {
+      "name": "花边一起拍手",
+      "choices": [
+        "try-basket",
+        "flower",
+        "clap",
+        "join-clap"
+      ],
+      "ending": "f09"
+    },
+    {
+      "name": "花边一起敲鼓",
+      "choices": [
+        "try-basket",
+        "flower",
+        "drum",
+        "join-drum"
+      ],
+      "ending": "f09"
+    },
+    {
+      "name": "草地一起拍手",
+      "choices": [
+        "try-basket",
+        "grass",
+        "clap",
+        "join-clap"
+      ],
+      "ending": "g09"
+    },
+    {
+      "name": "草地一起敲鼓",
+      "choices": [
+        "try-basket",
+        "grass",
+        "drum",
+        "join-drum"
+      ],
+      "ending": "g09"
+    }
+  ]
+}

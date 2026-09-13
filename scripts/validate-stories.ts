@@ -1,17 +1,8 @@
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { storySchema } from '../src/stories/schema'
 import { verifyAcceptance } from '../src/stories/engine'
-import {
-  assets,
-  backdrops,
-  catalogVersion,
-  moods,
-  motions,
-  slots,
-  styles,
-} from '../src/stories/catalog'
+import { capabilityExport } from '../src/stories/catalog'
 import { z } from 'zod'
-import { voiceIntents, voiceEmotions } from '../src/stories/speech'
 
 const args = process.argv.slice(2)
 if (args.includes('--review')) {
@@ -47,7 +38,7 @@ if (args.includes('--review')) {
       value.replaceAll('|', '／').replaceAll('\n', ' ')
     for (const n of p.nodes)
       output.push(
-        `| ${n.id} · ${n.kind} | ${cell(n.line.speaker + '：' + n.line.text)} (${n.line.emotion ?? n.line.style ?? 'neutral'})<br>文字提示：${cell(n.cue)} | ${n.backdrop}<br>${n.entities.map((e) => `${e.asset}@${e.slot}/${e.motion}`).join('<br>')} | ${n.interaction ? n.interaction.choices.map((c) => `${cell(c.label)} → ${c.next}：${cell(c.consequence)}`).join('<br>') : n.next ? `演出结束 → ${n.next}` : '主动结束／重玩'} |`,
+        `| ${n.id} · ${n.kind} | ${cell(n.line.speaker + '：' + n.line.text)} (${n.line.emotion ?? n.line.style ?? 'neutral'})<br>文字提示：${cell(n.cue)} | ${n.backdrop}${'soundCue' in n && n.soundCue ? `<br>制作音效：${n.soundCue}` : ''}<br>${n.entities.map((e) => `${e.asset}@${e.slot}/${e.motion}`).join('<br>')} | ${n.interaction ? n.interaction.choices.map((c) => `${cell(c.label)} → ${c.next}：${cell(c.consequence)}`).join('<br>') : n.next ? `演出结束 → ${n.next}` : '主动结束／重玩'} |`,
       )
     output.push('', '### 选择前后的实际差异', '',
       '只比较 JSON 快照；动效执行、空间含义和双方同意仍需审阅。无位置变化不一定是错误，不能用动效自动证明协商成立。', '',
@@ -96,7 +87,7 @@ if (args.includes('--review')) {
   writeFileSync(
     'docs/production/capabilities.json',
     JSON.stringify(
-      { catalogVersion, assets, backdrops, slots, moods, motions, styles, voiceIntents, voiceEmotions },
+      capabilityExport,
       null,
       2,
     ) + '\n',

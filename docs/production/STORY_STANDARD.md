@@ -1,8 +1,24 @@
-# 故事生产规范 v1.1
+# 故事生产规范 v1.2
 
-更新：2026-09-11。流程修订来自第四篇复审；JSON 与能力版本仍为 1.0，不要求重写旧包。
+更新：2026-09-13。新增显式版本化契约；旧故事仍按 1.0，不要求重写。v1.1 的内容审阅规则继续有效。
 
 这是一份经三个工程样板试用的项目规范，不是行业标准或经实验验证的教学法。数量、时长、字数是产品起始约束，后续以试玩观察调整。
+
+
+## 版本化契约（2026-09-13，E2）
+
+能力目录导出格式为 `formatVersion: "2.0"`，包含 `latest: "1.1"` 与 `catalogs["1.0"]` / `catalogs["1.1"]`。两个版本完整展开；必须按故事声明查目录，不能用 latest 覆盖版本或作为未知版本回退。语音方向字段继续来自当前 speech 定义。旧扁平目录读取方式需要更新。
+
+本需求明确采用锁步：仅 1.0/1.0 与 1.1/1.1，schema 和 catalog 概念独立，但当前不实现兼容矩阵。
+
+| 故事 / 目录版本 | 节点数 | 起点 | 背景 | 节点 soundCue |
+|---|---|---|---|---|
+| 1.0 / 1.0 | 4～24 | interactive | snow / meadow / rain | 字段不允许 |
+| 1.1 / 1.1 | 4～40 | interactive 或 beat | 旧背景＋meadow-after-rain | 可选 drum-short / drum-clap-short |
+
+soundCue 是制作方向 ID，不接受 URL、路径或时间轴；计划在制作时混入节点音频，播放器仍播一条最终音频。新背景已完成 E3 本地实现；混音仅完成 E1 样稿及 E2 契约，尚未完成 E4 制作管线；目录注册不等于可发布。现有四个包仍为 1.0，无迁移。新包必须等配套实现与验收完成后发布。
+
+字段、枚举和数量限制在导出 JSON Schema 中按版本独立表达；起点引用、可达性、可结束性与自动循环仍需 stories:validate。E2 经用户确认后本需求契约冻结，后续字段/能力/版本语义变化必须返回 E2 确认。
 
 ## 输入与输出
 
@@ -26,7 +42,7 @@
 
 ## 故事与互动
 
-建议从 1 个主要困难、2 位主要角色、4–8 次有意义的操作开始。单条台词硬上限 64 个字符，通常用 1–2 句短话；不是科学规定的注意力极限。v1 允许 4–24 个节点，每幕最多 3 个可操作对象，通常 1–2 个。
+建议从 1 个主要困难、2 位主要角色、4–8 次有意义的操作开始。单条台词硬上限 64 个字符，通常用 1–2 句短话；不是科学规定的注意力极限。1.0 允许 4–24 个节点，1.1 允许 4–40 个节点，每幕最多 3 个可操作对象，通常 1–2 个。
 
 每个互动都要写清楚：角色为什么需要它、孩子凭什么发现线索、能做什么、结果在画面上怎样出现。不要为了达到操作数量插入题卡；也不要只让所有按钮跳到一段相同的赞美。
 
@@ -62,7 +78,7 @@
 
 - 根对象：`schemaVersion/catalogVersion/id/title/summary/theme/audience/provenance/learning/start/nodes/acceptance`。
 - `id`：小写英文及数字、连字符，首字符字母，最长 48；不得占用原活动 ID；所有故事 ID 唯一。
-- 节点：`id/kind/backdrop/entities/line/cue`；交互节点有 `interaction`，演出节点有 `next`，结尾两者都没有。
+- 节点：`id/kind/backdrop/entities/line/cue`；1.1 可选 `soundCue`（有限注册 ID）；交互节点有 `interaction`，演出节点有 `next`，结尾两者都没有。
 - 实体：`id/asset/slot/mood/motion`；一个节点内实体 ID 和 slot 各自唯一。每个节点是完整画面快照，未列出的实体消失，不继承上一幕隐藏状态。
 - 台词：`speaker/text`，可选 `intent/emotion/voiceProfile/style/styleDegree/rate/pitch/segmentation/segments`。speaker 在制作端登记为角色声线身份；旧 style 兼容映射为 emotion。当前正式录音仍处于 legacy-retained，候选多角色声音仅供试听，见 [TTS_DECISION](../TTS_DECISION.md)。
 - 选择：`id/target/label/next/outcome/consequence`；target 必须是本幕可见实体；label 是按钮与读屏名称；consequence 是人工审阅用的可见后果描述，程序不会自动把它变成动画。

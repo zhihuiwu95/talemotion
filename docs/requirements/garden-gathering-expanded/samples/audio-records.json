@@ -1,0 +1,188 @@
+{
+  "scope": "E1 A: TTS only; no SFX; unpublished",
+  "configHash": "882728e7119dfd2140904887ec172ad2d2824a0a92690f4021a984419a24c567",
+  "records": [
+    {
+      "source": "sample:garden-party:x04c",
+      "lineId": "sample:garden-party:x04c:51a0723d9e38424b61b8",
+      "text": "咚咚，哒！听，我先敲起来啦！",
+      "file": "A-x04c.mp3",
+      "voice": "zh-CN-XiaoyiNeural",
+      "generation": {
+        "ttsConfigVersion": "azure-director-v3-approved",
+        "provider": "azure",
+        "region": "eastus",
+        "outputFormat": "audio-24khz-96kbitrate-mono-mp3",
+        "voice": "zh-CN-XiaoyiNeural",
+        "voiceProfile": "duoduo",
+        "speaker": "cat",
+        "intent": "dialogue",
+        "emotion": "cheerful",
+        "text": "咚咚，哒！听，我先敲起来啦！",
+        "styleDegree": 1.2,
+        "rate": "+0%",
+        "pitch": "+2Hz",
+        "style": "cheerful",
+        "requestedStyle": "cheerful",
+        "segments": [
+          {
+            "text": "咚咚，哒！听，我先敲起来啦！",
+            "settings": {
+              "styleDegree": 1.2,
+              "rate": "+0%",
+              "pitch": "+2Hz",
+              "style": "cheerful",
+              "requestedStyle": "cheerful",
+              "emotion": "cheerful"
+            },
+            "pronunciations": [
+              {
+                "text": "起来",
+                "phoneme": "qi3 lai5"
+              }
+            ]
+          }
+        ],
+        "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"zh-CN\"><voice name=\"zh-CN-XiaoyiNeural\"><mstts:express-as style=\"cheerful\" styledegree=\"1.2\"><prosody rate=\"+0%\" pitch=\"+2Hz\">咚咚，哒！听，我先敲<phoneme alphabet=\"sapi\" ph=\"qi 3 lai 5\">起来</phoneme>啦！</prosody></mstts:express-as></voice></speak>",
+        "warnings": []
+      },
+      "sha256": "642941b5b6fcb563b7d8c59e9457a21dfa27f565bc13d54020a43d319e92356c"
+    },
+    {
+      "source": "sample:garden-party:x06c",
+      "lineId": "sample:garden-party:x06c:5650cc2c114b5b6e7048",
+      "text": "拍拍，咚咚！我跟上鼓声啦！",
+      "file": "A-x06c.mp3",
+      "voice": "zh-CN-XiaohanNeural",
+      "generation": {
+        "ttsConfigVersion": "azure-director-v3-approved",
+        "provider": "azure",
+        "region": "eastus",
+        "outputFormat": "audio-24khz-96kbitrate-mono-mp3",
+        "voice": "zh-CN-XiaohanNeural",
+        "voiceProfile": "fox",
+        "speaker": "fox",
+        "intent": "dialogue",
+        "emotion": "cheerful",
+        "text": "拍拍，咚咚！我跟上鼓声啦！",
+        "styleDegree": 1.2,
+        "rate": "+0%",
+        "pitch": "+2Hz",
+        "style": "cheerful",
+        "requestedStyle": "cheerful",
+        "segments": [
+          {
+            "text": "拍拍，咚咚！我跟上鼓声啦！",
+            "settings": {
+              "styleDegree": 1.2,
+              "rate": "+0%",
+              "pitch": "+2Hz",
+              "style": "cheerful",
+              "requestedStyle": "cheerful",
+              "emotion": "cheerful"
+            }
+          }
+        ],
+        "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"zh-CN\"><voice name=\"zh-CN-XiaohanNeural\"><mstts:express-as style=\"cheerful\" styledegree=\"1.2\"><prosody rate=\"+0%\" pitch=\"+2Hz\">拍拍，咚咚！我跟上鼓声啦！</prosody></mstts:express-as></voice></speak>",
+        "warnings": []
+      },
+      "sha256": "18725136f8c5850c2a4c9e505763e4b034033cf533bd5d976993ad5a0efa01cc"
+    },
+    {
+      "source": "sample:garden-party:x04d",
+      "lineId": "sample:garden-party:x04d:7bc744b154a683cac010",
+      "text": "咚咚，哒！这一小段敲完啦，接下来请你和小狐狸一起！",
+      "file": "A-x04d.mp3",
+      "voice": "zh-CN-XiaoyiNeural",
+      "generation": {
+        "ttsConfigVersion": "azure-director-v3-approved",
+        "provider": "azure",
+        "region": "eastus",
+        "outputFormat": "audio-24khz-96kbitrate-mono-mp3",
+        "voice": "zh-CN-XiaoyiNeural",
+        "voiceProfile": "duoduo",
+        "speaker": "cat",
+        "intent": "dialogue",
+        "emotion": "cheerful",
+        "text": "咚咚，哒！这一小段敲完啦，接下来请你和小狐狸一起！",
+        "styleDegree": 1.2,
+        "rate": "+0%",
+        "pitch": "+2Hz",
+        "style": "cheerful",
+        "requestedStyle": "cheerful",
+        "segments": [
+          {
+            "text": "咚咚，哒！这一小段敲完啦，接下来请你和小狐狸一起！",
+            "settings": {
+              "styleDegree": 1.2,
+              "rate": "+0%",
+              "pitch": "+2Hz",
+              "style": "cheerful",
+              "requestedStyle": "cheerful",
+              "emotion": "cheerful"
+            },
+            "pronunciations": [
+              {
+                "text": "接下来",
+                "phoneme": "jie1 xia4 lai5"
+              },
+              {
+                "text": "一起",
+                "phoneme": "yi1 qi3"
+              }
+            ]
+          }
+        ],
+        "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"zh-CN\"><voice name=\"zh-CN-XiaoyiNeural\"><mstts:express-as style=\"cheerful\" styledegree=\"1.2\"><prosody rate=\"+0%\" pitch=\"+2Hz\">咚咚，哒！这一小段敲完啦，<phoneme alphabet=\"sapi\" ph=\"jie 1 xia 4 lai 5\">接下来</phoneme>请你和小狐狸<phoneme alphabet=\"sapi\" ph=\"yi 1 qi 3\">一起</phoneme>！</prosody></mstts:express-as></voice></speak>",
+        "warnings": []
+      },
+      "sha256": "74ac0de54afa804303c19852fb77bd72e46fae8abb19d57395a86ece7ded7c08"
+    },
+    {
+      "source": "sample:garden-party:x06d",
+      "lineId": "sample:garden-party:x06d:98acc56a7b2b3995d381",
+      "text": "咚咚，咚咚！我们的鼓声也响起来啦！",
+      "file": "A-x06d.mp3",
+      "voice": "zh-CN-XiaohanNeural",
+      "generation": {
+        "ttsConfigVersion": "azure-director-v3-approved",
+        "provider": "azure",
+        "region": "eastus",
+        "outputFormat": "audio-24khz-96kbitrate-mono-mp3",
+        "voice": "zh-CN-XiaohanNeural",
+        "voiceProfile": "fox",
+        "speaker": "fox",
+        "intent": "dialogue",
+        "emotion": "cheerful",
+        "text": "咚咚，咚咚！我们的鼓声也响起来啦！",
+        "styleDegree": 1.2,
+        "rate": "+0%",
+        "pitch": "+2Hz",
+        "style": "cheerful",
+        "requestedStyle": "cheerful",
+        "segments": [
+          {
+            "text": "咚咚，咚咚！我们的鼓声也响起来啦！",
+            "settings": {
+              "styleDegree": 1.2,
+              "rate": "+0%",
+              "pitch": "+2Hz",
+              "style": "cheerful",
+              "requestedStyle": "cheerful",
+              "emotion": "cheerful"
+            },
+            "pronunciations": [
+              {
+                "text": "起来",
+                "phoneme": "qi3 lai5"
+              }
+            ]
+          }
+        ],
+        "ssml": "<speak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xmlns:mstts=\"https://www.w3.org/2001/mstts\" xml:lang=\"zh-CN\"><voice name=\"zh-CN-XiaohanNeural\"><mstts:express-as style=\"cheerful\" styledegree=\"1.2\"><prosody rate=\"+0%\" pitch=\"+2Hz\">咚咚，咚咚！我们的鼓声也响<phoneme alphabet=\"sapi\" ph=\"qi 3 lai 5\">起来</phoneme>啦！</prosody></mstts:express-as></voice></speak>",
+        "warnings": []
+      },
+      "sha256": "489b8f8755277ccca871ec33c985114683c175fffba0325368e9996722e447f0"
+    }
+  ]
+}

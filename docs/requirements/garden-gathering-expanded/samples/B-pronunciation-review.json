@@ -1,0 +1,56 @@
+{
+  "scope": "Isolated E1 candidate",
+  "entries": [
+    {
+      "source": "sample:garden-party:B:x04c",
+      "speaker": "cat",
+      "text": "听，我先敲起来啦！",
+      "pronunciations": [
+        {
+          "text": "起来",
+          "phoneme": "qi3 lai5"
+        }
+      ],
+      "reviewer": "AI-context-review",
+      "note": "整句已读；仅去掉拟声词，保留原角色及声音方向；实际听感待用户对比。"
+    },
+    {
+      "source": "sample:garden-party:B:x06c",
+      "speaker": "fox",
+      "text": "我跟上鼓声啦！",
+      "pronunciations": [],
+      "reviewer": "AI-context-review",
+      "note": "整句已读；仅去掉拟声词，保留原角色及声音方向；实际听感待用户对比。"
+    },
+    {
+      "source": "sample:garden-party:B:x04d",
+      "speaker": "cat",
+      "text": "这一小段敲完啦，接下来请你和小狐狸一起！",
+      "pronunciations": [
+        {
+          "text": "接下来",
+          "phoneme": "jie1 xia4 lai5"
+        },
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        }
+      ],
+      "reviewer": "AI-context-review",
+      "note": "整句已读；仅去掉拟声词，保留原角色及声音方向；实际听感待用户对比。"
+    },
+    {
+      "source": "sample:garden-party:B:x06d",
+      "speaker": "fox",
+      "text": "我们的鼓声也响起来啦！",
+      "pronunciations": [
+        {
+          "text": "起来",
+          "phoneme": "qi3 lai5"
+        }
+      ],
+      "reviewer": "AI-context-review",
+      "note": "整句已读；仅去掉拟声词，保留原角色及声音方向；实际听感待用户对比。"
+    }
+  ]
+}

@@ -1,86 +1,182 @@
 {
-  "catalogVersion": "1.0",
-  "assets": [
-    "bear-cold",
-    "bear-warm",
-    "bear",
-    "fox",
-    "cat",
-    "rabbit",
-    "mitten-stripe",
-    "mitten-dot",
-    "snow",
-    "pine",
-    "bird",
-    "snowman",
-    "footprints",
-    "blocks",
-    "posts",
-    "roof-coral",
-    "roof-blue",
-    "shelter-coral",
-    "shelter-blue",
-    "shelter-coral-full",
-    "shelter-blue-full",
-    "basket",
-    "drum",
-    "wait",
-    "clap",
-    "flower"
-  ],
-  "backdrops": [
-    "snow",
-    "meadow",
-    "rain"
-  ],
-  "slots": [
-    "actor-left",
-    "actor-right",
-    "prop-left",
-    "prop-center",
-    "prop-right",
-    "sky-left",
-    "sky-right"
-  ],
-  "moods": [
-    "neutral",
-    "happy"
-  ],
-  "motions": [
-    "still",
-    "arrive",
-    "wiggle",
-    "celebrate",
-    "deliver",
-    "build",
-    "play"
-  ],
-  "styles": [
-    "story",
-    "affectionate",
-    "cheerful",
-    "excited",
-    "empathetic"
-  ],
-  "voiceIntents": [
-    "narration",
-    "dialogue",
-    "prompt",
-    "hint",
-    "success",
-    "comfort",
-    "question",
-    "ending"
-  ],
-  "voiceEmotions": [
-    "neutral",
-    "warm",
-    "gentle",
-    "curious",
-    "cheerful",
-    "excited",
-    "empathetic",
-    "sad",
-    "surprised"
-  ]
+  "formatVersion": "2.0",
+  "latest": "1.1",
+  "catalogs": {
+    "1.0": {
+      "assets": [
+        "bear-cold",
+        "bear-warm",
+        "bear",
+        "fox",
+        "cat",
+        "rabbit",
+        "mitten-stripe",
+        "mitten-dot",
+        "snow",
+        "pine",
+        "bird",
+        "snowman",
+        "footprints",
+        "blocks",
+        "posts",
+        "roof-coral",
+        "roof-blue",
+        "shelter-coral",
+        "shelter-blue",
+        "shelter-coral-full",
+        "shelter-blue-full",
+        "basket",
+        "drum",
+        "wait",
+        "clap",
+        "flower"
+      ],
+      "slots": [
+        "actor-left",
+        "actor-right",
+        "prop-left",
+        "prop-center",
+        "prop-right",
+        "sky-left",
+        "sky-right"
+      ],
+      "moods": [
+        "neutral",
+        "happy"
+      ],
+      "motions": [
+        "still",
+        "arrive",
+        "wiggle",
+        "celebrate",
+        "deliver",
+        "build",
+        "play"
+      ],
+      "styles": [
+        "story",
+        "affectionate",
+        "cheerful",
+        "excited",
+        "empathetic"
+      ],
+      "voiceIntents": [
+        "narration",
+        "dialogue",
+        "prompt",
+        "hint",
+        "success",
+        "comfort",
+        "question",
+        "ending"
+      ],
+      "voiceEmotions": [
+        "neutral",
+        "warm",
+        "gentle",
+        "curious",
+        "cheerful",
+        "excited",
+        "empathetic",
+        "sad",
+        "surprised"
+      ],
+      "backdrops": [
+        "snow",
+        "meadow",
+        "rain"
+      ],
+      "soundCues": []
+    },
+    "1.1": {
+      "assets": [
+        "bear-cold",
+        "bear-warm",
+        "bear",
+        "fox",
+        "cat",
+        "rabbit",
+        "mitten-stripe",
+        "mitten-dot",
+        "snow",
+        "pine",
+        "bird",
+        "snowman",
+        "footprints",
+        "blocks",
+        "posts",
+        "roof-coral",
+        "roof-blue",
+        "shelter-coral",
+        "shelter-blue",
+        "shelter-coral-full",
+        "shelter-blue-full",
+        "basket",
+        "drum",
+        "wait",
+        "clap",
+        "flower"
+      ],
+      "slots": [
+        "actor-left",
+        "actor-right",
+        "prop-left",
+        "prop-center",
+        "prop-right",
+        "sky-left",
+        "sky-right"
+      ],
+      "moods": [
+        "neutral",
+        "happy"
+      ],
+      "motions": [
+        "still",
+        "arrive",
+        "wiggle",
+        "celebrate",
+        "deliver",
+        "build",
+        "play"
+      ],
+      "styles": [
+        "story",
+        "affectionate",
+        "cheerful",
+        "excited",
+        "empathetic"
+      ],
+      "voiceIntents": [
+        "narration",
+        "dialogue",
+        "prompt",
+        "hint",
+        "success",
+        "comfort",
+        "question",
+        "ending"
+      ],
+      "voiceEmotions": [
+        "neutral",
+        "warm",
+        "gentle",
+        "curious",
+        "cheerful",
+        "excited",
+        "empathetic",
+        "sad",
+        "surprised"
+      ],
+      "backdrops": [
+        "snow",
+        "meadow",
+        "rain",
+        "meadow-after-rain"
+      ],
+      "soundCues": [
+        "drum-short",
+        "drum-clap-short"
+      ]
+    }
+  }
 }

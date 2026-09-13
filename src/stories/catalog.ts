@@ -1,3 +1,5 @@
+import { voiceIntents, voiceEmotions } from './speech'
+
 /** Versioned capabilities. Story authors reference these IDs; they never supply code. */
 export const assets = [
   'bear-cold',
@@ -55,4 +57,19 @@ export const styles = [
   'empathetic',
 ] as const
 export const MIN_BEAT_MS = 1800
-export const catalogVersion = '1.0'
+// Published protocols are lockstep for now; never resolve authored versions via latest.
+const common = { assets, slots, moods, motions, styles, voiceIntents, voiceEmotions }
+export const catalogs = {
+  '1.0': { ...common, backdrops, soundCues: [] as const },
+  '1.1': {
+    ...common,
+    backdrops: [...backdrops, 'meadow-after-rain'] as const,
+    soundCues: ['drum-short', 'drum-clap-short'] as const,
+  },
+} as const
+export const capabilityExport = {
+  formatVersion: '2.0',
+  latest: '1.1',
+  catalogs,
+} as const
+export type StoryBackdropKind = (typeof catalogs)['1.1']['backdrops'][number]

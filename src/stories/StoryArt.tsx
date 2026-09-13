@@ -1,3 +1,4 @@
+import type { StoryBackdropKind } from './catalog'
 import { Friend, Mitten, Rabbit } from '../play/Artwork'
 import {
   DressedBear,
@@ -219,7 +220,22 @@ export function StoryArt({
   )
 }
 
-export function StoryBackdrop({ kind }: { kind: 'snow' | 'rain' | 'meadow' }) {
+export function StoryBackdrop({ kind }: { kind: StoryBackdropKind }) {
+  if (kind === 'meadow-after-rain') {
+    // The nested meadow keeps its existing crop; the floral layer follows the
+    // same normalized positions as the approved narrow-stage composition.
+    return (
+      <svg className="pack-backdrop" viewBox="0 0 320 360" preserveAspectRatio="none" aria-hidden="true">
+        <svg width="320" height="360"><StoryBackdrop kind="meadow" /></svg>
+        <ellipse cx="42" cy="225" rx="20" ry="4" fill="#a7ced0" opacity=".65" />
+        <path d="M27 224h18" stroke="#edf7ed" strokeWidth="2" />
+        <ellipse cx="280" cy="350" rx="18" ry="3" fill="#a7ced0" opacity=".65" />
+        <svg x="135" y="213" width="130" height="110"><StoryArt entity={{ asset: 'flower', mood: 'neutral' }} /></svg>
+        <svg x="214" y="208" width="90" height="88"><StoryArt entity={{ asset: 'flower', mood: 'neutral' }} /></svg>
+        <path d="M215 270q-4 6 0 7q5-1 0-7" fill="#e4f5fa" stroke="#80b2bc" strokeWidth=".8" />
+      </svg>
+    )
+  }
   return (
     <svg
       className="pack-backdrop"

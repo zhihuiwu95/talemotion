@@ -1,0 +1,53 @@
+{
+  "scope": "E1 isolated candidates, not production approval",
+  "reviewer": "AI-context-review",
+  "entries": [
+    {
+      "source": "sample:garden-party:x04c",
+      "speaker": "cat",
+      "text": "咚咚，哒！听，我先敲起来啦！",
+      "pronunciations": [
+        {
+          "text": "起来",
+          "phoneme": "qi3 lai5"
+        }
+      ],
+      "note": "整句语境审阅；咚咚/哒/拍拍按拟声词，未改全局字典；实际听感待用户确认。"
+    },
+    {
+      "source": "sample:garden-party:x06c",
+      "speaker": "fox",
+      "text": "拍拍，咚咚！我跟上鼓声啦！",
+      "pronunciations": [],
+      "note": "整句语境审阅；咚咚/哒/拍拍按拟声词，未改全局字典；实际听感待用户确认。"
+    },
+    {
+      "source": "sample:garden-party:x04d",
+      "speaker": "cat",
+      "text": "咚咚，哒！这一小段敲完啦，接下来请你和小狐狸一起！",
+      "pronunciations": [
+        {
+          "text": "接下来",
+          "phoneme": "jie1 xia4 lai5"
+        },
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        }
+      ],
+      "note": "整句语境审阅；咚咚/哒/拍拍按拟声词，未改全局字典；实际听感待用户确认。"
+    },
+    {
+      "source": "sample:garden-party:x06d",
+      "speaker": "fox",
+      "text": "咚咚，咚咚！我们的鼓声也响起来啦！",
+      "pronunciations": [
+        {
+          "text": "起来",
+          "phoneme": "qi3 lai5"
+        }
+      ],
+      "note": "整句语境审阅；咚咚/哒/拍拍按拟声词，未改全局字典；实际听感待用户确认。"
+    }
+  ]
+}

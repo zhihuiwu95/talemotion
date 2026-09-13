@@ -1,0 +1,41 @@
+{
+  "stage": {
+    "width": 320,
+    "height": 360
+  },
+  "note": "Reuse actual artwork and narrow-screen normalized slots; static proposed floral layer, not live DOM proof.",
+  "layouts": [
+    [
+      "L0",
+      "出发：带着篮子和小鼓",
+      {
+        "basket": "left",
+        "drum": "right"
+      }
+    ],
+    [
+      "L1",
+      "试摆：篮子来到中间",
+      {
+        "basket": "center",
+        "drum": "right"
+      }
+    ],
+    [
+      "LF",
+      "花边：篮子更靠近花",
+      {
+        "basket": "right",
+        "drum": "center"
+      }
+    ],
+    [
+      "LG",
+      "草地：中间留给小鼓",
+      {
+        "basket": "left",
+        "drum": "center"
+      }
+    ]
+  ]
+}

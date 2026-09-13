@@ -1,8 +1,8 @@
 # 花园完整故事版：实施计划
 
-REQ-GARDEN-EXPANDED；Plan v0.2，2026-09-13；依据 [架构 v0.2](arch.md)、[Design v0.2](design.md)、[PRD v0.3](prd.md)。本轮核对基线 `27415c5`，开始时工作区干净。
+REQ-GARDEN-EXPANDED；Plan v0.3，2026-09-13；依据 [架构 v0.3](arch.md)、[Design v0.2](design.md)、[PRD v0.3](prd.md)。本轮核对基线 `27415c5`，开始时工作区干净。
 
-状态：Plan 已编写，待用户确认；下面 E1～E6 均未开始。用户已授权架构 review 修订并进入 Plan，不等于授权执行计划。
+状态：用户已授权本轮修订并执行 E1；E1 用户已确认 B 与四种布局；E2 已获用户确认并冻结；E3 已完成、待内容确认，E4～E6 未开始。E1 交付后等待用户确认，不提前进入 E2。
 
 ## 1. 执行顺序与确认点
 
@@ -53,6 +53,8 @@ REQ-GARDEN-EXPANDED；Plan v0.2，2026-09-13；依据 [架构 v0.2](arch.md)、[
 - JSON Schema 导出保留版本限制；导出目录与源清单一致。`npm run stories:export` 后复核差异。
 - 仓内目录消费者和制作说明同步；不声称外部使用者已迁移。保留现有反例，不为通过新包放宽图规则。
 
+E2 确认后，Story 1.1、Catalog 1.1 与公开目录格式在本需求内冻结。后续新增/删除字段、能力 ID 或改变版本/上限/起点语义，停止依赖该变化的工作并返回 E2 确认；A→B 先补声音决策，再回 E2。既有能力内台词和布局修订仍在对应阶段审阅。
+
 ## 4. E3：背景、完整故事与内容审阅
 
 ### 变更范围
@@ -65,6 +67,8 @@ REQ-GARDEN-EXPANDED；Plan v0.2，2026-09-13；依据 [架构 v0.2](arch.md)、[
 - 每条必要操作有可听提示；全台词按最终语境标注读音。B 入选时明确 cue 前缀与人声台词，避免重复节奏和字幕不一致。
 - 执行单篇 validate、review、audio:pronunciation 及受影响目标测试；此时正式音频可能缺失，不运行或冒称完整 quality 已绿。
 
+E3 generated 边界：audio:pronunciation 先调用 audio:collect；允许 scripts/narration-input.json 与 src/generated/narration-index.json 包含新故事，src/generated/narration.json 不发布。narration-playback.json 可以被重新写出，但内容只能投影当前正式 manifest，不伪造新音频映射。完整 audio:verify 因新台词未发布而暂未通过属于阶段状态，不放宽验证；E5 发布后 collect 才取得新映射。
+
 ### 完成条件
 
 - 四组合覆盖全部节点/选择，每条 18 节点、4 次有效点击；逐步检查篮子持续位置与中间鼓。
@@ -75,14 +79,14 @@ REQ-GARDEN-EXPANDED；Plan v0.2，2026-09-13；依据 [架构 v0.2](arch.md)、[
 
 ### 变更范围
 
-`collect-narration.ts`、`generate-audio.py`、`verify_audio.py`、相关测试；按需新增制作端混音模块和 sound-cues 注册元数据。保持播放器单音频元素与现有生命周期。
+`collect-narration.ts`、`generate-audio.py`、`scripts/verify_audio.py`（实际校验逻辑，`scripts/verify-audio.mjs` 为命令入口）、相关测试；按需新增制作端混音模块和 sound-cues 注册元数据。保持播放器单音频元素与现有生命周期。
 
 ### 所有方案必做
 
 - 保留 source→Narration Line ID；最终文件只由已发布产物记录决定。
 - 实现按 source 前缀限定本篇发布。拟定入口 `npm run audio:generate -- --publish --source-prefix pack:garden-gathering-party:`；参数尚不存在，完成实现与测试前不得直接执行或回退全量发布。
 - 保留旧 source 对应声音路径、文件哈希和实际生成证据。只保留旧文件不够，正式绑定也须不变。
-- 必要时按 arch 3.3/3.4 引入 manifest v3，显式支持 v2 与 v3 验证；speech 沿用旧校验，output 指向最终产物。先测试迁移，不能重贴旧录音标签。
+- A 保持 manifest v2，只实现 source-prefix 限定发布、合并与原子替换；B 才引入 v3 的 speech/output 与混音缓存。A 若遇明确阻断，先回架构评审，不自行升级。B 显式支持 v2/v3 验证与迁移，不能重贴旧录音标签。
 - 发布临时结果全部验证后替换正式 manifest；任何生成/验证失败保持正式清单不变。collect 从正式 manifest 重建 playback，不能还原原始语音绑定。
 
 ### B 入选时追加
@@ -126,4 +130,4 @@ REQ-GARDEN-EXPANDED；Plan v0.2，2026-09-13；依据 [架构 v0.2](arch.md)、[
 
 ## 9. 本轮 Plan 验证
 
-已静态核对公开导出、音频 source/index/playback、原始语音校验与全量 publish 行为。计划对应现有命令与拟定接口均有区分。只更新架构与计划文档，未运行生成、产品测试或服务，未生成任何样稿。执行从 E1 开始，等待用户确认本 Plan。
+已静态核对公开导出、音频 source/index/playback、原始语音校验与全量 publish 行为。计划对应现有命令与拟定接口均有区分。只更新架构与计划文档，未运行生成、产品测试或服务，未生成任何样稿。用户已确认开始 E1，本轮只执行 E1；下一步仍需确认。

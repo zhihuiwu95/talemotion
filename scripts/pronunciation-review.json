@@ -2553,6 +2553,516 @@
           "phoneme": "hui4"
         }
       ]
+    },
+    {
+      "source": "pack:garden-gathering-party:s01",
+      "speaker": "duoduo",
+      "text": "雨停了，小狐狸和小猫带着篮子和小鼓，来到花园。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "带着",
+          "phoneme": "dai4 zhe5"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:s02",
+      "speaker": "fox",
+      "text": "我带了野餐篮，想找个能看见花的地方，和大家一起聚会。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "地方",
+          "phoneme": "di4 fang5"
+        },
+        {
+          "text": "看",
+          "phoneme": "kan4"
+        },
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:s03",
+      "speaker": "cat",
+      "text": "我带了小鼓，等下我们一起玩音乐吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:s04",
+      "speaker": "fox",
+      "text": "我们先放花这边试试吧。点点篮子，帮我挪到中间。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "中间",
+          "phoneme": "zhong1 jian1"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:s05",
+      "speaker": "cat",
+      "text": "篮子摆好啦！我想把小鼓放在中间，让大家都能一起玩。咦，中间有篮子呢。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        },
+        {
+          "text": "中间",
+          "phoneme": "zhong1 jian1",
+          "occurrence": 1
+        },
+        {
+          "text": "中间",
+          "phoneme": "zhong1 jian1",
+          "occurrence": 2
+        },
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:s06",
+      "speaker": "fox",
+      "text": "那我们挪一挪吧。我还是想让篮子靠花一点。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:s07",
+      "speaker": "cat",
+      "text": "中间留给小鼓就好。篮子放花边或左边，我都喜欢。我来挪鼓！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "中间",
+          "phoneme": "zhong1 jian1"
+        },
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:s08",
+      "speaker": "fox",
+      "text": "左边也能看花，我也喜欢。点我，篮子去右边花旁；点小猫，篮子去左边草地。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "看",
+          "phoneme": "kan4"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f01",
+      "speaker": "fox",
+      "text": "篮子靠着花，小鼓到了中间，真合适！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "中间",
+          "phoneme": "zhong1 jian1"
+        },
+        {
+          "text": "靠着",
+          "phoneme": "kao4 zhe5"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f02",
+      "speaker": "cat",
+      "text": "这里敲鼓，大家都能加入啦！谢谢你帮忙挪篮子。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "pack:garden-gathering-party:f03",
+      "speaker": "cat",
+      "text": "小聚会开场啦！想一起拍手，就点点我；想敲小鼓，就点小鼓。你来选！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f04c",
+      "speaker": "cat",
+      "text": "听，我先敲起来啦！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "起来",
+          "phoneme": "qi3 lai5"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f05c",
+      "speaker": "fox",
+      "text": "我也想加入！点点我，我们一起拍拍手吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f06c",
+      "speaker": "fox",
+      "text": "我跟上鼓声啦！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "pack:garden-gathering-party:f04d",
+      "speaker": "cat",
+      "text": "这一小段敲完啦，接下来请你和小狐狸一起！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        },
+        {
+          "text": "接下来",
+          "phoneme": "jie1 xia4 lai5"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f05d",
+      "speaker": "fox",
+      "text": "小鼓就在中间呢。点点小鼓，和我一起敲吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        },
+        {
+          "text": "中间",
+          "phoneme": "zhong1 jian1"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f06d",
+      "speaker": "fox",
+      "text": "我们的鼓声也响起来啦！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "起来",
+          "phoneme": "qi3 lai5"
+        },
+        {
+          "text": "我们的",
+          "phoneme": "wo3 men5 de5"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f06",
+      "speaker": "cat",
+      "text": "刚才还要找地方，现在我们都能围着小鼓玩啦。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "地方",
+          "phoneme": "di4 fang5"
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        },
+        {
+          "text": "围着",
+          "phoneme": "wei2 zhe5"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f07",
+      "speaker": "fox",
+      "text": "花还看得见，咚咚歌也真好听。和你们一起，我真喜欢。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "看",
+          "phoneme": "kan4"
+        },
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        },
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f08",
+      "speaker": "duoduo",
+      "text": "花园里的小聚会，留下了一段咚咚歌。小狐狸、小猫，下次再一起玩吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:f09",
+      "speaker": "cat",
+      "text": "下次见！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "pack:garden-gathering-party:g01",
+      "speaker": "fox",
+      "text": "篮子在左边，也能看见花，小鼓到了中间，真合适！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "看",
+          "phoneme": "kan4"
+        },
+        {
+          "text": "中间",
+          "phoneme": "zhong1 jian1"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:g02",
+      "speaker": "cat",
+      "text": "这里敲鼓，大家都能加入啦！谢谢你帮忙挪篮子。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "pack:garden-gathering-party:g03",
+      "speaker": "cat",
+      "text": "小聚会开场啦！想一起拍手，就点点我；想敲小鼓，就点小鼓。你来选！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:g04c",
+      "speaker": "cat",
+      "text": "听，我先敲起来啦！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "起来",
+          "phoneme": "qi3 lai5"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:g05c",
+      "speaker": "fox",
+      "text": "我也想加入！点点我，我们一起拍拍手吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:g06c",
+      "speaker": "fox",
+      "text": "我跟上鼓声啦！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
+    },
+    {
+      "source": "pack:garden-gathering-party:g04d",
+      "speaker": "cat",
+      "text": "这一小段敲完啦，接下来请你和小狐狸一起！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        },
+        {
+          "text": "接下来",
+          "phoneme": "jie1 xia4 lai5"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:g05d",
+      "speaker": "fox",
+      "text": "小鼓就在中间呢。点点小鼓，和我一起敲吧！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        },
+        {
+          "text": "中间",
+          "phoneme": "zhong1 jian1"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:g06d",
+      "speaker": "fox",
+      "text": "我们的鼓声也响起来啦！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "起来",
+          "phoneme": "qi3 lai5"
+        },
+        {
+          "text": "我们的",
+          "phoneme": "wo3 men5 de5"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:g06",
+      "speaker": "cat",
+      "text": "刚才还要找地方，现在我们都能围着小鼓玩啦。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "地方",
+          "phoneme": "di4 fang5"
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        },
+        {
+          "text": "围着",
+          "phoneme": "wei2 zhe5"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:g07",
+      "speaker": "fox",
+      "text": "花还看得见，咚咚歌也真好听。和你们一起，我真喜欢。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "看",
+          "phoneme": "kan4"
+        },
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        },
+        {
+          "text": "好",
+          "phoneme": "hao3"
+        },
+        {
+          "text": "还",
+          "phoneme": "hai2"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:g08",
+      "speaker": "duoduo",
+      "text": "花园里的小聚会，留下了一段咚咚歌。小狐狸、小猫，下次再一起玩吧。",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": [
+        {
+          "text": "一起",
+          "phoneme": "yi1 qi3"
+        }
+      ]
+    },
+    {
+      "source": "pack:garden-gathering-party:g09",
+      "speaker": "cat",
+      "text": "下次见！",
+      "status": "reviewed",
+      "reviewer": "AI-context-review",
+      "pronunciations": []
     }
   ]
 }

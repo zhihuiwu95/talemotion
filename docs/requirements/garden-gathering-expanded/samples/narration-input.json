@@ -1,0 +1,88 @@
+[
+  {
+    "id": "sample:garden-party:x04c:51a0723d9e38424b61b8",
+    "source": "sample:garden-party:x04c",
+    "speaker": "cat",
+    "text": "咚咚，哒！听，我先敲起来啦！",
+    "intent": "dialogue",
+    "emotion": "cheerful",
+    "segments": [
+      {
+        "text": "咚咚，哒！听，我先敲起来啦！",
+        "pronunciations": [
+          {
+            "text": "起来",
+            "phoneme": "qi3 lai5"
+          }
+        ]
+      }
+    ],
+    "speakerLabel": "小猫",
+    "voiceProfile": "duoduo",
+    "legacyStyle": "story"
+  },
+  {
+    "id": "sample:garden-party:x06c:5650cc2c114b5b6e7048",
+    "source": "sample:garden-party:x06c",
+    "speaker": "fox",
+    "text": "拍拍，咚咚！我跟上鼓声啦！",
+    "intent": "dialogue",
+    "emotion": "cheerful",
+    "segments": [
+      {
+        "text": "拍拍，咚咚！我跟上鼓声啦！"
+      }
+    ],
+    "speakerLabel": "小狐狸",
+    "voiceProfile": "fox",
+    "legacyStyle": "story"
+  },
+  {
+    "id": "sample:garden-party:x04d:7bc744b154a683cac010",
+    "source": "sample:garden-party:x04d",
+    "speaker": "cat",
+    "text": "咚咚，哒！这一小段敲完啦，接下来请你和小狐狸一起！",
+    "intent": "dialogue",
+    "emotion": "cheerful",
+    "segments": [
+      {
+        "text": "咚咚，哒！这一小段敲完啦，接下来请你和小狐狸一起！",
+        "pronunciations": [
+          {
+            "text": "接下来",
+            "phoneme": "jie1 xia4 lai5"
+          },
+          {
+            "text": "一起",
+            "phoneme": "yi1 qi3"
+          }
+        ]
+      }
+    ],
+    "speakerLabel": "小猫",
+    "voiceProfile": "duoduo",
+    "legacyStyle": "story"
+  },
+  {
+    "id": "sample:garden-party:x06d:98acc56a7b2b3995d381",
+    "source": "sample:garden-party:x06d",
+    "speaker": "fox",
+    "text": "咚咚，咚咚！我们的鼓声也响起来啦！",
+    "intent": "dialogue",
+    "emotion": "cheerful",
+    "segments": [
+      {
+        "text": "咚咚，咚咚！我们的鼓声也响起来啦！",
+        "pronunciations": [
+          {
+            "text": "起来",
+            "phoneme": "qi3 lai5"
+          }
+        ]
+      }
+    ],
+    "speakerLabel": "小狐狸",
+    "voiceProfile": "fox",
+    "legacyStyle": "story"
+  }
+]
