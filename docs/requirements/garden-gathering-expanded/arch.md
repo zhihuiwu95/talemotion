@@ -2,7 +2,7 @@
 
 ## 1. 状态、依据与边界
 
-REQ-GARDEN-EXPANDED；架构 v0.1，2026-09-13，待用户确认。引用 [PRD v0.3](prd.md)、[Design v0.2](design.md)、[架构基线 v1.0](../../sdd/arch.md)。代码基线 `9f6cf8b`，本轮开始工作区干净。
+REQ-GARDEN-EXPANDED；架构 v0.2，2026-09-13；用户已授权落实 review 并进入 Plan；实施计划待确认。引用 [PRD v0.3](prd.md)、[Design v0.2](design.md)、[架构基线 v1.0](../../sdd/arch.md)。代码基线 `9f6cf8b`，本轮开始工作区干净。
 
 用户授权落实 Design review 并进入架构；本轮只修改需求/设计并新增架构、计划文档。新故事、能力扩展、音频及共享规则均未实现，性能与听感没有新测量结果。
 
@@ -24,7 +24,32 @@ REQ-GARDEN-EXPANDED；架构 v0.1，2026-09-13，待用户确认。引用 [PRD v
 
 catalog 1.0 只允许原有背景/能力；1.1 增加雨后背景。不能只把全局 `catalogVersion` 改成 1.1，因为当前 `z.literal(catalogVersion)` 会使所有旧包失效。实现时保留按版本的能力清单和验证，源枚举为权威；语音条款以当前 speech schema 为准，不回退历史文字描述。
 
-共享节点形状、图检查与引擎继续复用；用版本化上限、起点与能力检查区分协议。若采用联合 schema，确保 `z.toJSONSchema` 能导出分支限制；不能把 1.1 能力悄悄开放给 1.0。新增声音字段只在最终决定音效方案后列入 1.1。
+当前采用有意识的锁步版本策略，不认为 schema 与 catalog 概念上必须同步；将来仅目录扩容时再评估兼容矩阵，本次不实现。
+
+明确实现 `storyV1Schema` 与 `storyV1_1Schema` 两个严格版本分支，以 schemaVersion 区分；优先使用判别联合。entity、choice、learning 等公共形状和图检查可复用。catalogVersion literal、背景枚举、节点数量与可选字段写在对应分支，不采用先放开的 superset 再到处禁止旧版的方式。验证当前 Zod 与导出兼容性；必要时使用显式联合，目标仍是导出可见的两个分支。
+
+起点引用、自动循环、可达性与可结束性仍属于跨节点语义检查，不能声称全部可由 JSON Schema 表达。新增 soundCue 仅在 B 入选后加入 1.1；1.0 保持 strict 拒绝。
+
+#### 能力目录公开导出契约
+
+`docs/production/capabilities.json` 使用以下新文件格式：
+
+```json
+{
+  "formatVersion": "2.0",
+  "latest": "1.1",
+  "catalogs": {
+    "1.0": {"assets": [], "backdrops": [], "slots": [], "moods": [], "motions": [], "styles": [], "voiceIntents": [], "voiceEmotions": [], "soundCues": []},
+    "1.1": {"assets": [], "backdrops": [], "slots": [], "moods": [], "motions": [], "styles": [], "voiceIntents": [], "voiceEmotions": [], "soundCues": []}
+  }
+}
+```
+
+上例空数组仅表示字段形状，正式导出必须写入源目录的完整值。1.0 backdrops 仅 snow/meadow/rain；1.1 额外包含 meadow-after-rain。1.0 soundCues 恒为空；1.1 在 A 方案为空，在 B 方案列出实际注册 ID，不能列尚未实现能力。
+
+formatVersion 只表示此导出文件的格式，latest 只供制作推荐；消费者必须按故事声明查 `catalogs[catalogVersion]`，未知版本报错，不能回退 latest。各版本完整展开，不引入目录继承或差量。
+
+`catalog.ts` 为版本清单的权威来源，导出器与 schema 消费同一清单；styles 与语音方向字段保持现有可用定义，不伪称历史语音能力被冻结。改导出格式时同步生产 README/CAPABILITIES/AUTHOR_PROMPT 中的使用说明，检查仓内读取者；当前未发现需要维持旧扁平格式的机器消费者，但不能推断外部工具已迁移。导出格式变化明确作为制作接口升级记录。
 
 旧运行时不承诺能读 1.1。源码、故事 JSON、导出目录和静态资源须作为同一构建交付，禁止把新包单独投放给旧运行时。通用基线更新版本说明与兼容决策，原历史验收结论不改写。
 
@@ -53,7 +78,7 @@ catalog 1.0 只允许原有背景/能力；1.1 增加雨后背景。不能只把
 - 音乐节点在入场时先播 cue，再接角色对白；cue 前缀期间现有 play 动作开始。不得同时让角色念相同“咚咚”压住音效；最终台词在试听时调整，字幕只对应实际人声，不把非语言声音写成已朗读台词。
 - x04c/x04d 用 drum-short；x06c 用 drum-clap-short；x06d 用 drum-short。邀请节点 x05c/x05d 不播放背景节奏，静待儿童操作。尾声无 cue，保持安静。
 - cue 来源为授权可复用素材或项目自行制作，记录来源、许可/作者、哈希、长度与人工试听；不凭文件名推断授权。无合适素材则报告，不下载来源不明的声音。
-- 合成缓存键包含原语音 clip 身份、cue 内容哈希、混音参数与混音版本。只更新受影响的新故事最终播放映射；原纯语音文件与历史索引记录保留。
+- 合成缓存键包含实际原始语音文件 SHA-256、cue 文件 SHA-256、规范化混音参数与混音版本。只更新受影响的新故事最终播放映射；原始语音与历史产物不可覆盖。身份与发布契约见 3.3。
 - `audio:pronunciation` 仍覆盖全部实际人声；cue 是非语言音频，不伪造读音审阅。新增验证核对最终映射、合成产物存在、cue 注册有效、时长有界，并保证最终音频没有截断。
 - 制作时使用本地混音工具；先确认环境是否具备合适工具，再决定是否需要安装。新工具安装及素材采购不隐含在本架构批准内。生成候选不能覆盖正式映射；正式发布需在内容/声音确认后执行。
 
@@ -62,6 +87,39 @@ catalog 1.0 只允许原有背景/能力；1.1 增加雨后背景。不能只把
 采用 A/B 均只播放单条最终音频，不新增浏览器媒体元素。暂停、隐藏页面、退出、重玩、重听沿用取消旧音频和 generation 保护；恢复重播当前节点完整音频。静音停止整条声音并保留最终画面；减弱动态不影响台词和状态。
 
 音频结束才释放正常播放；最短 1.8 秒与 20 秒故障上限保持。单段合成音频须明显短于看门狗上限，超过则制作失败，不能以看门狗截断充当正常完成。播放拒绝/文件缺失仍允许有限等待后继续，保留字幕，不宣称自动降级为另一条原始音频。自动节点在真实手机上的媒体许可问题需要实测，不从桌面工具推断正常。
+
+### 3.3 内容身份、产物身份与发布契约
+
+```text
+Source ID（pack:<id>:<node>）
+  → narration-index.sources[source] = Narration Line ID
+  → published.clips[lineId]
+      → speech：原始人声资产与生成证据
+      → output：当前正式播放产物（speech 或 composite）
+  → narration-playback[lineId] = output.src
+```
+
+Narration Line ID 沿用 collectLine 的 source + direction digest。实际人声资产按解析后的合成设置缓存；二者不等同，不能仅凭逻辑 ID 推断文件字节未变。Raw Speech 与 Composite 是独立、不可覆盖的内容寻址文件，仍使用安全的 `audio/<hash>.mp3` 路径。
+
+只改 cue 音量：人声请求与原始人声文件复用，仅重新混音；更换人声字节或 cue 字节：合成缓存必须失效。内容身份不随非语言混音参数改变，不能将 Composite ID 写进 narration-index.sources。
+
+职责明确：collect 采集当前人声与 source→lineId，并从正式 manifest 投影 playback；候选生成只写独立样稿目录；publish 在全部新产物验证成功后更新正式 manifest；collect 无权把 output 切回 raw。新增验证须覆盖“发布混音→再次 collect→仍指向同一 composite”，以及修改 cue 后检测过期产物、非发布失败保持正式索引不变。
+
+若采用 B，将制作端 `narration.json` 的 manifest 升为 schemaVersion 3，与故事 schemaVersion 无关。每个 clips[lineId] 包含：
+
+- 原逻辑身份与 inputHash。
+- `speech`：保留原生成记录完整信息（src、audioSha256、generation、generationHash、voice/profile、原 status 等），继续执行对应旧录音/角色语音校验。
+- `output`：kind=speech/composite、src、audioSha256；composite 再保存 speechSha256、cue ID/hash、规范化 mixParameters、mixVersion、compositeId 与实际时长。kind=speech 的路径/哈希必须与 speech 一致。
+
+验证器显式支持现有 manifest v2 与新 v3，不简单绕过现有“生成路径必须匹配 settings digest”的断言；该断言在 v3 仍验证 speech，output 单独验证混音依赖与文件。历史 v2 迁移到 v3 只包装记录，output 初始指向原文件，不重新生成或改写原录音身份。浏览器继续只消费 lineId→文件路径投影，不加载制作元数据。
+
+### 3.4 限定发布范围（Plan 核对发现）
+
+当前 `--publish` 会解析全部输入并生成/替换整份角色语音清单，并非仅发布新故事。直接照用可能改变旧故事正式声音，与本需求的保留范围冲突。
+
+实施必须先增加显式 source 前缀筛选（拟定参数 `--source-prefix pack:garden-gathering-party:`），只生成和更新本篇记录；其他条目沿用已发布的实际声音与配置证据。A/B 都需要该隔离，不能依赖缓存命中作为范围保护。A 不做混音产物层，但若混合历史与新语音的 manifest 状态需要升级，同样使用 v3 的 speech/output=speech 包装，避免放宽全局 release 检查。
+
+发布器合并原清单与获准更新的条目，在临时产物通过完整验证后原子替换 manifest；失败保留原正式清单。playback 是可重建投影，构建前须从已发布清单再生成并验证。检查不在当前 narration-input 的旧身份应保存在历史记录中，不混入活动清单冒充当前台词。不将“保留旧文件”误写成“旧播放绑定没变化”。
 
 ## 4. 模块与验收映射
 
@@ -88,7 +146,10 @@ catalog 1.0 只允许原有背景/能力；1.1 增加雨后背景。不能只把
 2. 1.0 beat 起点被拒绝；1.1 beat 起点通过；ending 起点、自动循环、未知版本、版本/背景不匹配仍拒绝。导出结构与源约束一致，语义图检查继续独立运行。
 3. 四条路径逐步断言布局：选择后篮子不复位、鼓在中间；拍手 target=fox，反馈狐狸加入；尾声之前不出现结束区。
 4. 现有播放器测试使用固定 `settle` 时间和“重玩后等于 pack.start”假设，自动开场后该断言不再适用。改成有限逐节点推进到交互/结尾，另断言重玩瞬间 start 和后续自动开场；不无限推进定时器掩盖循环。保留旧故事行为断言。
-5. 有限自动开场、暂停/恢复、快速点击、静音、声音失败、退出和过期回调覆盖。B 如入选，增加制作管线素材与缓存测试，播放器不需复制音效状态机。
+5. 目录导出 formatVersion/latest/catalogs 完整性，版本范围与 schema 分支一致；发布混音后 collect 不还原 raw，音量变化不调用 TTS，候选失败不改变正式记录，新故事限定发布不修改旧 source 的声音绑定。
+6. 有限自动开场、暂停/恢复、快速点击、静音、声音失败、退出和过期回调覆盖。B 如入选，增加制作管线素材与缓存测试，播放器不需复制音效状态机。
+
+规模记录仅用于交付说明，非性能优化任务；没有实际异常，不改图算法，不展开基准测试项目。
 
 规模判断：图校验当前含按节点遍历/可终止性检查，部分工作为二次复杂度；34～40 的有界规模应实测，不承诺无成本。新增包被 eager glob 加入主构建，JSON 与 SVG 会增加包体；MP3 为静态资源，不等于 JS bundle。
 
@@ -102,4 +163,6 @@ catalog 1.0 只允许原有背景/能力；1.1 增加雨后背景。不能只把
 
 遵循 ARCH-01～09、11～24。能力目录与 STORY_STANDARD 的节点数量/起点/新背景说明在实现阶段同步升级，保留历史版本事实。自动开场与版本分支是本次明确的兼容扩展，不能写成原能力已经完整支持。
 
-本轮完成：代码静态核对、Design/PRD 修订、架构与 [实施计划](plan.md)。未实施、未生成音频、未运行产品测试、未提交/推送/部署。架构确认后进入计划步骤 4A；任何声音分支的实际采用须有试听决策记录。
+本轮完成：代码静态核对、Design/PRD 修订、架构与 [实施计划](plan.md)。未实施、未生成音频、未运行产品测试、未提交/推送/部署。Plan 经用户确认后进入计划步骤 E1；任何声音分支的实际采用须有试听决策记录。
+
+修订记录 v0.2：接受本轮 review，明确目录导出格式、锁步理由、显式版本分支、人声/混音产物分层及轻量规模记录；Plan 核对补充限定发布与 manifest 验证迁移。均为待实施约束。
