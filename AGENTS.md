@@ -10,6 +10,7 @@
 - 单篇检查：`npm run stories:validate -- src/stories/packs/<id>.json`。
 - 单篇审阅：`npm run stories:review -- src/stories/packs/<id>.json`；无文件参数时更新全量生成分镜。
 - 所有台词生成前逐句审阅多音字，按 `STORY_STANDARD.md` 标注数字声调（1～4、轻声5），更新 `scripts/pronunciation-review.json` 并通过 `npm run audio:pronunciation`；审定后 `npm run audio:generate -- --publish`；最终 `npm run quality`。结构通过不代表内容、视觉或真实播放通过。
-- 纯数据制作默认不使用 computer use；确需使用时必须先获用户确认；按 EVALUATION 分层记录，未检查的视觉/实机维度写待验证。
+- 全项目任务尽量不使用 computer use，以减少 token 消耗；优先使用文件、命令行、测试或专用工具完成。确需使用 computer use 时，必须先说明用途和必要性，并获得用户明确确认后再使用。
+- 纯数据制作默认不使用 computer use；按 EVALUATION 分层记录，未检查的视觉/实机维度写待验证。
 - 第四篇已完成两轮内容修订并通过本地工程门禁；内容评分、修订版预览与实机仍待确认，见 `docs/production/runs/fourth-story-review.md` 和 `docs/production/runs/fourth-story-revision.md`。不作合格范文，不覆盖首次实验记录。
 - 修改前检查 git 状态，保留别人的改动和历史音频；提交、推送、部署分别遵循用户授权。

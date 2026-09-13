@@ -52,7 +52,8 @@ const stage = () =>
 describe('short mitten adventure', () => {
   for (const ending of ['snowman', 'footprints'] as const)
     it(`explores, retries, thanks the child and reaches the ${ending} ending with a clean replay`, () => {
-      render(<MittenAdventure onHome={vi.fn()} onClassic={vi.fn()} />)
+      const onHome = vi.fn()
+      render(<MittenAdventure onHome={onHome} onClassic={vi.fn()} />)
       expect(audio.speak).not.toHaveBeenCalled()
       tap('走进故事')
       tap('问问小熊')
@@ -81,6 +82,8 @@ describe('short mitten adventure', () => {
             : /一串大脚印，一串小脚印/,
         ),
       ).toBeVisible()
+      tap('回到首页')
+      expect(onHome).toHaveBeenCalledOnce()
       tap('再玩一个结尾')
       expect(stage()).toBe('meet')
       tap('问问小熊')

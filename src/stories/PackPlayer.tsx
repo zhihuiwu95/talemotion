@@ -1,3 +1,4 @@
+import { EndingHomeButton } from '../play/EndingHomeButton'
 import { useEffect, useRef, useState } from 'react'
 import { narrationClipId } from '../runtime/audio/narrationLookup'
 import { EdgeAudioProvider } from '../runtime/audio/EdgeAudioProvider'
@@ -228,15 +229,13 @@ export function PackPlayer({
         )}
         {started && node.kind === 'ending' && (
           <div className="pack-ending">
+            <EndingHomeButton onHome={home} />
             <button
               className="replay-button"
               disabled={guard.locked}
               onClick={start}
             >
               再玩一次
-            </button>
-            <button className="parent-button" onClick={home}>
-              回故事小屋
             </button>
             <button className="parent-button" onClick={() => pause('parent')}>
               记一小笔

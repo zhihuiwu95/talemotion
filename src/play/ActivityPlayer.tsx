@@ -1,3 +1,4 @@
+import { EndingHomeButton } from './EndingHomeButton'
 import { legacyClipId } from '../runtime/audio/narrationLookup'
 import { FEEDBACK_MIN_MS, useInteractionGuard } from './useInteractionGuard'
 import { useEffect, useRef, useState } from 'react'
@@ -283,6 +284,7 @@ export function ActivityPlayer({
                 <h2>{activity.title}</h2>
                 <p>{activity.offline}</p>
               </div>
+              <EndingHomeButton onHome={onHome} />
               {state.phase === 'finished' && (
                 <button
                   className="big-button"
@@ -297,9 +299,6 @@ export function ActivityPlayer({
               >
                 <Icon name="repeat" />
                 再玩一次
-              </button>
-              <button className="parent-button" onClick={onHome}>
-                回故事小屋
               </button>
               <button className="parent-button" onClick={() => open('parent')}>
                 记录这次试玩

@@ -1,3 +1,4 @@
+import { EndingHomeButton } from './EndingHomeButton'
 import { legacyClipId } from '../runtime/audio/narrationLookup'
 import { FEEDBACK_MIN_MS, useInteractionGuard } from './useInteractionGuard'
 import { useEffect, useReducer, useRef, useState } from 'react'
@@ -351,6 +352,7 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
                   哪两只袜子，是一对好朋友？
                 </p>
               </div>
+              {onHome && <EndingHomeButton onHome={onHome} />}
               {state.phase === 'finished' && (
                 <button
                   className="big-button"
@@ -365,11 +367,6 @@ export function MatchingStory({ onHome }: { onHome?: () => void }) {
               >
                 记录这次试玩
               </button>
-              {onHome && (
-                <button className="parent-button" onClick={onHome}>
-                  回故事小屋
-                </button>
-              )}
               <button
                 className="replay-button"
                 onClick={() => act({ type: 'start' })}

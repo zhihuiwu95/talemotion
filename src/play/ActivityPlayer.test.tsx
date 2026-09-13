@@ -43,7 +43,8 @@ const click = (name: string) => {
 describe('new activities', () => {
   for (const activity of activities)
     it(`finishes ${activity.title} with retries, saves only explicit observations and resets replay`, () => {
-      render(<ActivityPlayer activity={activity} onHome={vi.fn()} />)
+      const onHome = vi.fn()
+      render(<ActivityPlayer activity={activity} onHome={onHome} />)
       click('一起出发')
       activity.rounds.forEach((round, index) => {
         click(itemNames[round.choices.find((item) => item !== round.target)!]!)
@@ -57,6 +58,8 @@ describe('new activities', () => {
       expect(
         screen.getByRole('heading', { name: '谢谢你，小帮手！' }),
       ).toBeVisible()
+      click('回到首页')
+      expect(onHome).toHaveBeenCalledOnce()
       expect(readObservations()).toEqual([])
       click('记录这次试玩')
       fireEvent.change(screen.getByLabelText('孩子理解了玩法吗？'), {

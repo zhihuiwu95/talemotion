@@ -65,7 +65,8 @@ describe('matching story', () => {
     expect(screen.getByText('帮小狐狸找手套')).toBeVisible()
   })
   it('lets a child retry, finish all three deliveries, leave for offline play, and replay cleanly', () => {
-    render(<MatchingStory />)
+    const onHome = vi.fn()
+    render(<MatchingStory onHome={onHome} />)
     expect(audio.speak).not.toHaveBeenCalled()
     click('一起出发')
     click('蓝色圆点手套')
@@ -89,6 +90,8 @@ describe('matching story', () => {
     expect(
       screen.getByRole('heading', { name: '谢谢你，小帮手！' }),
     ).toBeVisible()
+    click('回到首页')
+    expect(onHome).toHaveBeenCalledOnce()
     click('家长陪玩')
     expect(
       screen.getByText('已找到 3 对；各轮尝试次数：2 / 1 / 1。'),

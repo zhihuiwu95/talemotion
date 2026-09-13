@@ -1,0 +1,41 @@
+.ending-home-row {
+  width: 100%;
+  margin: 12px 0;
+  text-align: center;
+}
+.ending-home-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: min(100%, 320px);
+  min-height: 68px;
+  padding: 14px 24px;
+  border: 2px solid #245846;
+  border-radius: 22px;
+  background: #28664e;
+  color: #fff;
+  box-shadow: 0 5px 0 #194332;
+  font: inherit;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.3;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.ending-home-button svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.ending-home-button:hover {
+  background: #20543f;
+}
+.ending-home-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #194332;
+}
+.ending-home-button:focus-visible {
+  outline: 3px solid #b85a22;
+  outline-offset: 5px;
+}

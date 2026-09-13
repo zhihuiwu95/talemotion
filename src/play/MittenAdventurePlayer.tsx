@@ -1,3 +1,4 @@
+import { EndingHomeButton } from './EndingHomeButton'
 import { useEffect, useRef, useState } from 'react'
 import { narrationClipId } from '../runtime/audio/narrationLookup'
 import { EdgeAudioProvider } from '../runtime/audio/EdgeAudioProvider'
@@ -358,6 +359,7 @@ export function MittenAdventure({
       {stage === 'ending' && (
         <div className="adventure-ending-actions" {...guard.gestureProps}>
           <p>因为你的帮助，小熊又能开心地玩雪了。</p>
+          <EndingHomeButton onHome={onHome} />
           <button
             className="replay-button"
             disabled={guard.locked}
@@ -365,9 +367,6 @@ export function MittenAdventure({
           >
             <Icon name="repeat" />
             再玩一个结尾
-          </button>
-          <button className="parent-button" onClick={onHome}>
-            回故事小屋
           </button>
           <button className="parent-button" onClick={() => pause('parent')}>
             记录这次试玩

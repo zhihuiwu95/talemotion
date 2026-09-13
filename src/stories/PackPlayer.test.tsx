@@ -52,7 +52,8 @@ describe('shared story player', () => {
   for (const pack of storyPacks)
     for (const path of pack.acceptance)
       it(`${pack.id}: ${path.name}, visible choices reach the specified ending and replay clears history`, () => {
-        render(<PackPlayer pack={pack} onHome={vi.fn()} />)
+        const onHome = vi.fn()
+        render(<PackPlayer pack={pack} onHome={onHome} />)
         expect(audio.speak).not.toHaveBeenCalled()
         tap('走进故事')
         settle()
@@ -66,6 +67,8 @@ describe('shared story player', () => {
           settle()
         }
         expect(currentNode(pack.title)).toBe(path.ending)
+        tap('回到首页')
+        expect(onHome).toHaveBeenCalledOnce()
         tap('再玩一次')
         settle()
         expect(currentNode(pack.title)).toBe(pack.start)
