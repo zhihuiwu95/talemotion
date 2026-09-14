@@ -5,7 +5,7 @@ import re
 from voice_director import ROOT, digest, input_hash, is_mp3, legacy_settings, load_config, direct
 
 
-def verify(lines, manifest, config, archive):
+def verify_v2(lines, manifest, config, archive):
     if manifest.get('schemaVersion') != 2 or (manifest.get('release') == 'speaker-aware' and manifest.get('targetConfigHash') != digest(config)):
         raise ValueError('Stale manifest configuration; retain release or explicitly publish after listening')
     if set(manifest['clips']) != {line['id'] for line in lines}:
@@ -56,15 +56,52 @@ def verify(lines, manifest, config, archive):
     return retained
 
 
+def verify(lines, manifest, config, archive, directions=None):
+    if manifest.get('schemaVersion') == 2:
+        if directions and any(line['source'] in directions for line in lines):
+            raise ValueError('Authored sound cues require composite publication')
+        return verify_v2(lines, manifest, config, archive)
+    if manifest.get('schemaVersion') != 3:
+        raise ValueError('Unknown narration manifest version')
+    from audio_composite import verify_output
+    if directions is None:
+        directions = json.loads((ROOT / 'scripts/narration-directions.json').read_text())['soundCues']
+    if set(manifest['clips']) != {line['id'] for line in lines}:
+        raise ValueError('Manifest clip IDs do not match narration inputs')
+    retained = 0
+    for line in lines:
+        entry = manifest['clips'][line['id']]
+        if entry['id'] != line['id'] or entry['inputHash'] != input_hash(line):
+            raise ValueError('Stale logical narration identity')
+        context = manifest['contexts'][entry['contextId']]
+        if digest(context) != entry['contextId']:
+            raise ValueError('Invalid speech verification context')
+        speech = entry['speech']
+        # Each unchanged recording retains the configuration actually used to
+        # produce it. No global relabeling of old audio during a scoped publish.
+        view = {'schemaVersion': 2, 'release': context['release'],
+                'targetConfigHash': context['targetConfigHash'], 'voices': context['voices'],
+                'clips': {line['id']: speech}}
+        retained += verify_v2([line], view, context['config'], archive)
+        verify_output(speech, entry['output'], directions.get(line['source']))
+    return retained
+
+
+def playback_projection(manifest):
+    return {key: record['output']['src'] if manifest['schemaVersion'] == 3 else record['src']
+            for key, record in manifest['clips'].items()}
+
+
 def main():
     lines = json.loads((ROOT / 'scripts/narration-input.json').read_text())
     from pronunciation_review import check_current
     check_current(lines)
     manifest = json.loads((ROOT / 'src/generated/narration.json').read_text())
     archive = json.loads((ROOT / 'scripts/tts-legacy-manifest.json').read_text())
-    retained = verify(lines, manifest, load_config(), archive)
+    directions = json.loads((ROOT / 'scripts/narration-directions.json').read_text())['soundCues']
+    retained = verify(lines, manifest, load_config(), archive, directions)
     playback = json.loads((ROOT / 'src/generated/narration-playback.json').read_text())
-    if playback != {key: record['src'] for key, record in manifest['clips'].items()}:
+    if playback != playback_projection(manifest):
         raise ValueError('Stale playback projection; run audio:collect before building')
     print(f'Verified {len(lines)} clip identities and MP3 checksums; {retained} explicitly retained legacy recordings.' + (' Candidate voices are NOT published.' if retained else ' Speaker-aware release.'))
 

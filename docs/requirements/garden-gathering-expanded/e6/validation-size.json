@@ -1,0 +1,10 @@
+{
+  "single34Ms": 3.977,
+  "normalized34RawBytes": 30898,
+  "normalized34GzipBytes": 3894,
+  "all5Ms": 1.815,
+  "synthetic40Ms": 0.568,
+  "synthetic40RawBytes": 35488,
+  "synthetic40GzipBytes": 3987,
+  "note": "Single observation including parse/graph verification; not a benchmark. Synthetic six opening beats only for bounded validation."
+}

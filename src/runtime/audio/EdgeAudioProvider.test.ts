@@ -1,9 +1,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import manifest from '../../generated/narration.json'
+import playback from '../../generated/narration-playback.json'
+import index from '../../generated/narration-index.json'
 import { EdgeAudioProvider } from './EdgeAudioProvider'
 
-const id = Object.keys(manifest.clips)[0]!
-const text = (manifest.clips as Record<string, { text: string }>)[id]!.text
+const text = Object.keys(index.legacy)[0]!
+const id = (index.legacy as Record<string, string>)[text]!
 let play: ReturnType<typeof vi.spyOn>
 beforeEach(() => {
   play = vi
@@ -21,7 +22,7 @@ describe('Edge audio playback', () => {
     const status = vi.fn()
     const speech = new EdgeAudioProvider(status)
     speech.speak({ id, text: 'text is not used to choose audio' })
-    expect(document.querySelector('audio')!.getAttribute('src')).toBe(`/${(manifest.clips as Record<string, { src: string }>)[id]!.src}`)
+    expect(document.querySelector('audio')!.getAttribute('src')).toBe(`/${(playback as Record<string, string>)[id]}`)
     speech.speak({ id: 'unknown:clip', text })
     expect(status).toHaveBeenLastCalledWith(true)
     expect(play).toHaveBeenCalledOnce()

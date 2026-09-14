@@ -1,0 +1,8 @@
+{
+  "baseline": "HEAD 256345e (E3 included, E4/E5 absent)",
+  "beforeRaw": 464836,
+  "afterRaw": 469336,
+  "deltaRaw": 4500,
+  "beforeGzip": 132397,
+  "afterGzip": 133814
+}

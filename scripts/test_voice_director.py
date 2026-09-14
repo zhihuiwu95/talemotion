@@ -126,10 +126,11 @@ class DirectorTests(unittest.TestCase):
         lines = json.loads((ROOT / 'scripts/narration-input.json').read_text())
         manifest = json.loads((ROOT / 'src/generated/narration.json').read_text())
         archive = json.loads((ROOT / 'scripts/tts-legacy-manifest.json').read_text())
-        self.assertEqual(verify(lines, manifest, self.config, archive), sum(r['status'] == 'legacy-retained' for r in manifest['clips'].values()))
+        self.assertEqual(verify(lines, manifest, self.config, archive), sum(r.get('speech', r)['status'] == 'legacy-retained' for r in manifest['clips'].values()))
         for field, value in [('speaker', 'wrong'), ('voice', 'wrong'), ('audioSha256', 'bad'), ('inputHash', 'bad')]:
             bad = copy.deepcopy(manifest)
-            bad['clips'][lines[0]['id']][field] = value
+            entry = bad['clips'][lines[0]['id']]
+            entry.get('speech', entry)[field] = value
             with self.assertRaises(ValueError): verify(lines, bad, self.config, archive)
 
     def test_cache_reuses_exact_bytes_and_rejects_changed_parameters_or_corruption(self):

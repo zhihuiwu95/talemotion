@@ -1,6 +1,6 @@
 # 花园小聚会完整故事版：阶段记录
 
-当前：E3 内容与背景本地完成，待用户确认；E4 声音管线、E5 正式声音和完整工程验收、E6 真实预览尚未开始。
+当前：E3 已获确认，E4/E5 与 E6 本地工程及浏览器验收完成。旧 E3 记录保留；最新发布、测试和体验边界见 [Review Report](../../requirements/garden-gathering-expanded/REVIEW_REPORT.md)。
 
 需求、分镜、架构与计划见 [SDD 实例](../../requirements/garden-gathering-expanded/prd.md)。选题：3–4 岁亲子共玩；体验共同发现空间需要并调整，音乐兑现成果；项目原创，沿用原有依据，非学习效果证明。
 

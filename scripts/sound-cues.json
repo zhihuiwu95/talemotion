@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "mixVersion": "prefix-mp3-v1",
+  "mixParameters": {
+    "cueGain": 1.0,
+    "speechGain": 1.0,
+    "gapSeconds": 0.1,
+    "sampleRate": 24000,
+    "bitrateKbps": 96
+  },
+  "cues": {
+    "drum-short": {
+      "path": "scripts/sound-cues/drum-short.wav",
+      "sha256": "149551b6f4a105d965d8e938d791a8667a08339bffb79ddf8876c6d7fbaea5e9",
+      "durationSeconds": 1.22,
+      "provenance": "Project-authored procedural percussion; copied byte-for-byte from user-approved E1 B samples. No external recording.",
+      "recipe": "docs/requirements/garden-gathering-expanded/samples/make-b.py; seed 20260913"
+    },
+    "drum-clap-short": {
+      "path": "scripts/sound-cues/drum-clap-short.wav",
+      "sha256": "9db278366a5341626b5fafefebed5438dd0ce2aa472d1c6cfb4ffb2042e61cd3",
+      "durationSeconds": 1.22,
+      "provenance": "Project-authored procedural percussion; copied byte-for-byte from user-approved E1 B samples. No external recording.",
+      "recipe": "docs/requirements/garden-gathering-expanded/samples/make-b.py; seed 20260913"
+    }
+  }
+}

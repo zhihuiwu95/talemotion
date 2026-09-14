@@ -1,0 +1,20 @@
+{
+  "protectedFiles": 376,
+  "oldSourcesRetained": 104,
+  "newSources": 34,
+  "compositeSources": 8,
+  "uniqueOutputs": 22,
+  "uniqueCompositeOutputs": 4,
+  "outputBytes": 1473008,
+  "maxOutputSeconds": 8.568,
+  "uniqueOutputSeconds": 122.448,
+  "jsonBytes": 53745,
+  "jsonGzipBytes": 4147,
+  "localhostHTTP": 200,
+  "192.168.31.168HTTP": 200,
+  "audioHTTP": true,
+  "buildPreviewHTTP": {
+    "localhost": 200,
+    "192.168.31.168": 200
+  }
+}

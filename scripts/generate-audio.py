@@ -112,6 +112,7 @@ def publish(lines, config, voices, key, target):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--publish', action='store_true', help='Explicit full production generation, only after listening approval')
+    parser.add_argument('--source-prefix', help='Publish only exact pack:<story-id>: sources, preserving other recordings')
     parser.add_argument('--migrate-legacy', action='store_true', help='One-time metadata bridge; no synthesis')
     args = parser.parse_args()
     if args.publish == args.migrate_legacy:
@@ -132,8 +133,12 @@ def main():
     from pronunciation_review import check_current
     check_current(lines)
     voices = query_voices(config, key)
-    publish(lines, config, voices, key, target)
-    print(f'Published {len(lines)} speaker-aware clips.')
+    if not args.source_prefix:
+        raise ValueError('Publication requires --source-prefix pack:<story-id>:; full-library replacement is not implicit')
+    from scoped_publication import publish_scoped
+    directions = json.loads((ROOT / 'scripts/narration-directions.json').read_text())['soundCues']
+    result = publish_scoped(lines, config, voices, key, target, args.source_prefix, directions, synthesize, clip_record, write_json)
+    print('Scoped publication completed: ' + json.dumps(result))
 
 
 if __name__ == '__main__':

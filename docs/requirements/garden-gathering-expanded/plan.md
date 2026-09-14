@@ -2,7 +2,7 @@
 
 REQ-GARDEN-EXPANDED；Plan v0.3，2026-09-13；依据 [架构 v0.3](arch.md)、[Design v0.2](design.md)、[PRD v0.3](prd.md)。本轮核对基线 `27415c5`，开始时工作区干净。
 
-状态：用户已授权本轮修订并执行 E1；E1 用户已确认 B 与四种布局；E2 已获用户确认并冻结；E3 已完成、待内容确认，E4～E6 未开始。E1 交付后等待用户确认，不提前进入 E2。
+状态：E1～E3 已获用户确认；按最新授权连续执行 E4～E6。E4/E5 及 E6 本地工程与浏览器验收已完成；实机/人工体验待确认；最终结果见 REVIEW_REPORT.md。下表及旧阶段 Gate 保留为原计划记录，执行以文末最新授权为准。
 
 ## 1. 执行顺序与确认点
 
@@ -131,3 +131,7 @@ E3 generated 边界：audio:pronunciation 先调用 audio:collect；允许 scrip
 ## 9. 本轮 Plan 验证
 
 已静态核对公开导出、音频 source/index/playback、原始语音校验与全量 publish 行为。计划对应现有命令与拟定接口均有区分。只更新架构与计划文档，未运行生成、产品测试或服务，未生成任何样稿。用户已确认开始 E1，本轮只执行 E1；下一步仍需确认。
+
+## Latest execution authorization
+
+User confirmed E3 and explicitly authorized continuous E4–E6, including scoped production publication and local acceptance, overriding the earlier per-stage waits. FFmpeg installation was explicitly approved as a local production-only tool; no browser dependency or committed binary. Only frozen-contract/product changes, new unapproved resources, or unapproved commit/push/deploy/deletion require stopping.

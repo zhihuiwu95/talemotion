@@ -1,0 +1,12 @@
+{
+  "soundCues": {
+    "pack:garden-gathering-party:f04c": "drum-short",
+    "pack:garden-gathering-party:f06c": "drum-clap-short",
+    "pack:garden-gathering-party:f04d": "drum-short",
+    "pack:garden-gathering-party:f06d": "drum-short",
+    "pack:garden-gathering-party:g04c": "drum-short",
+    "pack:garden-gathering-party:g06c": "drum-clap-short",
+    "pack:garden-gathering-party:g04d": "drum-short",
+    "pack:garden-gathering-party:g06d": "drum-short"
+  }
+}

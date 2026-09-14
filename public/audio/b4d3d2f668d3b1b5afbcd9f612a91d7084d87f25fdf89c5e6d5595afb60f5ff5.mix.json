@@ -1,0 +1,19 @@
+{
+  "kind": "composite",
+  "src": "audio/b4d3d2f668d3b1b5afbcd9f612a91d7084d87f25fdf89c5e6d5595afb60f5ff5.mp3",
+  "audioSha256": "acca77a49594528e63fe47e9acd3798d6640f7fafc21f1b5988aabfc58ff70db",
+  "compositeId": "b4d3d2f668d3b1b5afbcd9f612a91d7084d87f25fdf89c5e6d5595afb60f5ff5",
+  "durationSeconds": 3.456,
+  "speechSha256": "bcfbae08ad23dd9109c0fba5d45a88172042eab89c3fd8e0940ef63c9ea672de",
+  "cue": "drum-clap-short",
+  "cueSha256": "9db278366a5341626b5fafefebed5438dd0ce2aa472d1c6cfb4ffb2042e61cd3",
+  "mixParameters": {
+    "cueGain": 1.0,
+    "speechGain": 1.0,
+    "gapSeconds": 0.1,
+    "sampleRate": 24000,
+    "bitrateKbps": 96
+  },
+  "mixVersion": "prefix-mp3-v1",
+  "encoderVersion": "ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers"
+}
