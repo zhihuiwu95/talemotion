@@ -222,20 +222,42 @@ export function StoryArt({
 
 export function StoryBackdrop({ kind }: { kind: StoryBackdropKind }) {
   if (kind === 'meadow-after-rain') {
-    // The nested meadow keeps its existing crop; the floral layer follows the
-    // same normalized positions as the approved narrow-stage composition.
+    // Only the terrain stretches. Sun and flowers have their own viewBoxes so
+    // their proportions stay intact on both wide and narrow stages.
     return (
-      <svg className="pack-backdrop" viewBox="0 0 320 360" preserveAspectRatio="none" aria-hidden="true">
-        <svg width="320" height="360"><StoryBackdrop kind="meadow" /></svg>
-        <ellipse cx="42" cy="225" rx="20" ry="4" fill="#a7ced0" opacity=".65" />
-        <path d="M27 224h18" stroke="#edf7ed" strokeWidth="2" />
-        <ellipse cx="280" cy="350" rx="18" ry="3" fill="#a7ced0" opacity=".65" />
-        <svg x="135" y="213" width="130" height="110"><StoryArt entity={{ asset: 'flower', mood: 'neutral' }} /></svg>
-        <svg x="214" y="208" width="90" height="88"><StoryArt entity={{ asset: 'flower', mood: 'neutral' }} /></svg>
-        <path d="M215 270q-4 6 0 7q5-1 0-7" fill="#e4f5fa" stroke="#80b2bc" strokeWidth=".8" />
+      <svg className="pack-backdrop" width="100%" height="100%" aria-hidden="true">
+        <svg width="100%" height="100%" viewBox="0 0 320 360" preserveAspectRatio="none">
+          <path d="M0 0H320V360H0Z" fill="#e4efd7" />
+          <path d="M0 132Q80 89 168 139Q247 99 320 120V360H0Z" fill="#bfd4b5" opacity=".75" />
+          <path d="M0 206Q94 190 173 219Q251 195 320 211V360H0Z" fill="#d6e4bc" />
+          <path d="M22 287Q37 263 105 271Q165 252 234 272Q286 271 301 305Q269 342 169 340Q65 343 22 315Z" fill="#e5ebc9" />
+          <ellipse cx="27" cy="254" rx="14" ry="3" fill="#a7ced0" opacity=".65" />
+          <path d="M19 253h12" stroke="#edf7ed" strokeWidth="1.5" />
+          <ellipse cx="292" cy="347" rx="13" ry="2" fill="#a7ced0" opacity=".65" />
+        </svg>
+        <svg x="43%" y="4%" width="14%" height="15%" viewBox="0 0 60 60">
+          <circle cx="30" cy="30" r="23" fill="#fff2bd" />
+        </svg>
+        <svg x="62%" y="56%" width="31%" height="21%" viewBox="0 0 150 90">
+          <path d="M7 79Q42 62 75 74Q112 61 146 80Q78 91 7 79Z" fill="#aec895" />
+          <g stroke="#639575" strokeWidth="2.5" fill="#95b891">
+            <path d="M28 77V39M73 79V28M119 77V46" />
+            <path d="M28 66Q11 50 13 65Q19 73 28 72M73 62Q96 44 92 60Q85 69 73 70M119 69Q139 51 136 67Q130 74 119 74" />
+          </g>
+          {[{ x: 28, y: 38, r: 12 }, { x: 73, y: 27, r: 14 }, { x: 119, y: 45, r: 11 }].map(({ x, y, r }) => (
+            <g key={x} transform={`translate(${x} ${y})`}>
+              {[0, 72, 144, 216, 288].map((angle) => (
+                <ellipse key={angle} cy={-r * .65} rx={r * .52} ry={r * .72} transform={`rotate(${angle})`} fill="#eaa08b" />
+              ))}
+              <circle r={r * .42} fill="#f6d177" />
+            </g>
+          ))}
+          <path d="M87 55q-4 5 0 6q4-1 0-6M19 61q-3 4 0 5q3-1 0-5" fill="#e4f5fa" stroke="#80b2bc" strokeWidth=".7" />
+        </svg>
       </svg>
     )
   }
+
   return (
     <svg
       className="pack-backdrop"

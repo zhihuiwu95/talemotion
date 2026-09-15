@@ -43,7 +43,9 @@ describe('garden party narrative continuity', () => {
     const svg = renderToStaticMarkup(<StoryBackdrop kind="meadow-after-rain" />)
     expect(svg).toContain('viewBox="0 0 320 360"')
     expect(svg).toContain('fill="#a7ced0"')
-    expect(svg).toContain('x="135"')
+    // Only terrain may stretch; decorative art retains its own aspect ratio.
+    expect(svg.match(/preserveAspectRatio="none"/g)).toHaveLength(1)
+    expect(svg).toContain('viewBox="0 0 150 90"')
     expect(svg).not.toContain('<button')
     expect(svg).not.toContain('rain-drop')
   })
